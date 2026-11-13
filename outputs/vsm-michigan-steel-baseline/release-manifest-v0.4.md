@@ -10,7 +10,7 @@
 | 交接用途 | GitHub 受控保存、审阅和后续迭代起点 |
 | 目标远端 | `https://github.com/wyfchina/FactoryPhyVsm.git` |
 | 候选分支 | `codex/vsm-v04-github-ready` |
-| 远端状态 | 本地远端已配置；GitHub 连接失败，分支尚未推送 |
+| 远端状态 | 主题分支已推送；首次推送确认远端分支指向 `9ff564b58f5313eeb1d8e6a93113f7c430261f8c` |
 | 仓库内容提交 | `afca64839f4170499148ccf3e1a861c4b840a393` |
 | 阶段门 | `HOLD` |
 | 正式基线 | 未通过；当前状态不是 `B0`、`B1` 或 `B2` |
