@@ -1,0 +1,8 @@
+ScenarioID,Stage,Change,FixedControls,PrimaryResponses,ExpectedUse,Status
+B0,Source baseline,Directly transcribe current-state VSM,"Demand=18400/month; L=12000; R=6400; 20 workdays; 2 shifts; initial WIP snapshot","Takt; WIP days; process time; inventory days","Check source transcription and analytic baseline",Planned
+B1,Initial prototype,"Add one operator per station; SCV=1.0; target availability; author batch assumptions","B0 data; no extra calibration time","Capacity; utilization; throughput; CT; WIP","Expose initial infeasibility",Planned
+B2,Calibrated baseline,"Add explicit 1.2 effective hours/day or equivalent 24 hours/month","All B1 controls; only calibration parameter changes","L/R CT; fill rate; utilization; WIP","Conditional comparison to author model",Planned
+E1,Absolute benchmark,"Derive demand/WIP/raw process time/bottleneck rate/critical WIP","B2","Benchmark ratios and bottleneck position","Diagnose excess WIP and capacity",Planned
+E2,Lot-size policy,"L batch=320; R batch=232; target fill rate=95%","B2 process and failure data","CT; FG; WIP; fill rate; turns; setups","Evaluate production-control policy",Planned
+E3,Floor balance,"Represent combined/parallel assembly alternative","Same demand, batch, calendar, variability, failures","CT; bottleneck; utilization; overtime","Evaluate physical/process change",Planned
+E4,Maintenance and overtime,"Test MTTR reduction and removal of 24 hours/month overtime","Documented failure and staffing controls","CT; throughput; utilization; overtime","Evaluate maintenance and labor policy",Planned

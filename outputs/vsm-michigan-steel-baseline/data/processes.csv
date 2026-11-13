@@ -1,0 +1,7 @@
+process_id,process_name,sequence,process_time_sec,setup_time_hr,availability_target_pct,workers_required,variability_scv,distribution_family,mttf_hr,mttr_hr,source_status,source_ref
+P01,Stamping,1,1.0,1.000,85,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
+P02,S Weld #1,2,39.0,0.167,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
+P03,S Weld #2,3,46.0,0.167,80,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
+P04,Assembly #1,4,62.0,0.000,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
+P05,Assembly #2,5,40.0,0.000,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
+P06,Shipping,6,0.0,0.000,,0,,,,,Source says Unlimited capacity; behavior choice required,Table 9-1; p.310
