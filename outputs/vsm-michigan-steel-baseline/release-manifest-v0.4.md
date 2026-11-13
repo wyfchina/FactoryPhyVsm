@@ -8,6 +8,7 @@
 | 迭代 | `I1`，当前路线阶段 `I1.4–I1.6` |
 | 模型状态 | `VSM_V0.4_InitialWIPPrototype` / `INITIAL_WIP_PROTOTYPE` |
 | 交接用途 | GitHub 受控保存、审阅和后续迭代起点 |
+| 仓库内容提交 | `afca64839f4170499148ccf3e1a861c4b840a393` |
 | 阶段门 | `HOLD` |
 | 正式基线 | 未通过；当前状态不是 `B0`、`B1` 或 `B2` |
 | Simio 版本 | `20.297.56736.0` |
