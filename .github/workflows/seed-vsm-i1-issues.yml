@@ -1,0 +1,162 @@
+name: Seed Michigan Steel VSM I1 Issues
+
+on:
+  push:
+    branches:
+      - codex/vsm-v04-github-ready
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const parentTitle = '[总览] Michigan Steel VSM 仿真：I1 路线与任务清单';
+            const allIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner, repo, state: 'all', per_page: 100
+            });
+            if (allIssues.some((issue) => issue.title === parentTitle)) {
+              core.info('I1 issues already exist; stopping without duplicates.');
+              return;
+            }
+
+            const labels = [
+              ['总览', '1d76db', 'I1 project overview'],
+              ['设计', '5319e7', 'Assumptions and design'],
+              ['数据', '0e8a16', 'Data and input snapshots'],
+              ['spike', 'd93f0b', 'Mechanism prototype'],
+              ['建模', 'fbca04', 'Model implementation'],
+              ['验证', 'b60205', 'Verification evidence'],
+              ['基线', 'c5def5', 'User-defined baseline'],
+              ['报告', '7057ff', 'Handover and reporting'],
+              ['status:partial', 'fbca04', 'Partially complete'],
+              ['status:blocked', 'b60205', 'Blocked by a prerequisite']
+            ];
+            for (const [name, color, description] of labels) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name });
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              }
+            }
+
+            const milestoneTitle = 'I1 - Michigan Steel VSM Baseline';
+            const milestones = await github.paginate(github.rest.issues.listMilestones, {
+              owner, repo, state: 'open', per_page: 100
+            });
+            let milestone = milestones.find((item) => item.title === milestoneTitle);
+            if (!milestone) {
+              milestone = (await github.rest.issues.createMilestone({
+                owner, repo, title: milestoneTitle,
+                description: 'I1 route from source and data definition through the initial WIP prototype and baseline readiness gate.'
+              })).data;
+            }
+
+            const commitUrl = 'https://github.com/' + owner + '/' + repo + '/blob/' + context.sha + '/';
+            const parentBody = [
+              '## 目标',
+              '为 Factory Physics for Managers 第 9 章 Michigan Steel VSM 案例建立可追溯的 Simio 仿真项目路线。项目采用逐轮增加模型复杂度、每轮验证新增机制并回归既有证据的方式，先完成用户定义的 VSM 基线，再进入作者方案实验。',
+              '',
+              '## 条件',
+              '- 来源：Factory Physics for Managers 第 9 章 Michigan Steel VSM 案例。',
+              '- 当前模型：`VSM_V0.4_InitialWIPPrototype`，属于初始 WIP 原型，不是正式 B0、B1 或 B2。',
+              '- 当前阶段门：`HOLD`。',
+              '- 项目路线与 I1 工作包已随分支 `codex/vsm-v04-github-ready` 推送。',
+              '',
+              '## 关键设计决定',
+              '- I1.1–I1.7 表示本轮迭代环节；核心工作包 01–14 是另一维度。',
+              '- B0 表示 Figure 9-1 当前状态；B1 加入作者建模假设；B2 仅增加 1.2 小时/日校准。',
+              '- V0.4 只证明初始 WIP 装载、W05 成品暂存边界和确定性实体守恒子集，不能写成正式基线通过。',
+              '',
+              '## 任务清单',
+              '- [ ] 推进子 Issue 02–09，并维护依赖和状态。',
+              '- [ ] 关闭 HOLD 所需的输入、模型实现、确定性验证和原生重载缺口。',
+              '- [ ] B0/B1 通过后再进入 10–13 后续实验。',
+              '',
+              '## 依赖关系',
+              '```text',
+              '#01 → #02 → #03 → #04 → #05 → #06 → #07 → #08 → #09',
+              '                                                        └→ #10–#13 → #14',
+              '```',
+              '',
+              '## 预期结果',
+              '每次迭代只增加声明过的机制，并保留前一迭代的通过证据；模型、输入、运行和结论可追溯。',
+              '',
+              '## 验收标准',
+              '- [ ] I1.1–I1.7 与线上 Issue、仓库 Markdown 和证据路径一致。',
+              '- [ ] V0.4 原型、B0/B1/B2 和后续方案实验有明确区别。',
+              '- [ ] 阶段门有入口条件、验收证据和 HOLD/GO 判据。',
+              '',
+              '## 当前结果',
+              '状态：`Partial / HOLD`。V0.4 初始 WIP 原型有部分运行证据，但 B0/B1 未通过，保存重载、动态守恒、班次、组批、随机故障、换型和履约验证仍未完成。',
+              '',
+              '## 项目记录',
+              '- [I1 路线](' + commitUrl + 'outputs/vsm-michigan-steel-baseline/01.md)',
+              '- [项目说明](' + commitUrl + 'outputs/vsm-michigan-steel-baseline/README.md)',
+              '- [V0.4 交接清单](' + commitUrl + 'outputs/vsm-michigan-steel-baseline/release-manifest-v0.4.md)'
+            ].join('\n');
+
+            const parent = (await github.rest.issues.create({
+              owner, repo, title: parentTitle, body: parentBody,
+              labels: ['总览', 'status:partial'], milestone: milestone.number
+            })).data;
+
+            const children = [
+              ['02', '[设计] Michigan Steel VSM I1.2：建模口径与假设', '设计'],
+              ['03', '[数据] Michigan Steel VSM I1.2：数据架构与输入快照', '数据'],
+              ['04', '[Spike] Michigan Steel VSM I1.3：最小机制原型', 'spike'],
+              ['05', '[建模] Michigan Steel VSM I1.4：公共模型骨架', '建模'],
+              ['06', '[建模] Michigan Steel VSM I1.4：初始流程模型', '建模'],
+              ['07', '[建模] Michigan Steel VSM I1.5：指标与统计框架', '建模'],
+              ['08', '[验证] Michigan Steel VSM I1.5：确定性验证与守恒', '验证'],
+              ['09', '[基线] Michigan Steel VSM I1.6：用户定义基线与研究状态', '基线'],
+              ['14', '[报告] Michigan Steel VSM I1.7：轮次评审与交接', '报告']
+            ];
+            const created = [];
+            for (const [num, title, category] of children) {
+              const path = 'outputs/vsm-michigan-steel-baseline/iterations/I1/' + num + '.md';
+              const source = fs.readFileSync(path, 'utf8');
+              const body = [
+                'Parent: #' + parent.number + ' (' + parent.html_url + ')',
+                'Iteration: I1',
+                'Core work package: ' + num,
+                'Source record: [' + path + '](' + commitUrl + path + ')',
+                '',
+                source,
+                '',
+                '## GitHub acceptance record',
+                '- Evidence must be added in a comment or linked run record before closing.',
+                '- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.'
+              ].join('\n');
+              const child = (await github.rest.issues.create({
+                owner, repo, title, body,
+                labels: [category, 'status:partial'], milestone: milestone.number
+              })).data;
+              created.push({ num, number: child.number, title, url: child.html_url });
+            }
+
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: parent.number,
+              body: 'Created I1 work packages from commit `' + context.sha + '`:\n\n' + created.map((x) => '- #' + x.number + ' ' + x.title).join('\n') + '\n\nThe project remains `HOLD`; Issue creation does not constitute model or baseline acceptance.'
+            });
+
+            const routePath = 'outputs/vsm-michigan-steel-baseline/01.md';
+            const routeFile = (await github.rest.repos.getContent({ owner, repo, path: routePath, ref: context.ref })).data;
+            const routeText = Buffer.from(routeFile.content, 'base64').toString('utf8');
+            const map = ['','## GitHub Issue 映射（自动登记）','', '| 工作包 | 线上 Issue | 状态 |','|---|---:|---|','| 01 总览 | #' + parent.number + ' | Partial / HOLD |'].concat(created.map((x) => '| ' + x.num + ' | #' + x.number + ' | Open / Partial |')).join('\n');
+            const updatedRoute = routeText.includes('## GitHub Issue 映射（自动登记）') ? routeText : routeText + '\n' + map + '\n';
+            await github.rest.repos.createOrUpdateFileContents({
+              owner, repo, path: routePath, branch: context.ref.replace('refs/heads/', ''),
+              message: 'Record I1 GitHub issue mapping', content: Buffer.from(updatedRoute).toString('base64'), sha: routeFile.sha
+            });
+            core.info('Created I1 parent and child issues, labels, milestone, and route mapping.');
