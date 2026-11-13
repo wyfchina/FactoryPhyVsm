@@ -29,6 +29,6 @@
 
 ## GitHub 协作状态
 
-项目规划和 I1 的 01–14 工作包 Markdown 已整理为仓库内容。它们尚未绑定 GitHub 上的实际 Issue 编号、Pull Request 或 Milestone；绑定后应在路线文件和关联 Issue 中补记链接。当前工作区未配置 Git 远端，因此本次可以形成候选分支和本地提交，推送与创建 GitHub Issue 需要先确定目标仓库。
+项目规划和 I1 的 01–14 工作包 Markdown 已整理为仓库内容。它们尚未绑定 GitHub 上的实际 Issue 编号、Pull Request 或 Milestone；绑定后应在路线文件和关联 Issue 中补记链接。目标远端为 [`wyfchina/FactoryPhyVsm`](https://github.com/wyfchina/FactoryPhyVsm)，候选分支为 `codex/vsm-v04-github-ready`。本地提交已完成，但当前执行环境无法连接 GitHub，因此远端分支尚未推送，线上 Issue、Pull Request 和 Milestone 尚未创建。
 
 每项后续模型变更应关联 Issue，记录目标、依赖、设计、验收条件、预期和实际结果以及证据路径。每次运行都须绑定模型文件哈希、输入快照和 Simio 版本；不能用提交、上传或文件名代替阶段验收。
