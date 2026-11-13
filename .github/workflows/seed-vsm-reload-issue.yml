@@ -1,0 +1,103 @@
+name: Seed VSM reload regression issue
+
+on:
+  push:
+    branches:
+      - codex/vsm-v04-github-ready
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create issue once
+        uses: actions/github-script@v7
+        env:
+          ISSUE_TITLE: "[验证] Michigan Steel VSM I1.6：V0.4 保存/重载回归"
+          ISSUE_BODY: |
+            Parent: #9 (https://github.com/wyfchina/FactoryPhyVsm/issues/9)
+            Iteration: I1
+            Core work package: 09
+            Subtask: V0.4 persistence and reload regression
+
+            ## 目标
+
+            证明当前 `VSM_V0.4_InitialWIPPrototype` 保存包是可重载、可复核的模型版本，并确认保存/关闭/重载不会改变 I1 已通过的结构性子集。
+
+            ## 依赖
+
+            - #5 公共模型骨架
+            - #6 初始流程模型
+            - #8 确定性验证与守恒
+            - #9 用户定义基线与研究状态
+            - 保存包：`release-manifest-v0.4.md`
+            - 运行记录：`09-simio-baseline-run-evidence.md`
+
+            ## 设计
+
+            1. 固定待回归的模型身份、实验名称、输入快照和运行时长。
+            2. 在 Simio 中保存当前 V0.4 候选模型，记录文件路径、时间戳和模型版本。
+            3. 关闭模型并重新打开同一保存包。
+            4. 回读 Facility、Data Table、Entity State、Release Process、实验和关键属性。
+            5. 先执行最小烟雾运行，再执行与重载前同口径的确定性回归运行。
+            6. 对比重载前后的结构、诊断、实体守恒、W05 成品暂存边界和运行结果；差异必须有解释并记录。
+
+            ## 验收条件
+
+            - [ ] 保存包路径和文件哈希已登记，模型可以关闭后重新打开。
+            - [ ] 重载后对象、表格、过程、实体状态和关键属性与保存前一致。
+            - [ ] 静态诊断为 0 errors，运行错误为 0。
+            - [ ] 最小烟雾运行通过实体守恒。
+            - [ ] 确定性回归运行仍满足已声明的数量守恒关系。
+            - [ ] W05 初始成品没有未经需求履约规则直接流入 Shipping。
+            - [ ] 所有差异、警告、未测项和证据路径写入本 Issue 评论及仓库运行记录。
+            - [ ] 在该 Issue 通过前，#9 和 I1 阶段门继续保持 HOLD。
+
+            ## 预期结果
+
+            形成可重载的 V0.4 模型版本和一份前后对照的回归证据。通过后，I1 可以把“模型身份/保存重载”从阻塞项中移除；不通过则保留 HOLD，并定位是保存包、MCP 活动会话、实验元数据还是模型逻辑导致的差异。
+
+            ## 当前状态
+
+            `Blocked`：V0.4 保存包已完成包内 XML 只读核验，但原生关闭、重开和回归尚未完成。该 Issue 不代表 B0/B1 已通过。
+
+            ## GitHub acceptance record
+
+            Evidence must be added in a comment or linked run record before closing. The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = process.env.ISSUE_TITLE;
+            const body = process.env.ISSUE_BODY;
+            const existing = await github.paginate(github.rest.issues.listForRepo, {
+              owner,
+              repo,
+              state: 'all',
+              per_page: 100
+            });
+            const match = existing.find(issue => issue.title === title);
+            if (match) {
+              core.info(`Issue already exists: #${match.number}`);
+              return;
+            }
+            const milestones = await github.paginate(github.rest.issues.listMilestones, {
+              owner,
+              repo,
+              state: 'all',
+              per_page: 100
+            });
+            const milestone = milestones.find(item => item.title === 'I1 - Michigan Steel VSM Baseline');
+            const issue = await github.rest.issues.create({
+              owner,
+              repo,
+              title,
+              body,
+              labels: ['验证', 'status:blocked'],
+              ...(milestone ? { milestone: milestone.number } : {})
+            });
+            core.info(`Created ${issue.data.html_url}`);
