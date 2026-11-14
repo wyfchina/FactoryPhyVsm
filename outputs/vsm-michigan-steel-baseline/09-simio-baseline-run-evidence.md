@@ -1,5 +1,52 @@
 # Simio 基线运行证据
 
+## V0.11 当前 MCP 候选：初始 WIP cohort
+
+V0.11 继承 V0.10 公共模型骨架，在 `VSM_InitializeWIP` 中启用
+`CopyOverTableRowReferences=True`，并把每个初始 WIP 计算实体的
+`VSM_ProductionBatchState` 写为 `WIP:<WIPRecordId>`。活动模型 `/Project/Model`
+的根属性为 `VSM_ModelVersion=VSM_V0.11_InitialWIPCohortCandidate`、
+`VSM_BaselineStage=INITIAL_FLOW_CANDIDATE`。用户已另存独立保存包
+`models/VSM_MichiganSteel_V0.11_InitialWIPCohortCandidate.spfx`，SHA-256 为
+`D023F7420FF2E1FF21046A0E9481E64E3268CD7B2C7EC7F8D0532C9A606D6F52`。
+
+### 复位态检查
+
+在 `/Project/Model/Runtime/Objects/ModelEntity/DefaultEntity` 上执行 `Reset` 后，
+仿真时间为 `0 h`，`Population.NumberInSystem=857`。运行时表达式读取到：
+
+| 表达式 | 结果 |
+|---|---|
+| `Population.FirstItem.ModelEntity.VSM_ProductionBatchState` | `WIP:InitialWIP_W01_L` |
+| `Population.FirstItem.ModelEntity.VSM_QuantityState` | `20` |
+| `Population.LastItem.ModelEntity.VSM_ProductionBatchState` | `WIP:InitialWIP_W05_R` |
+| `Population.LastItem.ModelEntity.VSM_ProductTypeState` | `Right` |
+| `Population.LastItem.ModelEntity.VSM_QuantityState` | `20` |
+
+上述结果证明 cohort 标签写入实体状态并可读；MCP 不能从实体表达式直接返回
+`VSM_InitialWIPTable.WIPRecordId` 的表行对象，因此不能据此声称逐行动态账本已完成。
+
+### 保存后确定性回归
+
+运行设置为确定性、无预热、随机性关闭，`RunLength=306.6666667 h`。保存后的活动候选执行
+`Reset → FastForward`，`get_diagnostics` 返回 `0 errors`，`get_run_status` 返回
+`0 warnings`、`lastError=null`。
+
+| 指标 | 结果 |
+|---|---:|
+| Left 生产释放 | 12,000 件 |
+| Right 生产释放 | 6,400 件 |
+| 总生产释放 | 18,400 件 |
+| 加权 Shipping | 19,630 件 |
+| 期末加权 WIP | 15,900 件 |
+| 实体创建/销毁 | 1,777 / 982 |
+| 期末实体 | 795 |
+| 件数守恒 | `17,130 + 18,400 = 19,630 + 15,900` |
+| Left 守恒 | `11,200 + 12,000 = 14,500 + 8,700` |
+| Right 守恒 | `5,930 + 6,400 = 5,130 + 7,200` |
+
+本节证据是“保存后活动会话回归”，尚未包含关闭 Simio 后重新打开 V0.11 文件的独立原生回归；因此 VSM-14 仍为 `Partial`。逐行 `WIPRecordId` cohort ledger、真实生产批次动态守恒、班次、换型、故障/维修、物理托盘和服务指标仍未完成。详见 [V0.11 cohort 证据](vsm-v11-initial-wip-cohort-evidence.md)。
+
 ## V0.10 当前 MCP 候选：公共模型骨架
 
 V0.10 继承 V0.9 的产品分组审计和位置级加权 WIP 逻辑，本次只完成公共骨架的命名、说明和版本标识增量。活动模型 `/Project/Model` 的根属性为 `VSM_ModelVersion=VSM_V0.10_CommonSkeletonCandidate`、`VSM_BaselineStage=COMMON_SKELETON`。变更前的 V0.9 保存包 SHA-256 为 `49197D44DA482F97B6B06E4A47D97931875AF6C4DA639C684D6FF8794B5363A8`，快照见 `snapshots/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.before-I1.4-issue05-skeleton.spfx`。用户已另存独立 V0.10 保存包 `models/VSM_MichiganSteel_V0.10_CommonSkeletonCandidate.spfx`，SHA-256 为 `B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF`；关闭/重开回归仍待完成。

@@ -3,7 +3,7 @@
 ## 模型身份
 
 - 模型名：`VSM_MichiganSteel`
-- 阶段：`VSM_V0.10_CommonSkeletonCandidate`（继承 V0.9 产品分组审计并完成公共骨架命名/说明增量）
+- 阶段：`VSM_V0.11_InitialWIPCohortCandidate`（继承 V0.10 公共骨架并增加初始 WIP cohort 标签增量）
 - 目的：表达 Figure 9-1 当前状态，并为后续作者步骤提供可验证的输入和响应。
 - 运行类型：先做有限月度原型；是否建立稳态 warm-up 版本，留到 B1 运行设计确认。
 
@@ -76,6 +76,12 @@ L 先于 R 是本项目的可复现实现选择，不是来源给出的详细排
 V0.9 产品分组审计状态包括 `VSM_InitialLeftUnitCount`、`VSM_InitialRightUnitCount`、`VSM_ShippedLeftUnitCount`、`VSM_ShippedRightUnitCount`，以及六个位置各自的 Left/Right 当前加权 WIP 状态。初始累计按 `VSM_InitialWIPTable.BatchUnitQuantity` 在每个计算实体赋值时增加；发运累计按 `VSM_ProductTypeState` 和 `VSM_QuantityState` 在 `VSM_OnShipment` 中增加；位置状态由各 Server 的 Entered/Exited 过程维护。`ProductionBatch` 对初始 WIP 仍是追溯标签，不宣称真实生产批次。
 
 V0.10 公共骨架增量只改变模型身份、链接业务命名和关键对象/Output Statistic 的说明，不改变上述状态更新、处理时间、路由、批量或守恒逻辑。活动模型和独立保存包已通过当前会话静态检查与确定性回归；保存包 SHA-256 为 `B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF`。关闭/重开回归仍由 VSM-14 承担。
+
+### V0.11 初始 WIP cohort 增量
+
+V0.11 在 `VSM_InitializeWIP` 的 `Search` 步骤启用 `CopyOverTableRowReferences=True`，并把每个初始 WIP 计算实体的 `VSM_ProductionBatchState` 写为 `WIP:<WIPRecordId>`。复位态首实体为 `WIP:InitialWIP_W01_L`，尾实体为 `WIP:InitialWIP_W05_R`，初始实体数为 857。该状态是可读取的 cohort 标签，不等于每个表行的动态 Shipping/期末账本，也不等于真实生产批次。
+
+V0.11 保存包为 `models/VSM_MichiganSteel_V0.11_InitialWIPCohortCandidate.spfx`，SHA-256 为 `D023F7420FF2E1FF21046A0E9481E64E3268CD7B2C7EC7F8D0532C9A606D6F52`。保存后的活动会话确定性回归保持 `17,130 + 18,400 = 19,630 + 15,900`、L/R 分组守恒、0 errors 和 0 warnings；关闭/重开后的独立原生回归仍由 VSM-14 管理。
 
 ## 输出和守恒
 
