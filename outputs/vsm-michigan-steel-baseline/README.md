@@ -4,14 +4,14 @@
 
 ## 当前交接状态
 
-- 模型快照：`VSM_V0.4_InitialWIPPrototype`
+- 模型快照：`VSM_V0.7_InitialWIPTable`
 - 当前迭代：`I1`；路线环节见 [`01.md`](01.md)，核心 Issue 记录见 [`iterations/I1/`](iterations/I1/)
 - 阶段门：`HOLD`
-- 已验证范围：初始 WIP 17,130 件的装载、W05 初始成品暂存、确定性完整运行的全系统实体守恒
-- 未通过范围：正式 B0/B1/B2 基线、保存后原生重载回归、实际托盘组批/尾批、班次日历、随机故障、换型、需求履约及 Fill Rate
-- 当前模型包、输入哈希、运行证据和未关闭事项：[`release-manifest-v0.4.md`](release-manifest-v0.4.md)
+- 已验证范围：20 件计算批次表达、初始 WIP 17,130 件的装载、W03-R 10 件尾批、W05 初始成品暂存、加权交付统计、确定性完整运行的件数与实体数守恒；V0.7 已保存并完成关闭重开回归
+- 未通过范围：正式 B0/B1/B2 基线、物理托盘组批语义、班次日历、随机故障、换型、需求履约及 Fill Rate；20 件计算批次对批内时序指标的等价性仍未证明
+- 当前模型包、输入哈希、运行证据和未关闭事项：[`vsm-v07-20piece-entity-evidence.md`](vsm-v07-20piece-entity-evidence.md)
 
-保存包内部仍有 V0.3 实验场景元数据和过时对象说明，记录为 `DQ-005`。完整运行出现 1 条高实体数量技术警告，原生重载回归后需复核。这些状态不妨碍把模型作为受控候选快照提交审阅，但不允许将其标为正式基线或发布版本。
+保存包中的旧实验场景元数据和对象说明仍记录为 `DQ-005`，需在后续维护中统一。V0.7 关闭重开后的原生回归已完成：诊断 0 errors、运行警告 0，完整运行件数与实体数均守恒。模型仍是受控候选快照，不能标为正式基线；20 件计算批次与逐件实体模型的细节等价性尚未验证。
 
 ## 文件导航
 
@@ -24,7 +24,7 @@
 | 模型契约和验证计划 | [`03-model-contract.md`](03-model-contract.md)、[`05-verification-plan.md`](05-verification-plan.md) |
 | 合规审查和 Simio 运行证据 | [`07-baseline-compliance-review.md`](07-baseline-compliance-review.md)、[`09-simio-baseline-run-evidence.md`](09-simio-baseline-run-evidence.md) |
 | 输入数据与假设 | [`data/`](data/)、[`assumptions-register.csv`](assumptions-register.csv) |
-| V0.4 模型与 V0.1 回滚快照 | [`models/`](models/)、[`snapshots/`](snapshots/) |
+| V0.6 逐件参照、V0.7 20 件计算批次和回滚快照 | [`models/`](models/)、[`snapshots/`](snapshots/) |
 | 通用规划 Skill | [`../../skills/supply-chain-simulation-planning/SKILL.md`](../../skills/supply-chain-simulation-planning/SKILL.md) |
 
 ## GitHub 协作状态

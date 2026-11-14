@@ -8,7 +8,7 @@
 
 ## 当前状态
 
-当前轮次路线和 Issue 文件见 [项目级 01.md](01.md) 与 [iterations/I1/](iterations/I1/)。本轮是 I1 文档迁移、初始 WIP 原型和证据分级，不代表 B0/B1 或模型保存重载已完成。
+当前轮次路线和 Issue 文件见 [项目级 01.md](01.md) 与 [iterations/I1/](iterations/I1/)。本轮是 I1 文档迁移、初始 WIP 原型、20 件计算批次增量和证据分级；V0.7 已完成保存、关闭、重新打开和原生回归，但不代表 B0/B1 已完成。
 
 - 来源提取：完成
 - VSM 当前状态基线规格：完成；正式 `B0` 模型尚未完成
@@ -18,7 +18,7 @@
 - 初始 WIP 原型仿真运行：已完成；17,130 件初始 WIP 已装载，W05 初始成品被隔离在暂存区
 - 正式 `B0/B1` 仿真验收：尚未完成
 - 作者后续步骤的验证：已规划，尚未执行
-- 阶段门：`HOLD`，三项高影响项目口径已由用户接受；初始 WIP 原型已运行，但仍需完成真实组批、日历、故障/换型、保存重载和正式基线验证
+- 阶段门：`HOLD`，三项高影响项目口径已由用户接受；V0.7 的计算批次、加权件数和重载回归已验证，但仍需完成正式 B0/B1、物理托盘语义、日历、故障/换型和统计验收
 
 ## 基线术语和当前阶段映射
 
@@ -44,8 +44,8 @@
 - `data/demand-calendar.csv`：需求、班次和节拍口径
 - `assumptions-register.csv`：事实、假设、实现选择和待确认项
 - `models/`、`snapshots/`：当前候选模型和历史回滚快照
-- `release-manifest-v0.4.md`：模型/输入哈希、运行证据和交接限制
+- `release-manifest-v0.4.md`、`release-manifest-v0.7.md`：模型/输入哈希、运行证据和交接限制
 
 ## 关键边界
 
-交付目录含有两个原生 Simio `.spfx` 快照：`snapshots/VSM_MichiganSteel_V0.1_SourceBaseline_pre-I1.4-WIP.spfx` 是回滚点，`models/VSM_MichiganSteel_V0.4_InitialWIPPrototype.spfx` 是当前候选模型交接包。V0.4 仓库副本与用户保存的原始文件使用同一 SHA-256，详见 [release-manifest-v0.4.md](release-manifest-v0.4.md)。已完成文件哈希和包内 XML 只读核验，但尚未完成 Simio 原生关闭、重开和回归。保存包的实验场景仍有 V0.3 元数据，需修正后再作为正式交接版本。当前交付仍是可审阅的基线规格和初始 WIP 原型证据，不代表正式 B0/B1 已完成。MTTF/MTTR、随机分布族、批次顺序和统计终止制度尚未完全确定，因此不据此声称已验证结果。
+交付目录含有历史回滚点 `snapshots/VSM_MichiganSteel_V0.1_SourceBaseline_pre-I1.4-WIP.spfx`、逐件参照模型 V0.6 和当前 20 件计算批次候选 `models/VSM_MichiganSteel_V0.7_InitialWIPTable.spfx`。V0.7 用户保存包已完成关闭、重新打开和原生回归，详见 [release-manifest-v0.7.md](release-manifest-v0.7.md)。保存包中的旧实验场景和对象说明仍有 V0.3/V0.4 历史元数据，记录为 DQ-005，需后续统一。当前交付仍不是正式 B0/B1；MTTF/MTTR、随机分布族、班次日历、物理托盘语义和统计终止制度尚未完全确定。
