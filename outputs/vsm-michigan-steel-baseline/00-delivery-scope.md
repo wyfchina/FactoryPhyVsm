@@ -48,4 +48,4 @@
 
 ## 关键边界
 
-交付目录含有历史回滚点 `snapshots/VSM_MichiganSteel_V0.1_SourceBaseline_pre-I1.4-WIP.spfx`、逐件参照模型 V0.6 和当前 20 件计算批次候选 `models/VSM_MichiganSteel_V0.7_InitialWIPTable.spfx`。V0.7 用户保存包已完成关闭、重新打开和原生回归，详见 [release-manifest-v0.7.md](release-manifest-v0.7.md)。保存包中的旧实验场景和对象说明仍有 V0.3/V0.4 历史元数据，记录为 DQ-005，需后续统一。当前交付仍不是正式 B0/B1；MTTF/MTTR、随机分布族、班次日历、物理托盘语义和统计终止制度尚未完全确定。
+交付目录含有历史回滚点 `snapshots/VSM_MichiganSteel_V0.1_SourceBaseline_pre-I1.4-WIP.spfx`、逐件参照模型 V0.6、V0.7 计算批次候选，以及当前 V0.8 位置审计和 V0.9 产品分组审计包。V0.7 用户保存包已完成关闭、重新打开和原生回归；V0.9 已保存但尚未完成独立包重载回归，详见 [Simio 运行证据](09-simio-baseline-run-evidence.md)。I1 输入快照已形成，见 [输入快照清单](input-snapshot-manifest-v0.9.md)。当前交付仍不是正式 B0/B1；班次日历、物理托盘语义、随机机制运行验证和统计终止制度仍待后续 Issue 固化或验证。

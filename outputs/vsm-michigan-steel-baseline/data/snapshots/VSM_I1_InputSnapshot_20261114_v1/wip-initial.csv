@@ -1,0 +1,7 @@
+location_id,location_name,location_order,L_units,R_units,total_units,wip_class,days_at_920,source_ref
+W01,After Stamping,1,4600,2400,7000,ProcessWIP,7.6087,Figure 9-1 p.309
+W02,After S Weld #1,2,1100,600,1700,ProcessWIP,1.8478,Figure 9-1 p.309
+W03,After S Weld #2,3,1600,850,2450,ProcessWIP,2.6630,Figure 9-1 p.309
+W04,After Assembly #1,4,1200,640,1840,ProcessWIP,2.0000,Figure 9-1 p.309
+W05,Finished Goods staging,5,2700,1440,4140,FinishedGoods,4.5000,Figure 9-1 p.309; Figure 9-2 p.310
+RAW,Raw material coils,0,,,NA,RawMaterial,5.0000,Figure 9-1 p.309; Figure 9-2 p.310

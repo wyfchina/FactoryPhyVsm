@@ -2,53 +2,84 @@
 
 ## 验证原则
 
-先验证资料转录和解析边界，再验证模型机制，最后才把作者模型输出作为条件性对照。任何一项失败都先定位原因，不用调整结果显示来消除差异。
+先验证资料转录和解析边界，再验证模型机制，最后才把作者模型输出作为条件性对照。每项测试都记录预期、容差、实际结果、证据路径和失败后的下游影响；解析值、模型响应和作者报告值不得混写。`Passed` 只表示该测试范围有直接证据，不等于 B0/B1 整体通过。
+
+验证责任映射如下。责任 Issue 定义测试输入、实现或关闭条件；Issue 08 承担相关的确定性守恒回归。
+
+| 测试 ID | 负责 Issue |
+|---|---|
+| VSM-01 | Issue 02、03 |
+| VSM-02 | Issue 02、08 |
+| VSM-03 | Issue 03、08 |
+| VSM-04 | Issue 02 |
+| VSM-05 | Issue 04、06、08 |
+| VSM-06 | Issue 02、06、08 |
+| VSM-07 | Issue 03、06、08 |
+| VSM-08 | Issue 06、08 |
+| VSM-09 | Issue 06、08 |
+| VSM-10 | Issue 03、06、08 |
+| VSM-11 | Issue 06、08 |
+| VSM-12 | Issue 06、07、08 |
+| VSM-13 | Issue 07、09 |
+| VSM-14 | Issue 06、08 |
+| VSM-15 | Issue 06、08 |
+| VSM-16 | Issue 06、07、08 |
+| VSM-17 | Issue 05、08 |
+
+## Issue 01–09 反向映射
+
+Issue 定义工作目标、依赖和验收责任；本表是验证 ID 的唯一索引。每个 Issue 只报告其负责的验证项，不得把其他 Issue 的局部通过状态提升为本 Issue 或整体基线通过。
+
+| Issue | 负责测试 | 当前验证状态摘要 | 主要证据/说明 |
+|---|---|---|---|
+| 01 | 文档治理检查，不分配 VSM 运行测试 | Issue 01 治理验收已通过；I1 整体阶段仍为 HOLD | `01.md` 的 I1.1–I1.7 路线表、Issue 映射、`iterations/I1/01.md` 及本表 |
+| 02 | VSM-01、02、04、06 | Issue 02 口径与假设治理已通过；VSM-01 输入来源核对已通过，VSM-06 动态批次语义仍由 Issue 06/08 验证 | `iterations/I1/02.md`、`04-expected-analytic-checks.md`、`assumptions-register.csv` |
+| 03 | VSM-01、03、07、10 | Issue 03 输入快照已通过；VSM-03/07 端到端模型核对和 VSM-10 观测可用率仍由 Issue 06/08 验证 | `iterations/I1/03.md`、`input-snapshot-manifest-v0.9.md`、`data/*.csv`、`assumptions-register.csv` |
+| 04 | VSM-05（Issue 04 机制范围） | V0.9 当前候选原生回归通过总量释放、事件挂接、五工序路径、守恒和 Assembly #1 能力压力；旧历史运行版本未知；VSM-05 完整流程适用性仍由 Issue 06/08 检查 | `iterations/I1/04.md`、`09-simio-baseline-run-evidence.md`、`04-expected-analytic-checks.md` |
+| 05 | VSM-17 | V0.10 公共骨架静态检查和保存包身份核对通过：对象、命名链接、Data Table、初始 WIP Process、事件挂钩、Output Statistic 和诊断均已核对；关闭/重载仍待完成 | `iterations/I1/05.md`、`03-model-contract.md`、`09-simio-baseline-run-evidence.md` |
+| 06 | VSM-05–12、14–16 | V0.9 已完成 L/R 聚合守恒子集；保存/重载、初始 WIP 行 cohort、真实生产批次及其他机制未关闭 | `iterations/I1/06.md`、`09-simio-baseline-run-evidence.md` |
+| 07 | VSM-12、13、16 | L/R 守恒响应已登记；统计契约、作者结果对照和批次分组仍未完成 | `iterations/I1/07.md`、`06-experiment-matrix.csv` |
+| 08 | VSM-02、03、05–12、14–17 | V0.9 的 L/R 聚合子集通过；V0.9 保存/重载、初始 WIP 行 cohort 和完整批次守恒未关闭 | `iterations/I1/08.md`、`09-simio-baseline-run-evidence.md` |
+| 09 | VSM-13 | 作者结果对照未运行；正式 B0/B1 为 Blocked / HOLD | `iterations/I1/09.md`、`02-source-extraction.md` |
+
+反向映射也必须在 `iterations/I1/01.md`–`09.md` 的“验证计划映射”段落中出现。某项 Issue 没有 VSM 测试时，应明确标注为文档/治理验收，而不是留下未说明的空缺。
 
 ## 测试矩阵
 
-状态按 I1 记录：`Passed` 仅表示该测试范围已有直接证据；`Partial` 表示解析或结构子集已检查但完整机制未覆盖；`Planned` 表示尚未执行。I1 的运行证据见 `09-simio-baseline-run-evidence.md`，完整 B0/B1 不得从 `Partial` 推断为 `Passed`。
+| ID | 负责 Issue | 类别 | 配置/方法 | 通过判据与容差 | 实际结果 | 状态 | 证据 | 下一步/失败处理 |
+|---|---|---|---|---|---|---|---|
+| VSM-01 | Issue 02、03 | 来源转录与输入快照 | 对照 Figure 9-1、Table 9-1、Figure 9-2 | 五道工序、产品、需求、WIP、过程参数与来源逐项有来源；数值字段按输入单位精确对账 | 来源字段、单位、派生值和实现选择已分开登记并通过输入级复核；运行实现由 VSM-07/10/17 验证 | Passed（来源/输入快照范围） | `02-source-extraction.md`、`data/*.csv`、`input-snapshot-manifest-v0.9.md` | 保留输入哈希；运行级验证由对应测试负责 |
+| VSM-02 | Issue 02、08 | 需求节拍 | 18,400 件/月、20 日/月 | 日需求=920 件/日；节拍=60 秒/件；件数误差 0 | V0.7 加权生产释放=18,400 件；解析值一致 | Passed（范围限定） | `04-expected-analytic-checks.md`、`vsm-v07-20piece-entity-evidence.md` | 保留为回归测试，不外推到日历可用性 |
+| VSM-03 | Issue 03、08 | WIP 对账 | 汇总 `wip-initial.csv`，核对 V0.7/V0.9 初始化表和末期加权 WIP | 工序 WIP=12,990、FG=4,140、初始有件数=17,130；W03-R=850；L/R=11,200/5,930；误差 0 | V0.9 初始 L/R 审计为 11,200/5,930，位置状态总量和初始输入仍对账 | Partial | `data/wip-initial.csv`、`09-simio-baseline-run-evidence.md` | 继续补初始 WIP 行 cohort 的动态核对 |
+| VSM-04 | Issue 02 | 价值时间 | 累加五道工序过程时间 | 188 秒=3.1333 分钟；不含换型、等待；算术误差 < 1e-9 秒 | 解析值已独立复算 | Passed（解析范围） | `04-expected-analytic-checks.md` | 运行模型中另行核对加权处理时间 |
+| VSM-05 | Issue 04、06、08 | 能力边界 | 单操作员、无额外有效时间 | Assembly #1 名义负荷=62/60=103.33%；模型不得用统计上限掩盖超载 | V0.9 确定性回归中 Assembly #1 资源忙碌率=100%、处理时间=306.6667 h 且输入积压；解析负荷仍独立报告为 103.33%；完整日历适用性未验证 | Partial（Issue 04 子集 Passed） | `04-expected-analytic-checks.md`、`iterations/I1/04.md`、`iterations/I1/08.md`、`09-simio-baseline-run-evidence.md` | Issue 06/08 接入并验证日历和完整流程后回归 |
+| VSM-06 | Issue 02、06、08 | 批量语义 | 20 件计算实体；L/R 生产批量 6,000/3,200，每 10 个工作日于 Stamping 前释放 | 来源件数守恒；标准实体权重 20；尾批保留；计算实体不冒充物理托盘 | V0.7 已验证 20 件表示、W03-R 10 件尾批、18,400 件加权释放；物理托盘和批内时序未验证 | Partial | `vsm-v07-20piece-entity-evidence.md`、`release-manifest-v0.7.md` | 先做 V0.6/V0.7 等价性和尾批动态测试 |
+| VSM-07 | Issue 03、06、08 | 日历 | 两班、每班 27,600 秒有效时间 | 2×27,600×20=1,104,000 秒/月=18,400 分钟/月；若无班间时刻须明确限制 | 项目口径已接受；Simio 班次日历尚未实现 | Partial | `data/demand-calendar.csv`、`assumptions-register.csv` | 冻结日历实现或在 B0 中声明有效时间抽象 |
+| VSM-08 | Issue 06、08 | 初始状态 | `VSM_InitialWIPTable` + `VSM_InitializeWIP` Process；W05 独立暂存 | 初始件数、位置和产品分组一致；总量/实体守恒；W05 不自动发运；误差 0 | V0.9 初始化审计得到 Left=11,200、Right=5,930、合计 17,130；W05 4,140 件保持暂存；独立保存包已形成，重载仍待完成 | Partial | `09-simio-baseline-run-evidence.md` | 对独立 V0.9 包执行 VSM-14，并扩展初始 WIP 行 cohort 核对 |
+| VSM-09 | Issue 06、08 | 换型 | L→R、R→L 各做一次确定性小例 | 只在定义资源发生；换型时间只计一次；顺序和总时长可解释 | 未实现/未运行 | Planned | 无 | 冻结切换规则后建立小例 |
+| VSM-10 | Issue 03、06、08 | 故障可用率 | 选定 MTTF/MTTR 或等效可用率机制，多复制 | 目标为 85%/80%；数值容差、运行长度和复制数须在运行前登记；报告观测值及置信区间，随机流可复现 | 输入快照已冻结 MTTF/MTTR、分布和随机流；尚未执行故障运行，观测误差、复制数和置信区间待 Issue 07/08 | Partial（输入范围通过） | `input-snapshot-manifest-v0.9.md`、`assumptions-register.csv` | 冻结统计契约后由 Issue 06/08 运行并检验目标可用率 |
+| VSM-11 | Issue 06、08 | 资源释放与异常 | 完工、取消、异常退出各一例 | 无资源/队列泄漏；件数和实体数均守恒 | 未执行 | Planned | 无 | 在完整流程模型上执行 |
+| VSM-12 | Issue 06、07、08 | 候选状态响应 | V0.9 确定性 306.6666667 h，无预热 | 运行错误=0、警告=0；件数和实体守恒误差 0；指标口径与版本一致 | 17,130+18,400=19,630+15,900；1,777-982=795；L/R 分组守恒成立；诊断 0、警告 0 | Partial（位置和 L/R 审计子集） | `09-simio-baseline-run-evidence.md` | 完成独立 V0.9 包的关闭/重开，再完成初始 WIP 行 cohort、详细等价性和 KPI |
+| VSM-13 | Issue 07、09 | 作者结果对照 | B2 仅在口径可比后比较 14.8/12.8 日等结果 | 明确已复现、条件性支持或未复现；附差异和输入版本 | B2 尚未运行；不能把作者结果写成 Simio 结果 | Planned | `02-source-extraction.md` | B0/B1 通过后单独运行 |
+| VSM-14 | Issue 06、08 | 持久化与重载 | 保存 V0.7，关闭、重新打开、诊断并重跑确定性回归；随后对 V0.9/V0.10 重复 | 模型身份、输入和统计保持一致；诊断 0 errors、运行警告 0 | V0.7 已完成；V0.9 独立保存包已形成并完成当前会话回归；V0.10 已另存并完成当前会话回归，尚未关闭/重开 | Partial（V0.7 Passed；V0.9 已保存；V0.10 关闭/重载待完成） | `models/VSM_MichiganSteel_V0.10_CommonSkeletonCandidate.spfx`、`models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx`、`iterations/I1/05.md`、`09-simio-baseline-run-evidence.md` | 关闭 Simio 后重新打开独立 V0.10 包，复核身份、诊断、警告和关键统计 |
+| VSM-15 | Issue 06、08 | 位置级动态守恒 | 在确定性运行中按 Stamping、Weld 1、Weld 2、Assembly 1、Assembly 2、FG staging 和 Shipping 边界盘点加权件数 | 每个边界满足期初件数 + 流入 - 流出 = 期末件数；误差 0 件；盘点时刻和统计边界固定 | V0.8 两个终点差分子集仍成立；V0.9 L/R 位置状态与总位置状态逐项相加一致；V0.9 保存包已形成，重载尚未完成 | Passed（两时点及 L/R 聚合范围，非持久化范围） | `09-simio-baseline-run-evidence.md` | 完成 V0.9 持久化回归；再扩展中间时点和逐件等价性 |
+| VSM-16 | Issue 06、07、08 | 产品/批次分组守恒 | 按 `VSM_ProductTypeState` 和生产/初始批次标签分别核对 L/R 及初始 WIP 行 | 每个产品组、每个输入批次满足到达/释放 = Shipping + 期末剩余；误差 0 件；标签口径与真实生产批次分开说明 | L/R 聚合子集通过：Left `11,200+12,000=14,500+8,700`，Right `5,930+6,400=5,130+7,200`；初始 WIP 行 cohort 和真实生产批次仍未执行 | Partial（L/R 子集通过） | `09-simio-baseline-run-evidence.md`、`iterations/I1/08.md` | 保存 V0.9 后重载回归；增加按 WIPRecordId/ProductionBatch 的独立 cohort 审计 |
+| VSM-17 | Issue 05、08 | 结构架构 | 静态检查 Facility 路线、Data Table、初始 WIP Process、普通生产 Source、状态/表引用及命名；执行原生诊断 | 初始 WIP 由 Data Table + 专用 Process 初始化；普通生产释放与初始装载职责分开；目标位置有效；诊断 0 errors；静态检查结果与运行证据对应同一模型身份 | V0.10 当前候选已核对 20 个对象、15 个节点、11 条业务命名链接、6 张表、初始 WIP/生产/位置/Shipping 过程和公共 Output Statistic；诊断 0 errors，回归 0 warnings；另存/重载仍未完成 | Passed（当前会话静态结构范围） | `iterations/I1/05.md`、`03-model-contract.md`、`09-simio-baseline-run-evidence.md` | 用户另存并重载 V0.10 后复核对象/引用/描述及诊断，与 VSM-14 一起关闭持久化范围 |
 
-| ID | 类别 | 配置/方法 | 通过判据 | 状态 | I1 证据 |
-|---|---|---|---|---|---|
-| VSM-01 | 来源转录 | 对照 Figure 9-1、Table 9-1 | 五道工序、参数、产品、班次和 WIP 与来源一致 | Partial | `02-source-extraction.md`; 项目口径已冻结，模型实现待验证 |
-| VSM-02 | 需求节拍 | 18,400 件/月、20 日/月 | 日需求 920，节拍 60 秒/件 | Passed | `04-expected-analytic-checks.md`; 结构运行创建总量证据 |
-| VSM-03 | WIP 对账 | 按位置汇总 `wip-initial.csv`，并核对各初始 Source 创建数 | 工序 WIP=12,990，FG=4,140，原料=5 天；有件数位置合计 17,130；W03 R=850；W05 初始成品不自动发运 | Partial | `09-simio-baseline-run-evidence.md`：9 个 Source 合计 17,130，W05 暂存进入/离开=4,140/0；位置级动态守恒仍未验证 |
-| VSM-04 | 价值时间 | 累加五道工序过程时间 | 188 秒=3.13 分钟，不含换型和等待 | Passed | `04-expected-analytic-checks.md` |
-| VSM-05 | 能力边界 | 单操作员、无额外时间 | Assembly #1 名义负荷=103.33%，模型不掩盖不可行性 | Partial | `09-simio-baseline-run-evidence.md`; 完整日历/产品流未接入 |
-| VSM-06 | 批量语义 | 20 件转移批量；L/R 生产批量分别 6,000/3,200，每 10 个工作日于 Stamping 前释放 | 初始 WIP 不伪造历史托盘；新生产转移的满批/尾批规则和生产批次状态可独立核对 | Partial | 释放公式、批次标签和候选托盘号已接入；V0.4 总量守恒通过，但实体组批、尾批、真实释放点和直接 L/R 计数证据仍待完成 |
-| VSM-07 | 日历 | 两班、每班 27,600 秒有效时间 | 2×27,600×20 秒 = 18,400 分钟/月；若未表示班间停顿，明确列为实现限制 | Partial | 来源算术和项目假设已固定；V0.4 仍未实现 Simio 工作日历 |
-| VSM-08 | 初始状态 | 按位置、产品和来源件数注入工序 WIP 与成品库存 | 各位置 L/R 数量与输入快照一致；W03 保留 R=850 件；初始化不生成虚构托盘；实体总量守恒；W05 初始成品不自动发运 | Partial | `09-simio-baseline-run-evidence.md`：17,130 初始创建；完整运行 `35,530 = 19,645 + 15,885`，W05 暂存 4,140/0；动态位置级守恒未完成 |
-| VSM-09 | 换型 | L→R、R→L 各做一次 | 换型只发生在定义的资源/切换点，时间不重复计入 | Planned | 换型机制未运行 |
-| VSM-10 | 故障可用率 | 使用选定 MTTF/MTTR 或等效机制 | 长期统计可用率接近目标；短期波动有记录 | Planned | 结构运行关闭故障；可用率统计未验证 |
-| VSM-11 | 资源释放 | 完工、取消、异常退出各一例 | 资源、队列引用和 WIP 无泄漏 | Planned | 异常路径测试未执行 |
-| VSM-12 | 基线响应 | 运行 B0/B1 | 响应总体、单位、窗口和剩余订单处理符合指标契约 | Partial | `09-simio-baseline-run-evidence.md`; V0.4 初始 WIP 原型全长守恒完成，完整 B0/B1 未完成 |
-| VSM-13 | 作者结果对照 | 在口径可比时比较 B2 | 只能标为已复现、条件性支持或未复现，并附差异解释 | Planned | B2 尚未运行 |
+## V0.7–V0.10 当前运行证据
 
-## 已完成的原生结构运行检查
+当前候选为 `VSM_V0.7_InitialWIPTable`，运行长度 `306.6666667 h`，无预热、随机性关闭。初始 WIP 为 17,130 件/857 实体，生产释放为 18,400 件/920 实体，加权 Shipping 为 19,630 件，期末加权 WIP 为 15,900 件；模型诊断为 0 errors，运行警告为 0。该证据覆盖计算批次的聚合工作内容和持久化回归，不覆盖物理托盘、批内时序、位置级动态、日历、换型、故障、Fill Rate 或 V0.6 详细指标等价性。
 
-早期 `Exp_VSM_Baseline / VSM_Original_Structural` 结构运行完成一次确定性运行（旧记录对该运行的模型版本标签存在冲突；不得将其当作 V0.4 结果，运行长度
-306.6667 小时、无预热、关闭随机性）。已获得的证据为：诊断 0 errors、运行警告 0；
-创建 18,400、发运 17,804、期末线内 596，守恒关系成立；Assembly #1 原生排班利用率
-99.9922%，独立名义负荷 103.33%；`VSM_OnProductionRelease` 的释放序号响应为
-18,400。该结果关闭了 VSM-02/VSM-05 的结构核对和 VSM-12 的部分结构响应核对，
-但不关闭产品混合、初始 WIP、日历、换型、故障和作者 KPI 对照项。首次全长运行出现的 2 次实体技术上限警告已通过将 `DefaultEntity` 上限提高至 50,000 后消除；该值是运行保护设置，不是业务库存容量。
+V0.9 独立保存包的当前会话回归复现相同的总量、实体和 L/R 分组结果；它已进入持久化回归队列，但尚未完成关闭/重新打开后的原生检查。因此 V0.9 的结果可用于继续模型增量和审计，不可作为已完成重载的正式交接版本。
 
-另完成一次 `RunLength=0.1` 小时的 V0.4 初始 WIP 运行：17,130 初始创建、9,200 生产释放，
-总创建 26,330；W05 暂存 4,140 件进入、0 件离开，Shipping 收到 9 件。诊断 0 errors、运行错误 0，出现 1 条高实体数量技术警告。
+V0.10 公共模型骨架候选在 V0.9 上只增加业务命名、中文说明和模型阶段标识。当前会话和独立保存包身份核对通过，确定性回归复现 18,400 件生产释放、19,630 件加权 Shipping、15,900 件期末加权 WIP、实体 `1,777 - 982 = 795`、0 errors 和 0 warnings；文件哈希为 `B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF`。关闭/重开仍待完成，不能把当前会话证据当作已完成的重载交接证据。
 
-还保留早期 `RunLength=0.5` 小时的 V0.3 释放状态烟雾运行：31 创建、26 发运、5 期末线内，
-诊断 0 errors、运行错误/警告 0/0。该运行只验证新增释放过程可执行和实体守恒；未验证产品分组统计、托盘组批或生产批次行为。为验证 L/R 计数新增的两个实验响应没有有效观测值，因此不能把它们写成运行计数通过。
+V0.4 的高实体数量警告和未重载记录只属于历史逐件原型；不得用于否定 V0.7 的当前回归，也不得与 V0.7 的指标混合成一个基线结果。
 
-## 后续作者步骤的验证顺序
+## 进入正式 B0/B1 的条件
 
-1. VSM 当前状态和 WIP/节拍解析核算。
-2. B1 初始模型，预期发现 Assembly #1 负荷超过 100%。
-3. 记录“模型与案例 KPI 不一致”的诊断，不直接改参数。
-4. 以作者给出的额外 1.2 小时/日作为明确校准变更，建立 B2。
-5. 对照 L/R 的 14.8/12.8 日、填充率和资源利用率。
-6. 做绝对基准分析，记录需求、WIP、raw process time、瓶颈率和 critical WIP 的来源。
-7. 再进入批量、工序平衡、维修和加班实验；每一步单独记录变更和结果来源。
+必须关闭或明确接受 VSM-03、VSM-06、VSM-07、VSM-08、VSM-09、VSM-10、VSM-11、VSM-12、VSM-15、VSM-16 的适用边界，并完成 Issue 07 的统计契约。B0/B1 的模型、输入快照、运行设置和证据必须能通过同一版本身份复现；否则 Issue 09 保持 `Blocked / HOLD`。
 
 ## 运营确认边界
 
-本案例是书中示例，没有真实工厂逐日交易数据。即使 VSM-13 通过，也只能说明模型与作者公开的案例输出在指定口径下相符，不等于完成真实工厂运营确认。
+本案例是书中示例，没有真实工厂逐日交易数据。即使 VSM-13 通过，也只能说明模型与作者公开案例输出在指定口径下相符，不等于完成真实工厂运营确认。

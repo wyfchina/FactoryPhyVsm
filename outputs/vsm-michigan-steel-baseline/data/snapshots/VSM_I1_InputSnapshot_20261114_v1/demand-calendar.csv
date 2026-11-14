@@ -1,0 +1,4 @@
+item_type,monthly_demand_units,mix_pct,workdays_per_month,avg_units_per_workday,shifts_per_day,hours_per_day,available_min_per_month,takt_sec_per_unit,tray_size_units,source_status,source_ref
+L,12000,65.2174,20,600,2,15.3333,18400,60,20,"Source fact; hours/minutes derived under A-004",pp.308-309
+R,6400,34.7826,20,320,2,15.3333,18400,60,20,"Source fact; hours/minutes derived under A-004",pp.308-309
+TOTAL,18400,100.0000,20,920,2,15.3333,18400,60,20,"Derived from source and A-004",pp.308-309

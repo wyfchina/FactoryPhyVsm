@@ -1,7 +1,7 @@
-process_id,process_name,sequence,process_time_sec,setup_time_hr,availability_target_pct,workers_required,variability_scv,distribution_family,mttf_hr,mttr_hr,source_status,source_ref
-P01,Stamping,1,1.0,1.000,85,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
-P02,S Weld #1,2,39.0,0.167,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
-P03,S Weld #2,3,46.0,0.167,80,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
-P04,Assembly #1,4,62.0,0.000,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
-P05,Assembly #2,5,40.0,0.000,100,1,1.0,TBD,,,Source time/setup/availability; author worker and SCV assumptions,Table 9-1; Figure 9-1; p.311
-P06,Shipping,6,0.0,0.000,,0,,,,,Source says Unlimited capacity; behavior choice required,Table 9-1; p.310
+process_id,process_name,sequence,process_time_sec,process_time_basis,setup_time_hr,availability_target_pct,workers_required,variability_scv,processing_distribution,processing_stream_id,failure_time_basis,failure_distribution,mttf_hr,mttr_hr,failure_stream_id,source_status,source_ref
+P01,Stamping,1,1.0,per_workpiece,1.000,85,1,1.0,Exponential,PROC_P01,effective_operating_hours,Exponential,5.6667,1.000,FAIL_P01,"Source time/setup/availability; distribution/reliability implementation from A-006/A-007",Table 9-1; Figure 9-1; p.311
+P02,S Weld #1,2,39.0,per_workpiece,0.167,100,1,1.0,Exponential,PROC_P02,NA,None,NA,NA,None,"Source time/setup/availability; SCV implementation and no-failure I1 simplification from A-006/A-007",Table 9-1; Figure 9-1; p.311
+P03,S Weld #2,3,46.0,per_workpiece,0.167,80,1,1.0,Exponential,PROC_P03,effective_operating_hours,Exponential,4.0000,1.000,FAIL_P03,"Source time/setup/availability; distribution/reliability implementation from A-006/A-007",Table 9-1; Figure 9-1; p.311
+P04,Assembly #1,4,62.0,per_workpiece,0.000,100,1,1.0,Exponential,PROC_P04,NA,None,NA,NA,None,"Source time/setup/availability; SCV implementation and no-failure I1 simplification from A-006/A-007",Table 9-1; Figure 9-1; p.311
+P05,Assembly #2,5,40.0,per_workpiece,0.000,100,1,1.0,Exponential,PROC_P05,NA,None,NA,NA,None,"Source time/setup/availability; SCV implementation and no-failure I1 simplification from A-006/A-007",Table 9-1; Figure 9-1; p.311
+P06,Shipping,6,0.0,not_applicable,0.000,NA,0,NA,None,None,NA,None,NA,NA,None,"Unlimited capacity and zero processing time implementation from A-013",Table 9-1; p.310
