@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "mode": "apply",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "target_branch": "codex/vsm-v04-github-ready",
+  "issue_number": 3,
+  "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/03.md",
+  "evidence_commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+  "evidence_paths": [
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/03.md",
+    "outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+    "outputs/vsm-michigan-steel-baseline/input-snapshot-manifest-v0.9.md",
+    "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/processes.csv",
+    "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/wip-initial.csv",
+    "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/demand-calendar.csv",
+    "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/assumptions-register.csv",
+    "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx"
+  ],
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "business_review_confirmed": true,
+  "approval_reference": "本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。",
+  "acceptance_summary": "验收通过的是来源、单位、转换规则、参数/随机流快照、质量核对、冻结文件哈希及V0.9身份。活动清单的假设表哈希已据原冻结清单和CSV作有日期的纠正，原快照保留。随机参数消费、可用率观测、原生重载由#6/#8承接；当前演进输入不冒充历史冻结副本。",
+  "expected_status_label": "status:passed"
+}

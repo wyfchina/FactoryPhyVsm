@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "repository": "wyfchina/FactoryPhyVsm",
+  "target_branch": "codex/vsm-v04-github-ready",
+  "evidence_commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+  "approval_reference": "本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。",
+  "records": [
+    {
+      "issue_number": 1,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/01.md",
+      "local_status": "Passed（仅01治理范围）；项目总览Partial/HOLD",
+      "summary": "本地工作包01的目标、路线、依赖及Wu治理责任已验收Passed。此线上#1兼作整个I1的项目总览，因此继续open/status:partial，不用治理子项通过关闭项目。#2–#5本轮按各自范围闭环；#7规范已验收；#6/#8实现与验证仍未完成，#9正式基线Blocked。当前受控候选记录为V0.11初始WIP cohort，不是B0/B1。下一步是#6/#8新增机制及回归，不进入方案实验。",
+      "progress_comment": "## 01治理验收与项目总览分开记录\n\nWu已批准本地01目标、路线、责任和依赖为Passed。线上#1承担整个I1的总览职责，故保持open/status:partial/HOLD；#2–#5分别按已验收范围同步，#7已闭环，#6/#8/#9待办保留。不把父项状态当作01治理验收未通过。"
+    },
+    {
+      "issue_number": 2,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/02.md",
+      "local_status": "Passed（仅本工作包声明范围）",
+      "summary": "验收通过的是来源/假设分类、需求与节拍、20件计算实体语义、有效时间、分布/可靠性实现选择及下游分工。随机机制、动态批次、可用率观测和模型运行仍由#6/#8承接，统计规则已在#7验收；本关闭不表示B0/B1通过。"
+    },
+    {
+      "issue_number": 3,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/03.md",
+      "local_status": "Passed（仅本工作包声明范围）",
+      "summary": "验收通过的是来源、单位、转换规则、参数/随机流快照、质量核对、冻结文件哈希及V0.9身份。活动清单的假设表哈希已据原冻结清单和CSV作有日期的纠正，原快照保留。随机参数消费、可用率观测、原生重载由#6/#8承接；当前演进输入不冒充历史冻结副本。"
+    },
+    {
+      "issue_number": 4,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/04.md",
+      "local_status": "Passed（仅本工作包声明范围）",
+      "summary": "验收范围绑定V0.9保存包和当前原生回归：18,400件释放（L12,000/R6,400）、事件挂接、五工序和Shipping路径、件数/实体守恒、Assembly #1能力压力及0错误/0警告。版本未知的历史18,400逐件运行不作为证据，旧逐件60秒到达时序不追认；动态批次、故障、需求和重载由#6/#8承接。"
+    },
+    {
+      "issue_number": 5,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/05.md",
+      "local_status": "Passed（仅本工作包声明范围）",
+      "summary": "验收范围为V0.10公共骨架、命名/职责、表/状态/统计挂钩、Process+Table初始化、原生诊断、当前会话确定性回归和已保存文件身份。独立关闭/重载仍由VSM-14及#6/#8承担；物理托盘、换型、随机故障和服务策略不在本次通过范围，I1/B0/B1仍HOLD。"
+    },
+    {
+      "issue_number": 6,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/06.md",
+      "local_status": "In Progress / HOLD",
+      "summary": "已保存的历史V0.11候选采用VSM_InitialWIPTable+VSM_InitializeWIP Process初始化；20件计算实体，尾批保留实际件数。已验证cohort首尾标签及聚合守恒：17,130+18,400=19,630+15,900，1,777-982=795。此结果不证明逐行动态账本。#7已确认连续有效工时（55,200秒/工作日）、CT/统计/方案A；不再等待真实班次表。仍需实现并验证cohort动态账本、真实P1/P2-L/R批次、CT及FG/需求分配、换型/故障、异常退出、原生关闭重载和聚合适用性。",
+      "progress_comment": "## 同步当前交付物与剩余工作\n\n历史V0.11的Table+Process初始化、cohort标签和确定性总量/产品子集有证据；完整06仍In Progress/HOLD。保持本Issue打开并保留status:partial。07的有效工时、CT和方案A规范已移交；动态cohort、真实批次、需求/FG、换型/故障和保存重载由本项实施、#8验证。工作区另有未提交模型变化，本次不将其作为历史验收包。"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "mode": "apply",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "target_branch": "codex/vsm-v04-github-ready",
+  "issue_number": 5,
+  "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/05.md",
+  "evidence_commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+  "evidence_paths": [
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/05.md",
+    "outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+    "outputs/vsm-michigan-steel-baseline/09-simio-baseline-run-evidence.md",
+    "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.10_CommonSkeletonCandidate.spfx"
+  ],
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "business_review_confirmed": true,
+  "approval_reference": "本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。",
+  "acceptance_summary": "验收范围为V0.10公共骨架、命名/职责、表/状态/统计挂钩、Process+Table初始化、原生诊断、当前会话确定性回归和已保存文件身份。独立关闭/重载仍由VSM-14及#6/#8承担；物理托盘、换型、随机故障和服务策略不在本次通过范围，I1/B0/B1仍HOLD。",
+  "expected_status_label": "status:passed"
+}

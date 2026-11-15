@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "mode": "apply",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "target_branch": "codex/vsm-v04-github-ready",
+  "issue_number": 2,
+  "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/02.md",
+  "evidence_commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+  "evidence_paths": [
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/02.md",
+    "outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+    "outputs/vsm-michigan-steel-baseline/assumptions-register.csv",
+    "outputs/vsm-michigan-steel-baseline/04-expected-analytic-checks.md",
+    "outputs/vsm-michigan-steel-baseline/vsm-v07-20piece-entity-evidence.md"
+  ],
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "business_review_confirmed": true,
+  "approval_reference": "本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。",
+  "acceptance_summary": "验收通过的是来源/假设分类、需求与节拍、20件计算实体语义、有效时间、分布/可靠性实现选择及下游分工。随机机制、动态批次、可用率观测和模型运行仍由#6/#8承接，统计规则已在#7验收；本关闭不表示B0/B1通过。",
+  "expected_status_label": "status:passed"
+}
