@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "repository": "wyfchina/FactoryPhyVsm",
+  "branch": "codex/vsm-v04-github-ready",
+  "issue_number": 6,
+  "evidence_commit": "7191bba2a9ce64245b0210845ee584d3ccdabbfa",
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "business_review_confirmed": true,
+  "local_status": "Passed（V0.12实施与确定性实现范围）",
+  "expected_status_label": "status:passed",
+  "model_path": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx",
+  "model_sha256": "73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f",
+  "evidence_paths": [
+    "outputs/vsm-michigan-steel-baseline/issue06-closure-evidence.md",
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/06.md",
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/06-V012-implementation-evidence.md",
+    "outputs/vsm-michigan-steel-baseline/05-verification-plan.md",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-acceptance-summary.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-persistence-readback.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-aggregation-comparison.json",
+    "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx"
+  ],
+  "approval_reference": "本会话Wu明确授权关闭VSM Issue 06；接受范围限定为V0.12实施与确定性实现，不扩展为Issue 09研究或B0/B1通过。",
+  "acceptance_comment": "<!-- issue06-closure:7191bba2a9ce64245b0210845ee584d3ccdabbfa -->\n## I1 / Issue 06 验收与闭环记录（2026-11-15）\n\n- **Local status: Passed（V0.12实施与确定性实现范围）**\n- **Decision owner: Wu**\n- **Business reviewer: Wu**\n- **Evidence commit: 7191bba2a9ce64245b0210845ee584d3ccdabbfa**\n- **Accepted scope:** V0.12初始WIP、动态来源/需求/成品账本、9张Output Table、生产批次、ManufacturingCT/删失、方案A履约、换型、故障续作、保存重载及确定性实现回归。\n\n保存包SHA-256为73A98D963B756E485D6EB8B2A460954391047ED229290A823CEEB6CE9BFDD62F。15个来源、6个位置、21个时点形成1,890条快照，来源/位置守恒差为0；F01-F07及机制小例、保存重载逐行回读通过；诊断0 errors、运行警告0。\n\n20件计算实体与逐件参照的发运及按期需求结果一致，但制造完成量相差15件、已完成制造CT加权均值相差14.7333分钟；本次不声明批内制造时序等价。R1独立随机复制、95%置信区间、目标可用率观测、随机流/种子平台映射、20件聚合适用性、作者结果对照和正式B0/B1阶段门不属于本次关闭条件，转由Issue 09/后续基线评审。\n\n证据：[实施验收记录](https://github.com/wyfchina/FactoryPhyVsm/blob/7191bba2a9ce64245b0210845ee584d3ccdabbfa/outputs/vsm-michigan-steel-baseline/iterations/I1/06.md)、[V0.12实施证据](https://github.com/wyfchina/FactoryPhyVsm/blob/7191bba2a9ce64245b0210845ee584d3ccdabbfa/outputs/vsm-michigan-steel-baseline/iterations/I1/06-V012-implementation-evidence.md)、[持久化回读](https://github.com/wyfchina/FactoryPhyVsm/blob/7191bba2a9ce64245b0210845ee584d3ccdabbfa/outputs/vsm-michigan-steel-baseline/evidence/issue06-persistence-readback.json)、[验证计划](https://github.com/wyfchina/FactoryPhyVsm/blob/7191bba2a9ce64245b0210845ee584d3ccdabbfa/outputs/vsm-michigan-steel-baseline/05-verification-plan.md)。Closure reason: completed.",
+  "issue_body": "## 当前验收状态\n\n- Iteration: I1 / I1.4\n- Local status: Passed（V0.12实施与确定性实现范围）\n- Decision owner: Wu\n- Business reviewer: Wu\n- Evidence commit: 7191bba2a9ce64245b0210845ee584d3ccdabbfa\n\n本Issue仅关闭已实施并验证的V0.12范围。20件计算批次不宣称与逐件制造时序等价；Issue 09负责随机研究、置信区间、可用率观测、聚合适用性、作者结果对照和B0/B1阶段门。"
+}

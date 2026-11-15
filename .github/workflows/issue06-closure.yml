@@ -1,0 +1,32 @@
+name: Accept and close I1 Issue 06
+
+on:
+  push:
+    branches: [codex/vsm-v04-github-ready]
+    paths:
+      - .github/workflows/issue06-closure.yml
+      - scripts/github/close-issue06.cjs
+      - outputs/vsm-michigan-steel-baseline/evidence/issue06-closure-request.json
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: factoryphyvsm-issue06-closure
+  cancel-in-progress: false
+
+jobs:
+  close-issue06:
+    if: github.repository == 'wyfchina/FactoryPhyVsm' && github.actor == 'wyfchina'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { run } = require('./scripts/github/close-issue06.cjs');
+            await run({ github, context, core });
