@@ -1,0 +1,174 @@
+{
+  "CapturedAtUtc": "2026-11-15T00:21:55.3790238Z",
+  "Mode": "Read-only offline replay using freshly retrieved GitHub records; no Apply; no online mutations",
+  "ScriptPath": "C:/Users/吴一帆/.codex/skills/supply-chain-simulation-planning/scripts/github_issue_sync_check.ps1",
+  "ScriptSHA256": "A9956CD528D690EB010A24A232EF9F0E4B01163DEE1CAFAAD444BD179D91B311",
+  "Repository": "wyfchina/FactoryPhyVsm",
+  "Issue": 7,
+  "EvidenceCommit": "f821e0044453146a4eff350307bcc4240f5552c7",
+  "Fixture": {
+    "capturedAtUtc": "2026-11-15T00:18:34.283Z",
+    "source": "GitHub Connector live read of Issue 7, comments and immutable evidence commit; labels adapted to GitHub REST schema for script replay",
+    "issue": {
+      "number": 7,
+      "title": "[建模] Michigan Steel VSM I1.5：指标与统计框架",
+      "body": "Parent: #1\nIteration: I1 / I1.5\nCore work package: 07\n\n# 指标与统计框架\n\n**状态：Passed（指标与统计规范），以 completed 关闭。**\n\n目标：冻结可审计的指标、单位、总体、删失与复制规范。依赖：#1、#2、#3；实现与运行消费者为#6、#8，作者对照为#9。\n\n已验收：CT为Stamping进入至Assembly #2离开；初始WIP剩余时间单列；生产批次P1-L/P1-R/P2-L/P2-R；R1有限20工作日、无预热、初始30独立随机复制、95%CI；方案A每日末L600/R320按产品FIFO/部分交付；仅计有效工时55,200秒/日。\n\n验收结论只涵盖规范。CT/FG/需求/批次挂钩、原生小例、随机复制和作者算法映射仍由#6/#8/#9承接。I1与B0/B1仍HOLD。\n\n规范与全部验收条件：[受控07.md](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/iterations/I1/07.md)。\n\n证据提交：f821e0044453146a4eff350307bcc4240f5552c7；[验收评论](https://github.com/wyfchina/FactoryPhyVsm/issues/7#issuecomment-6886336335)。Wu为决策责任人和业务评审人，已明确授权本次闭环。此前开单版本：[原始07.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/07.md)，不把旧版Partial当作当前结论。",
+      "state": "closed",
+      "state_reason": "completed",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/7",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        {
+          "name": "建模"
+        },
+        {
+          "name": "status:passed"
+        }
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "comments": 1,
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:28:02Z",
+      "updated_at": "2026-11-15T00:06:36Z",
+      "closed_at": "2026-11-15T00:06:36Z",
+      "closed_by": "github-actions[bot]",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    "comments": [
+      {
+        "id": 6886336335,
+        "body": "<!-- issue07-closure:f821e0044453146a4eff350307bcc4240f5552c7 -->\n## I1 / Issue 07 验收与闭环记录（2026-11-15）\n\n- **Local status: Passed（指标与统计规范）**\n- **Decision owner: Wu；Business reviewer: Wu**\n- **Evidence commit: f821e0044453146a4eff350307bcc4240f5552c7**\n- 证据：[闭环核对](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md)、[指标与统计规范](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/iterations/I1/07.md)、[方案 A 契约](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/iterations/I1/07-fill-rate-contract.md)、[需求表](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/data/demand-due-calendar.csv)、[MCP 原始只读回读](https://github.com/wyfchina/FactoryPhyVsm/blob/f821e0044453146a4eff350307bcc4240f5552c7/outputs/vsm-michigan-steel-baseline/evidence/issue07-timebase-readonly-20261115.json)。\n\nWu 已确认 CT 边界、真实生产批次、R1 的20工作日/无预热/初始30个独立随机复制与95%CI、需求方案A。本轮进一步明确“非工作时间一律不计入仿真”，并授权确认后闭环07。\n\n**时间口径：**2×27,600=55,200秒/有效工作日（15小时20分钟）；20日=1,104,000秒（306小时40分钟）。不插入休息、夜间、周末；工作时段内排队、换型及故障维修按机制计时。Simio 默认24小时/日不能代替工作日。\n\n**已核对：**需求表20行、L12,000/R6,400、到期秒=55,200×d；V0.11为RunLength=306.6666667h、预热0、五制造工位Fixed/1、当前随机关闭。保存包SHA-256保持D023F7420FF2E1FF21046A0E9481E64E3268CD7B2C7EC7F8D0532C9A606D6F52。本轮无模型修改、无新仿真或保存重载。文档差异检查和80个相对链接核对通过。\n\n**批准的范围处置：**按本Issue原始“指标与统计框架”范围验收规范。此前本地额外列入的实现和执行要求保留并转交：#6实现CT/FG/需求分配/真实批次与复制配置；#8执行边界小例F01–F07、分层守恒、独立复制/CI及持久化回归；#9负责作者算法和统计总体映射。测试VSM-12/13/16/18和M09–M13实现状态不因此通过；I1及B0/B1仍HOLD。\n\n**同步检查：**已运行本地只读检查脚本；因无gh/GITHUB_TOKEN无法读取线上，按既定治理改用GitHub Connector等效清单核验提交、证据、Wu评审、评论、标签及关闭状态。随后设置status:passed并以completed关闭，再回读复核。\n\nClosure reason: completed。\n\n同步执行说明：Connector写入返回403，改由仓库GitHub Action执行同一闭环清单。Action回读状态和评论后报告结果。",
+        "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/7#issuecomment-6886336335",
+        "user": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "profile_url": "https://github.com/apps/github-actions",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+        },
+        "author_association": "CONTRIBUTOR",
+        "reactions": {
+          "total_count": 0,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "confused": 0,
+          "heart": 0,
+          "hooray": 0,
+          "rocket": 0,
+          "eyes": 0
+        },
+        "created_at": "2026-11-15T00:06:31Z",
+        "updated_at": "2026-11-15T00:06:31Z"
+      }
+    ],
+    "commit": {
+      "sha": "f821e0044453146a4eff350307bcc4240f5552c7",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/commit/f821e0044453146a4eff350307bcc4240f5552c7",
+      "commit": {
+        "message": "docs: accept I1 issue 07 metric and effective-time contracts\n\nRefs #7. Record Wu approval, verify effective-work-time setup and demand schedule, and assign native implementation and execution to #6, #8, and #9.",
+        "author": {
+          "name": "unknown",
+          "email": "wyfchina@hotmail.com",
+          "date": "2026-11-14T23:59:24Z"
+        },
+        "committer": {
+          "name": "unknown",
+          "email": "wyfchina@hotmail.com",
+          "date": "2026-11-14T23:59:24Z"
+        }
+      },
+      "author": {
+        "login": "wyfchina",
+        "id": 244147581,
+        "profile_url": "https://github.com/wyfchina",
+        "avatar_url": "https://avatars.githubusercontent.com/u/244147581?v=4"
+      },
+      "committer": {
+        "login": "wyfchina",
+        "id": 244147581,
+        "profile_url": "https://github.com/wyfchina",
+        "avatar_url": "https://avatars.githubusercontent.com/u/244147581?v=4"
+      }
+    }
+  },
+  "Cases": [
+    {
+      "Case": "valid",
+      "ExpectedExitCode": 0,
+      "ActualExitCode": 0,
+      "ExpectationMet": true,
+      "RawOutput": "Replay case: valid; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: GitHub closure record is consistent. No GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "local-partial",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 2,
+      "ExpectationMet": true,
+      "RawOutput": "Replay case: local-partial; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[FAIL] local-status: Local status: Partial\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: DRIFT or incomplete closure prerequisites; no GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "missing-evidence",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 2,
+      "ExpectationMet": true,
+      "RawOutput": "Replay case: missing-evidence; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[FAIL] evidence-file:C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\tmp\\issue07-skill-audit\\does-not-exist.md: Evidence path exists: C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\tmp\\issue07-skill-audit\\does-not-exist.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: DRIFT or incomplete closure prerequisites; no GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "remote-open",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 2,
+      "ExpectationMet": true,
+      "RawOutput": "Replay case: remote-open; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[FAIL] remote-state: GitHub state: open\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: DRIFT or incomplete closure prerequisites; no GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "no-acceptance-comment",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 2,
+      "ExpectationMet": true,
+      "RawOutput": "Replay case: no-acceptance-comment; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[FAIL] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: DRIFT or incomplete closure prerequisites; no GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "wrong-close-reason",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 0,
+      "ExpectationMet": false,
+      "RawOutput": "Replay case: wrong-close-reason; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: GitHub closure record is consistent. No GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "conflicting-status-labels",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 0,
+      "ExpectationMet": false,
+      "RawOutput": "Replay case: conflicting-status-labels; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md: Evidence path exists: outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed, status:partial\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: GitHub closure record is consistent. No GitHub changes were made.\r\n"
+    },
+    {
+      "Case": "uncommitted-evidence",
+      "ExpectedExitCode": 2,
+      "ActualExitCode": 0,
+      "ExpectationMet": false,
+      "RawOutput": "Replay case: uncommitted-evidence; source=real online snapshot; Apply=false\r\nGitHub Issue sync audit: wyfchina/FactoryPhyVsm#7\r\n[PASS] local-status: Local status: Passed\r\n[PASS] evidence-file:C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\tmp\\issue07-skill-audit\\uncommitted-evidence.md: Evidence path exists: C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\tmp\\issue07-skill-audit\\uncommitted-evidence.md\r\n[PASS] remote-state: GitHub state: closed\r\n[PASS] status-label: Labels: 建模, status:passed\r\n[PASS] evidence-commit: Evidence commit present online: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] remote-commit: Evidence commit exists in the remote repository: f821e0044453146a4eff350307bcc4240f5552c7\r\n[PASS] acceptance-comment: An online acceptance comment with evidence was found\r\n[PASS] decision-owner: Decision owner: Wu\r\n[PASS] business-reviewer: Business reviewer: Wu\r\nResult: GitHub closure record is consistent. No GitHub changes were made.\r\n"
+    }
+  ]
+}
