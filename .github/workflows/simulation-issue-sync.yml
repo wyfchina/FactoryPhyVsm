@@ -1,0 +1,53 @@
+name: Simulation Issue closure sync
+
+on:
+  push:
+    paths:
+      - .github/issue-closures/*.json
+  workflow_dispatch:
+    inputs:
+      request_file:
+        description: Repository-relative closure request path
+        required: true
+        type: string
+      apply:
+        description: Apply an approved request marked mode=apply
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: simulation-issue-sync-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Synchronize linked project records when requested
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { run } = require('./scripts/github/sync-issue-records.cjs');
+            await run({ github, context, core });
+      - name: Check and synchronize approved requests
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./scripts/github_issue_sync_workflow.ps1
+      - name: Preserve sync receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-issue-sync-receipts
+          path: ${{ runner.temp }}/issue-sync-receipts/*.json
+          if-no-files-found: ignore

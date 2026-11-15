@@ -21,9 +21,11 @@ The model binding identifies the V0.9 product-group audit candidate. The candida
 | `data/processes.csv` | Process time, setup, availability, distribution, stream and failure parameters | `25555C859F4E6FA535DD275337EC8895AEEA626828F471C80D2AB45070DB121C` |
 | `data/wip-initial.csv` | Initial WIP by position and product, including raw-material days | `5FEA6E6AF4E7839EA9B611E534CAF3370B84E1CD0C7E25A45E457448777CCF76` |
 | `data/demand-calendar.csv` | Demand mix, workdays, shifts, effective hours, takt and transfer batch | `9460AC2B940927FF0AAB8CBB5ADC63D388DFF2A2BCB372D747798B48EB3031C5` |
-| `assumptions-register.csv` | Source facts, project assumptions, implementation choices and verification ownership | `89A84ADB4B22877F061F5B62C76A6126325C39BCD4707856896F3D3FCE4F0283` |
+| `assumptions-register.csv` | Source facts, project assumptions, implementation choices and verification ownership | `8FD1BBDB718308DDD673A4965E5DDD11B94EAF1D457726FBC827B767C0795D28` |
 
-Frozen copies of these four inputs are stored under the directory listed above; their SHA-256 values match the files in the table.
+The table identifies the four frozen copies under the snapshot directory above, not later revisions of the active input files. Their SHA-256 values match the frozen files.
+
+2026-11-15 correction under Issue 03: this active manifest previously listed `89A84ADB4B22877F061F5B62C76A6126325C39BCD4707856896F3D3FCE4F0283` for the assumptions register. The original frozen manifest and frozen CSV both identify `8FD1BBDB718308DDD673A4965E5DDD11B94EAF1D457726FBC827B767C0795D28`. This entry is corrected to that verified frozen identity; the original snapshot files and prior Git version are retained. The active assumptions register has since evolved, including the Issue 07 effective-time convention, and is not claimed to be byte-identical to this historical snapshot. See [synchronization audit](issue01-06-sync-audit.md).
 
 ## Frozen conversion and implementation rules
 

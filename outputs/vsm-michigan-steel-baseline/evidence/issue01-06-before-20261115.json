@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-15T01:00:02.482Z",
+  "source": "GitHub Connector issue_read get; raw issue bodies retained before this synchronization",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "issues": [
+    {
+      "number": 1,
+      "title": "[总览] Michigan Steel VSM 仿真：I1 路线与任务清单",
+      "body": "## 目标\n为 Factory Physics for Managers 第 9 章 Michigan Steel VSM 案例建立可追溯的 Simio 仿真项目路线。项目采用逐轮增加模型复杂度、每轮验证新增机制并回归既有证据的方式，先完成用户定义的 VSM 基线，再进入作者方案实验。\n\n## 条件\n- 来源：Factory Physics for Managers 第 9 章 Michigan Steel VSM 案例。\n- 当前模型：`VSM_V0.4_InitialWIPPrototype`，属于初始 WIP 原型，不是正式 B0、B1 或 B2。\n- 当前阶段门：`HOLD`。\n- 项目路线与 I1 工作包已随分支 `codex/vsm-v04-github-ready` 推送。\n\n## 关键设计决定\n- I1.1–I1.7 表示本轮迭代环节；核心工作包 01–14 是另一维度。\n- B0 表示 Figure 9-1 当前状态；B1 加入作者建模假设；B2 仅增加 1.2 小时/日校准。\n- V0.4 只证明初始 WIP 装载、W05 成品暂存边界和确定性实体守恒子集，不能写成正式基线通过。\n\n## 任务清单\n- [ ] 推进子 Issue 02–09，并维护依赖和状态。\n- [ ] 关闭 HOLD 所需的输入、模型实现、确定性验证和原生重载缺口。\n- [ ] B0/B1 通过后再进入 10–13 后续实验。\n\n## 依赖关系\n```text\n#01 → #02 → #03 → #04 → #05 → #06 → #07 → #08 → #09\n                                                        └→ #10–#13 → #14\n```\n\n## 预期结果\n每次迭代只增加声明过的机制，并保留前一迭代的通过证据；模型、输入、运行和结论可追溯。\n\n## 验收标准\n- [ ] I1.1–I1.7 与线上 Issue、仓库 Markdown 和证据路径一致。\n- [ ] V0.4 原型、B0/B1/B2 和后续方案实验有明确区别。\n- [ ] 阶段门有入口条件、验收证据和 HOLD/GO 判据。\n\n## 当前结果\n状态：`Partial / HOLD`。V0.4 初始 WIP 原型有部分运行证据，但 B0/B1 未通过，保存重载、动态守恒、班次、组批、随机故障、换型和履约验证仍未完成。\n\n## 项目记录\n- [I1 路线](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/01.md)\n- [项目说明](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/README.md)\n- [V0.4 交接清单](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/release-manifest-v0.4.md)",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/1",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "总览",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "comments": 1,
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:27:58Z",
+      "updated_at": "2026-11-13T22:05:24Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    {
+      "number": 2,
+      "title": "[设计] Michigan Steel VSM I1.2：建模口径与假设",
+      "body": "Parent: #1 (https://github.com/wyfchina/FactoryPhyVsm/issues/1)\nIteration: I1\nCore work package: 02\nSource record: [outputs/vsm-michigan-steel-baseline/iterations/I1/02.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/02.md)\n\n# I1 / Issue 02：建模口径与假设\n\n## 迭代编号与工作包\n\n- 迭代：`I1`\n- 环节：`I1.2` 数据与机制定义\n- 核心工作包：`02` 建模口径与假设\n\n## 继承与增量\n\n- 继承：`02-source-extraction.md`、`assumptions-register.csv`。\n- 增量：将来源事实、作者假设、来源推导和实现选择绑定到 I1 路线；不把作者结果写成 Simio 结果。\n\n## 当前口径\n\n- 需求：L=12,000、R=6,400 件/月；20 个工作日；总需求 18,400 件/月。\n- 节拍：60 秒/件；过程时间合计 188 秒。\n- 转移批量：20 件/托盘；生产批量：L=6,000、R=3,200；按用户接受的默认值在 Stamping 前释放，每 10 个工作日一轮。\n- 可用率：Stamping 85%、S. Weld #2 80%；MTTF/MTTR 和分布族属于实现选择。\n- 27,600 秒按每班解释，用户接受该来源推导口径；每天两班合计 15.3333 个有效小时。具体班次时刻和休息仍未给出。\n- W03 的 2,450 件按来源数量保留，作为按件初始化的在制品；不反推既有托盘。R=850 与 20 件托盘不整除由尾批规则处理，不再作为转录错误阻塞。\n\n## 验证与结果\n\n解析需求、节拍、价值时间和 WIP 总量已有证据；W03 按件初始化、每班 27,600 秒有效时间、两周批量在 Stamping 前每 10 个工作日释放三项项目口径已由用户接受并登记。它们是项目假设/实现约定，不是额外来源事实。产品批次 L/R 顺序、转移尾批执行方式、随机分布、故障参数和 Fill Rate 统计口径仍未关闭。状态：`Partial/HOLD`。\n\n## 下一步\n\n在 I1.3/I1.4 前冻结剩余高影响实现选择；每个选择必须保留来源值和实现值。已接受口径不再作为等待用户确认的阻塞项，但仍需模型实现和验证。\n\n\n## GitHub acceptance record\n- Evidence must be added in a comment or linked run record before closing.\n- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/2",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "设计",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:27:58Z",
+      "updated_at": "2026-11-13T21:27:58Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    {
+      "number": 3,
+      "title": "[数据] Michigan Steel VSM I1.2：数据架构与输入快照",
+      "body": "Parent: #1 (https://github.com/wyfchina/FactoryPhyVsm/issues/1)\nIteration: I1\nCore work package: 03\nSource record: [outputs/vsm-michigan-steel-baseline/iterations/I1/03.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/03.md)\n\n# I1 / Issue 03：数据架构与输入快照\n\n## 迭代编号与工作包\n\n- 迭代：`I1`\n- 环节：`I1.2` 数据与机制定义\n- 核心工作包：`03` 数据架构与输入快照\n\n## 输入制品\n\n- `data/processes.csv`\n- `data/wip-initial.csv`\n- `data/demand-calendar.csv`\n- `assumptions-register.csv`\n- 来源 PDF：`09_Ch09_Examples_from_Industry.pdf`\n\n## 继承与增量\n\n当前快照继承上一阶段的转录和解析核算。本轮将每个输入绑定到来源、单位、状态和后续模型版本；不修改数值。\n\n## 数据检查\n\n- 需求、节拍、工序时间和 WIP 位置可独立对账。\n- W03 为 2,450 件，与 20 件托盘规则不整除；已按用户接受的规则保留来源件数并按件初始化，不虚构历史托盘，记为已登记的建模假设 A-014。新流转尾批属于运行机制，尚待实现验证。\n- `processes.csv` 中分布族、MTTF、MTTR 尚未形成可执行快照；形成 DQ-003。\n- 原材料为 5 天指标，不是具体件数，模型转换规则未关闭。\n\n## 结果与阶段门\n\n状态：`Partial/HOLD`。DQ-001 的初始库存计量解释、V0.4 初始 Source 装载总量和 W05 暂存证据已完成；位置级动态守恒和新流转尾批仍未完成。DQ-003 的分布族、MTTF/MTTR 仍需形成可执行输入，输入文件哈希清单仍需建立。\n\n\n## GitHub acceptance record\n- Evidence must be added in a comment or linked run record before closing.\n- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/3",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "数据",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:27:59Z",
+      "updated_at": "2026-11-13T21:27:59Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    {
+      "number": 4,
+      "title": "[Spike] Michigan Steel VSM I1.3：最小机制原型",
+      "body": "Parent: #1 (https://github.com/wyfchina/FactoryPhyVsm/issues/1)\nIteration: I1\nCore work package: 04\nSource record: [outputs/vsm-michigan-steel-baseline/iterations/I1/04.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/04.md)\n\n# I1 / Issue 04：最小机制原型\n\n## 迭代编号与工作包\n\n- 迭代：`I1`\n- 环节：`I1.3` 脆弱机制原型\n- 核心工作包：`04` 最小机制原型\n\n## 目标\n\n验证总量释放、五道工序连接、实体守恒和 Assembly #1 的能力压力，确定平台结构可以继续扩展。\n\n## 已验证机制\n\n- Source 按 60 秒间隔、18,400 件上限生成结构性输入。\n- 五道工序和 Shipping 单路径连接存在。\n- `VSM_OnProductionRelease` 对每个源输出执行一次。\n- `ModelEntity` 已增加 `VSM_ProductTypeState`、`VSM_TrayIDState`、`VSM_ProductionBatchState` 和 `VSM_ReleaseTimeHoursState`；释放过程已写入产品身份、释放小时、两周批次标签和每 20 件递增的候选托盘号。\n- 释放顺序采用 I1 实现选择：每个 9,200 件周期先 L=6,000、再 R=3,200；这表达已接受的批量口径，但不代表作者给出的详细排产顺序。\n- `VSM_LeftReleasedCount`、`VSM_RightReleasedCount` 已接入释放过程并具备中文描述；实验响应目前没有返回有效观测，计数器仍待运行态直接核验。\n- 306.6667 小时确定性运行中，18,400 创建、17,804 发运、596 期末线内，数量守恒；提高实体技术上限后运行无警告。\n- 0.5 小时确定性烟雾运行中，31 创建、26 发运、5 期末线内，数量守恒；运行无错误、无警告，诊断为 0 errors。\n- 解析负荷 `62/60=103.33%` 与原生利用率约 100% 被明确区分。\n\n## 尚未验证\n\n产品身份已接入释放过程但尚无按产品分组的输出核对；候选托盘号未形成实际组批或物理托盘，初始 WIP、班次、换型、故障随机性和需求履约均未完成原型验证。\n\n## 结果\n\n状态：`Partial`。本 Issue 的结构性子集通过；不能据此宣称 B0/B1。\n\n\n## GitHub acceptance record\n- Evidence must be added in a comment or linked run record before closing.\n- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/4",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "spike",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:28:00Z",
+      "updated_at": "2026-11-13T21:28:00Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    {
+      "number": 5,
+      "title": "[建模] Michigan Steel VSM I1.4：公共模型骨架",
+      "body": "Parent: #1 (https://github.com/wyfchina/FactoryPhyVsm/issues/1)\nIteration: I1\nCore work package: 05\nSource record: [outputs/vsm-michigan-steel-baseline/iterations/I1/05.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/05.md)\n\n# I1 / Issue 05：公共模型骨架\n\n## 迭代编号与工作包\n\n- 迭代：`I1`\n- 环节：`I1.4` 模型增量实现\n- 核心工作包：`05` 公共模型骨架\n\n## 当前骨架\n\n活动模型包含 `Source_ProductionRelease`、五个制造 Server、`Sink_Shipping`、六条 Connector，以及 `VSM_OperationTable`、`VSM_ProductTable`、`VSM_InventoryTable`、`VSM_ScenarioTable`、`VSM_ReliabilityTable`。\n\n## 继承与增量\n\n继承结构原型，保留统一对象命名和参数表。已写入过程时间、设置时间、资源容量和第一版故障属性。`ModelEntity` 已建立四个运行状态：`VSM_ProductTypeState`（产品编码）、`VSM_TrayIDState`（每 20 次释放递增的候选托盘号）、`VSM_ProductionBatchState`（生产批次）、`VSM_ReleaseTimeHoursState`（相对仿真小时）。释放过程设置产品身份、释放小时和候选托盘号；批次写入 `Pending`。候选托盘号不表示实体已实际组批。\n\n## 验证与结果\n\n诊断记录为 0 errors；结构连接、表格、实体运行状态和释放过程存在。V0.4 已增加 9 个初始 WIP Source 和独立的 `Server_FG_Staging`，初始 WIP 合计 17,130 件；0.1 小时和 306.6667 小时运行均完成总量核对。班次对象、产品分组输出核对、真实批量行为和需求账本尚未完成。状态：`Partial`。\n\n## 下一步\n\n只在形成可保存版本后进入 I1.4 的完整流程增量；不得用当前骨架替代正式基线。\n\n\n## GitHub acceptance record\n- Evidence must be added in a comment or linked run record before closing.\n- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/5",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "建模",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:28:01Z",
+      "updated_at": "2026-11-13T21:28:01Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    },
+    {
+      "number": 6,
+      "title": "[建模] Michigan Steel VSM I1.4：初始流程模型",
+      "body": "Parent: #1 (https://github.com/wyfchina/FactoryPhyVsm/issues/1)\nIteration: I1\nCore work package: 06\nSource record: [outputs/vsm-michigan-steel-baseline/iterations/I1/06.md](https://github.com/wyfchina/FactoryPhyVsm/blob/b6ad8634b7dae89c999918a9cd95f85357d9166b/outputs/vsm-michigan-steel-baseline/iterations/I1/06.md)\n\n# I1 / Issue 06：初始流程模型\n\n## 迭代编号与工作包\n\n- 迭代：`I1`\n- 环节：`I1.4` 模型增量实现\n- 核心工作包：`06` 初始流程模型\n\n## 目标\n\n在公共骨架上实现可解释的 L/R 生产释放、批量、初始 WIP、班次、换型、故障和 Shipping 边界。\n\n## 当前状态\n\n当前 Simio MCP 活动模型属性为 `VSM_V0.4_InitialWIPPrototype`。在 V0.3 释放原型上，已加入 9 个按位置/产品分开的初始 WIP Source，共装入 17,130 件：W01 7,000、W02 1,700、W03 2,450、W04 1,840、W05 成品 4,140。W03 按来源件数保留 L=1,600、R=850，不重建历史托盘。W05 初始成品进入 `Server_FG_Staging`，其 Transfer-Out Condition=0，运行中没有自动流入 Shipping。初始实体设置 `TrayID=0`，不冒充真实托盘身份。\n\n新生产释放仍按每个 9,200 件周期先 L=6,000、再 R=3,200；这只是可复现的实现顺序。按每 20 件生成的状态仍是候选托盘号，不代表真实托盘组批或跨工序整批转移。释放点已按项目口径设在 Stamping 前，但尚未由班次日历驱动真实时点。\n\n## 待执行的设计与实现项\n\n- 20 件转移的实际组批/尾批行为及可独立核对的 L/R 运行计数；\n- 初始 WIP 之后跨工序迁移、成品暂存和发运之间的完整位置守恒；当前证据只证明初始装载数和 W05 未发运；\n- 若需表达班间停顿，须有来源支持具体班次时刻；\n- 分布、MTTF/MTTR 和随机流；\n- 需求履约和 Fill Rate 定义。\n\n## 结果\n\n状态：`In Progress / HOLD`。初始 WIP 原型已实施，0.1 小时装载核对和 306.6667 小时确定性运行均完成；完整运行的实体守恒成立，W05 初始成品未发运。当前仍不能标记 `Passed`：班次日历、换型、故障、真实托盘组批/尾批、Fill Rate 和完整履约验证未完成；模型保存/重载也未验证。L→R 顺序已登记为可复现实现选择，不作为等待用户重新确认的项目口径。运行中有 1 条高实体数量技术警告，见 `09-simio-baseline-run-evidence.md`。\n\n\n## GitHub acceptance record\n- Evidence must be added in a comment or linked run record before closing.\n- The GitHub Issue number is the work-item identifier; the I1 route identifier remains in the source record.",
+      "state": "open",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/6",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "labels": [
+        "建模",
+        "status:partial"
+      ],
+      "assignees": [],
+      "milestone": "I1 - Michigan Steel VSM Baseline",
+      "comments": 1,
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-13T21:28:01Z",
+      "updated_at": "2026-11-15T00:06:32Z",
+      "has_parent": false,
+      "has_children": false,
+      "closed_by_pull_requests": {
+        "total_count": 0,
+        "references": []
+      }
+    }
+  ]
+}

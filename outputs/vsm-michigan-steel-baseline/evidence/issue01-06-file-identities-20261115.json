@@ -1,0 +1,60 @@
+{
+  "captured_at_utc": "2026-11-15T01:01:55.709Z",
+  "evidence_base_commit": "b31ddfd6361f50daeb35f5b159913b084a6e4921",
+  "models": [
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx",
+      "expected_sha256": "49197D44DA482F97B6B06E4A47D97931875AF6C4DA639C684D6FF8794B5363A8",
+      "committed_sha256": "49197D44DA482F97B6B06E4A47D97931875AF6C4DA639C684D6FF8794B5363A8",
+      "working_sha256": "49197D44DA482F97B6B06E4A47D97931875AF6C4DA639C684D6FF8794B5363A8",
+      "working_matches_evidence": true
+    },
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.10_CommonSkeletonCandidate.spfx",
+      "expected_sha256": "B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF",
+      "committed_sha256": "B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF",
+      "working_sha256": "B719029E9A04AD2DD2F93E0594C5C06BE79087DC2D62BC66B58DAD186FCC1CAF",
+      "working_matches_evidence": true
+    },
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.11_InitialWIPCohortCandidate.spfx",
+      "expected_sha256": "D023F7420FF2E1FF21046A0E9481E64E3268CD7B2C7EC7F8D0532C9A606D6F52",
+      "committed_sha256": "D023F7420FF2E1FF21046A0E9481E64E3268CD7B2C7EC7F8D0532C9A606D6F52",
+      "working_sha256": "D66611C3ECB1A9A8CA9064186135D73421AE7B37B7D68AAECF434B92FF86C097",
+      "working_matches_evidence": false
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/processes.csv",
+      "expected_sha256": "25555C859F4E6FA535DD275337EC8895AEEA626828F471C80D2AB45070DB121C",
+      "observed_sha256": "25555C859F4E6FA535DD275337EC8895AEEA626828F471C80D2AB45070DB121C",
+      "passed": true
+    },
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/wip-initial.csv",
+      "expected_sha256": "5FEA6E6AF4E7839EA9B611E534CAF3370B84E1CD0C7E25A45E457448777CCF76",
+      "observed_sha256": "5FEA6E6AF4E7839EA9B611E534CAF3370B84E1CD0C7E25A45E457448777CCF76",
+      "passed": true
+    },
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/demand-calendar.csv",
+      "expected_sha256": "9460AC2B940927FF0AAB8CBB5ADC63D388DFF2A2BCB372D747798B48EB3031C5",
+      "observed_sha256": "9460AC2B940927FF0AAB8CBB5ADC63D388DFF2A2BCB372D747798B48EB3031C5",
+      "passed": true
+    },
+    {
+      "file": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/assumptions-register.csv",
+      "expected_sha256": "8FD1BBDB718308DDD673A4965E5DDD11B94EAF1D457726FBC827B767C0795D28",
+      "observed_sha256": "8FD1BBDB718308DDD673A4965E5DDD11B94EAF1D457726FBC827B767C0795D28",
+      "passed": true
+    }
+  ],
+  "manifest_correction": {
+    "file": "outputs/vsm-michigan-steel-baseline/input-snapshot-manifest-v0.9.md",
+    "previous_assumptions_sha256": "89A84ADB4B22877F061F5B62C76A6126325C39BCD4707856896F3D3FCE4F0283",
+    "verified_frozen_sha256": "8FD1BBDB718308DDD673A4965E5DDD11B94EAF1D457726FBC827B767C0795D28",
+    "original_frozen_files_preserved": true
+  },
+  "scope": "File identity only; no new simulation/reload validation"
+}
