@@ -1,0 +1,210 @@
+{
+  "captured_at_utc": "2026-11-15T00:50:17.4785779Z",
+  "version": "2026.11.15.1",
+  "maintenance_source": "C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\skills\\supply-chain-simulation-planning",
+  "source_git_commit": "9be8e15ab98af5119f16d5166f1995e31f7243ff",
+  "installation": "C:\\Users\\吴一帆\\.codex\\skills\\supply-chain-simulation-planning",
+  "file_count": 33,
+  "installed_only_files": [],
+  "all_match": true,
+  "files": [
+    {
+      "path": "SKILL.md",
+      "source_sha256": "DD0F79E5A078E9CFBAD300058130277AD6FFEB5030C9AAC0661CB18505C5F7AE",
+      "installed_sha256": "DD0F79E5A078E9CFBAD300058130277AD6FFEB5030C9AAC0661CB18505C5F7AE",
+      "matches": true
+    },
+    {
+      "path": "agents/openai.yaml",
+      "source_sha256": "B5BD961359F1DCB97E479AD82623236FC8B5BA921D4A04E3A01DBF19BD27BB99",
+      "installed_sha256": "B5BD961359F1DCB97E479AD82623236FC8B5BA921D4A04E3A01DBF19BD27BB99",
+      "matches": true
+    },
+    {
+      "path": "assets/templates/assumptions-register.csv",
+      "source_sha256": "3632BACEE2DC37488478C89E9EE8E70699085172E0B2A899C2B2DA4D2C239ECE",
+      "installed_sha256": "3632BACEE2DC37488478C89E9EE8E70699085172E0B2A899C2B2DA4D2C239ECE",
+      "matches": true
+    },
+    {
+      "path": "assets/templates/experiment-matrix.csv",
+      "source_sha256": "4AB5115E1CAF9FC85E16E3C48127AF84576281D8F1A31921A186C5C0574B9923",
+      "installed_sha256": "4AB5115E1CAF9FC85E16E3C48127AF84576281D8F1A31921A186C5C0574B9923",
+      "matches": true
+    },
+    {
+      "path": "assets/templates/github-issue-closure-request.json",
+      "source_sha256": "3A1C81D2140CF536E1306131C0181C4CD824E7F97030F0B11357DA10719DB63B",
+      "installed_sha256": "3A1C81D2140CF536E1306131C0181C4CD824E7F97030F0B11357DA10719DB63B",
+      "matches": true
+    },
+    {
+      "path": "assets/templates/github-issue-sync.yml",
+      "source_sha256": "D8C3D47770D157AC897043EBB06B44034716AE32DBCCB611765015FE991B46A5",
+      "installed_sha256": "D8C3D47770D157AC897043EBB06B44034716AE32DBCCB611765015FE991B46A5",
+      "matches": true
+    },
+    {
+      "path": "assets/templates/project-baseline.md",
+      "source_sha256": "1E46F431C763A3CB8C0A9B9E85480E21E843478FFB9F529E242C3286E2C082BD",
+      "installed_sha256": "1E46F431C763A3CB8C0A9B9E85480E21E843478FFB9F529E242C3286E2C082BD",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-case-patterns.md",
+      "source_sha256": "22ABC224400136180573155A9079A0FE0F2836BA0F6F171B510A89C0539BB03C",
+      "installed_sha256": "22ABC224400136180573155A9079A0FE0F2836BA0F6F171B510A89C0539BB03C",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issue-patterns.md",
+      "source_sha256": "72B521C32BCF4561909EF3C6DD9784EAE58F1D8E285C1419E5F1EC8C57992399",
+      "installed_sha256": "72B521C32BCF4561909EF3C6DD9784EAE58F1D8E285C1419E5F1EC8C57992399",
+      "matches": true
+    },
+    {
+      "path": "references/data-and-conceptual-model.md",
+      "source_sha256": "05940F6F7994E98A6B6333697DDF0B70A6102907D9E1121F0B9B86D44BD9188F",
+      "installed_sha256": "05940F6F7994E98A6B6333697DDF0B70A6102907D9E1121F0B9B86D44BD9188F",
+      "matches": true
+    },
+    {
+      "path": "references/github-issue-sync.md",
+      "source_sha256": "F50FADD5FAA69DB1423C901A76E61D82373A325FB5C7DE0761DAA21888D37885",
+      "installed_sha256": "F50FADD5FAA69DB1423C901A76E61D82373A325FB5C7DE0761DAA21888D37885",
+      "matches": true
+    },
+    {
+      "path": "references/github-project-governance.md",
+      "source_sha256": "BA6D15B19186D40DCB1EE3800FF8093845FBE933DBEF960A07A9236C7FC1239D",
+      "installed_sha256": "BA6D15B19186D40DCB1EE3800FF8093845FBE933DBEF960A07A9236C7FC1239D",
+      "matches": true
+    },
+    {
+      "path": "references/issue-driven-model-build.md",
+      "source_sha256": "51DC62C9CEF9B3766C3691FCBED7D34FC50C8187B74A3A385E03962CC7EA5B12",
+      "installed_sha256": "51DC62C9CEF9B3766C3691FCBED7D34FC50C8187B74A3A385E03962CC7EA5B12",
+      "matches": true
+    },
+    {
+      "path": "references/model-audit-protocol.md",
+      "source_sha256": "779335C918537A9021C2D757507DD298B770854354573AF5C3B3F128F6747748",
+      "installed_sha256": "779335C918537A9021C2D757507DD298B770854354573AF5C3B3F128F6747748",
+      "matches": true
+    },
+    {
+      "path": "references/project-lifecycle.md",
+      "source_sha256": "BEC2AA2C15939F41EDE08347AE48359A7150694276DE94CD06E7B4452C2F8D7E",
+      "installed_sha256": "BEC2AA2C15939F41EDE08347AE48359A7150694276DE94CD06E7B4452C2F8D7E",
+      "matches": true
+    },
+    {
+      "path": "references/verification-and-experiments.md",
+      "source_sha256": "54093C24BE73D80DE2E3B85B8EFC252983016F25FD8EB1EED2BE0A5FE66A633E",
+      "installed_sha256": "54093C24BE73D80DE2E3B85B8EFC252983016F25FD8EB1EED2BE0A5FE66A633E",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/01.md",
+      "source_sha256": "089D3CA9D45B9B94886711D6929BE10682C1BB9D0B7406DC95F61C665D6335AA",
+      "installed_sha256": "089D3CA9D45B9B94886711D6929BE10682C1BB9D0B7406DC95F61C665D6335AA",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/02.md",
+      "source_sha256": "CEDED7AD60EA2177B74CFCF66AE72C5129ECBA01EC81F6C90DFC0391321CD9B6",
+      "installed_sha256": "CEDED7AD60EA2177B74CFCF66AE72C5129ECBA01EC81F6C90DFC0391321CD9B6",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/03.md",
+      "source_sha256": "E3CDA89931F0A1D156E3710BA0D24817CC01CE2EA917E420F341886525712C63",
+      "installed_sha256": "E3CDA89931F0A1D156E3710BA0D24817CC01CE2EA917E420F341886525712C63",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/04.md",
+      "source_sha256": "26AB3EEE5C6CD62BF4351DD2462AEF0B9F5CC3BFCF6BED433AAE5FB49AA9E48D",
+      "installed_sha256": "26AB3EEE5C6CD62BF4351DD2462AEF0B9F5CC3BFCF6BED433AAE5FB49AA9E48D",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/05.md",
+      "source_sha256": "6C2D5C6F66DFD53839DB06BB59B71BA8BB9EA473B3471FC48FB64724F3D90FA6",
+      "installed_sha256": "6C2D5C6F66DFD53839DB06BB59B71BA8BB9EA473B3471FC48FB64724F3D90FA6",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/06.md",
+      "source_sha256": "7643B8863085E140DBB9CEFD562A4CB882E98BCA0013C5A49334BC57AC4C5FF7",
+      "installed_sha256": "7643B8863085E140DBB9CEFD562A4CB882E98BCA0013C5A49334BC57AC4C5FF7",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/07.md",
+      "source_sha256": "ACEEA9B0EB627EDF0182DB871C5C00C5F83EE93AA855A0817EF16AD00EDA6BB6",
+      "installed_sha256": "ACEEA9B0EB627EDF0182DB871C5C00C5F83EE93AA855A0817EF16AD00EDA6BB6",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/08.md",
+      "source_sha256": "2A52551553E5FAEFA0351810219EA2B0A749AD8ED42A7E236D2641A9195E4E76",
+      "installed_sha256": "2A52551553E5FAEFA0351810219EA2B0A749AD8ED42A7E236D2641A9195E4E76",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/09.md",
+      "source_sha256": "4A215A6C6A7074B48A20DC65A6900C19373C0AEA9B9628786CADE81B5A9D6F32",
+      "installed_sha256": "4A215A6C6A7074B48A20DC65A6900C19373C0AEA9B9628786CADE81B5A9D6F32",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/10.md",
+      "source_sha256": "0EBA4E7769A5669D738F9C698DA25C786CE4980A6E30B2FFEA863F1573C32EFC",
+      "installed_sha256": "0EBA4E7769A5669D738F9C698DA25C786CE4980A6E30B2FFEA863F1573C32EFC",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/11.md",
+      "source_sha256": "3D3E5C0F8F4024A3567CD9B21581FDABD62A12AA7F9D875829F787A5BA51CC9E",
+      "installed_sha256": "3D3E5C0F8F4024A3567CD9B21581FDABD62A12AA7F9D875829F787A5BA51CC9E",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/12.md",
+      "source_sha256": "F21BC4A2B4CC19054A21C20E470A0AFEA3DC2351506F719A220F60D2D48B881B",
+      "installed_sha256": "F21BC4A2B4CC19054A21C20E470A0AFEA3DC2351506F719A220F60D2D48B881B",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/13.md",
+      "source_sha256": "F2D55F953216949337399A864AE0E82D85A1A9967B8D4467CA4FC6CB7B6C0486",
+      "installed_sha256": "F2D55F953216949337399A864AE0E82D85A1A9967B8D4467CA4FC6CB7B6C0486",
+      "matches": true
+    },
+    {
+      "path": "references/aerospace-issues/14.md",
+      "source_sha256": "597DC6DAE9164467E86CD668B34B4BAB641AF273C54883B8C0EE5BE1C20739EC",
+      "installed_sha256": "597DC6DAE9164467E86CD668B34B4BAB641AF273C54883B8C0EE5BE1C20739EC",
+      "matches": true
+    },
+    {
+      "path": "scripts/github_issue_sync_check.ps1",
+      "source_sha256": "58909023BC9EA1476143237B02D0C4A19C16C57A970CF73F11E40713C5285214",
+      "installed_sha256": "58909023BC9EA1476143237B02D0C4A19C16C57A970CF73F11E40713C5285214",
+      "matches": true
+    },
+    {
+      "path": "scripts/github_issue_sync_workflow.ps1",
+      "source_sha256": "04C849A4E554FBC31D9C37DE1C82410E806D4ECBDC8DA3A11D44C7E413D30E0F",
+      "installed_sha256": "04C849A4E554FBC31D9C37DE1C82410E806D4ECBDC8DA3A11D44C7E413D30E0F",
+      "matches": true
+    },
+    {
+      "path": "scripts/test_github_issue_sync.ps1",
+      "source_sha256": "B6EE13E7CDD2B10CAB6816D9B6E2F617B9A19BF2A5380D7E8EF45ECF2ADF574B",
+      "installed_sha256": "B6EE13E7CDD2B10CAB6816D9B6E2F617B9A19BF2A5380D7E8EF45ECF2ADF574B",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-15T00:50:30.5731814Z",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "issue_number": 7,
+  "evidence_commit": "f821e0044453146a4eff350307bcc4240f5552c7",
+  "phase": "PostClose",
+  "transport": "REST anonymous (read-only)",
+  "snapshot_only": false,
+  "result": "Passed",
+  "detail": "Read-only audit; no GitHub mutations. Snapshot success is not live verification.",
+  "actions": [],
+  "checks": [
+    {
+      "Name": "local-status",
+      "Passed": true,
+      "Detail": "Local status: Passed"
+    },
+    {
+      "Name": "decision-owner",
+      "Passed": true,
+      "Detail": "Decision owner: Wu"
+    },
+    {
+      "Name": "business-reviewer",
+      "Passed": true,
+      "Detail": "Business reviewer: Wu"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/evidence/issue07-timebase-readonly-20261115.json",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/iterations/I1/07-fill-rate-contract.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/data/demand-due-calendar.csv",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "remote-commit",
+      "Passed": true,
+      "Detail": "Immutable evidence commit exists in the target repository"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/issue07-closure-evidence.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit f821e0044453146a4eff350307bcc4240f5552c7"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/evidence/issue07-timebase-readonly-20261115.json",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit f821e0044453146a4eff350307bcc4240f5552c7"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/iterations/I1/07-fill-rate-contract.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit f821e0044453146a4eff350307bcc4240f5552c7"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/data/demand-due-calendar.csv",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit f821e0044453146a4eff350307bcc4240f5552c7"
+    },
+    {
+      "Name": "issue-identity",
+      "Passed": true,
+      "Detail": "Target is the requested Issue, not a PR"
+    },
+    {
+      "Name": "remote-state",
+      "Passed": true,
+      "Detail": "State: closed"
+    },
+    {
+      "Name": "closure-reason",
+      "Passed": true,
+      "Detail": "Reason: completed"
+    },
+    {
+      "Name": "status-label",
+      "Passed": true,
+      "Detail": "Required: status:passed"
+    },
+    {
+      "Name": "exclusive-status-label",
+      "Passed": true,
+      "Detail": "Conflicting labels: "
+    },
+    {
+      "Name": "acceptance-comment",
+      "Passed": true,
+      "Detail": "Acceptance comment binds evidence commit and named decision owner/business reviewer"
+    }
+  ],
+  "observed_issue": {
+    "state_reason": "completed",
+    "state": "closed",
+    "labels": [
+      "建模",
+      "status:passed"
+    ],
+    "number": 7
+  },
+  "acceptance_comment_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/7#issuecomment-6886336335"
+}

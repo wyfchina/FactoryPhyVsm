@@ -1,0 +1,194 @@
+{
+  "captured_at_utc": "2026-11-15T00:48:29.8190494Z",
+  "network_writes": false,
+  "fixture_kind": "Synthetic isolated audit snapshots and local REST double",
+  "checker_sha256": "58909023BC9EA1476143237B02D0C4A19C16C57A970CF73F11E40713C5285214",
+  "passed": 22,
+  "total": 22,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Passed. Read-only audit; no GitHub mutations. Snapshot success is not live verification.\r\n"
+    },
+    {
+      "case": "local-partial",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\n[FAIL] local-status: Local status: Partial\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\nResult: Drift. Local prerequisites are incomplete; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "missing-evidence",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[FAIL] evidence-file:evidence/missing.md: Evidence file exists locally\r\nResult: Drift. Local prerequisites are incomplete; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "remote-open",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[FAIL] remote-state: State: open\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "no-acceptance-comment",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[FAIL] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "wrong-close-reason",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[FAIL] closure-reason: Reason: not_planned\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "conflicting-status-labels",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[FAIL] exclusive-status-label: Conflicting labels: status:partial\r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "uncommitted-evidence",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/local-only.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[FAIL] committed-evidence:evidence/local-only.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "missing-commit",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[FAIL] remote-commit: Immutable evidence commit exists in the target repository\r\n[FAIL] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "empty-evidence-list",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\nResult: InvalidInput. At least one evidence path is required\r\n"
+    },
+    {
+      "case": "path-outside-root",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\nResult: InvalidInput. Expected repository-relative path: ../outside.md\r\n"
+    },
+    {
+      "case": "snapshot-apply-prohibited",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\nResult: InvalidInput. Apply is prohibited for snapshot replay\r\n"
+    },
+    {
+      "case": "preclose-open",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\nResult: Ready. Read-only audit; no GitHub mutations. Snapshot success is not live verification.\r\n"
+    },
+    {
+      "case": "unconfirmed-review",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Not selected]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[FAIL] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\nResult: Drift. Local prerequisites are incomplete; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "wrong-issue",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[FAIL] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "acceptance-not-passed",
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "passed": true,
+      "actions": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [Snapshot (offline, read-only)]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[FAIL] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Drift. Closure prerequisites or online state are inconsistent; no GitHub mutations.\r\n"
+    },
+    {
+      "case": "apply-idempotent",
+      "passed": true,
+      "first_exit": 0,
+      "second_exit": 0,
+      "writes": [
+        "comment",
+        "labels",
+        "close"
+      ],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Passed. Online closure read back successfully. Update local sync status and commit the receipt.\r\nGitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:passed\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Passed. Online closure read back successfully. Update local sync status and commit the receipt.\r\n"
+    },
+    {
+      "case": "partial-write-retry",
+      "passed": true,
+      "first_exit": 3,
+      "second_exit": 0,
+      "writes": [
+        "comment",
+        "labels",
+        "close"
+      ],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\nResult: Unavailable. Synthetic transport interruption after acceptance comment\r\nGitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Passed. Online closure read back successfully. Update local sync status and commit the receipt.\r\n"
+    },
+    {
+      "case": "workflow-audit",
+      "passed": true,
+      "actual_exit": 0,
+      "writes": [],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\nResult: Ready. Read-only audit; no GitHub mutations. Snapshot success is not live verification.\r\n"
+    },
+    {
+      "case": "workflow-apply",
+      "passed": true,
+      "actual_exit": 0,
+      "writes": [
+        "comment",
+        "labels",
+        "close"
+      ],
+      "output": "GitHub Issue sync audit: example/simulation-test#42 [REST token]\r\n[PASS] local-status: Local status: Passed\r\n[PASS] decision-owner: Decision owner: DecisionOwner\r\n[PASS] business-reviewer: Business reviewer: Reviewer\r\n[PASS] evidence-file:evidence/acceptance.md: Evidence file exists locally\r\n[PASS] business-review-confirmed: Business review confirmation supplied\r\n[PASS] approval-reference: Approval record reference supplied; authorization must be established by the agent\r\n[PASS] acceptance-summary: Acceptance scope and any approved deferred work are documented\r\n[PASS] remote-commit: Immutable evidence commit exists in the target repository\r\n[PASS] committed-evidence:evidence/acceptance.md: Path is a file in evidence commit aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n[PASS] issue-identity: Target is the requested Issue, not a PR\r\n[PASS] closeable-state: No conflicting historical closure reason\r\n[PASS] nonconflicting-status: Existing status labels: status:partial\r\n[PASS] remote-state: State: closed\r\n[PASS] closure-reason: Reason: completed\r\n[PASS] status-label: Required: status:passed\r\n[PASS] exclusive-status-label: Conflicting labels: \r\n[PASS] acceptance-comment: Acceptance comment binds evidence commit and named decision owner/business reviewer\r\nResult: Passed. Online closure read back successfully. Update local sync status and commit the receipt.\r\n"
+    },
+    {
+      "case": "workflow-wrong-repository",
+      "passed": true,
+      "actual_exit": 2,
+      "writes": [],
+      "output": ""
+    },
+    {
+      "case": "workflow-wrong-branch",
+      "passed": true,
+      "actual_exit": 2,
+      "writes": [],
+      "output": ""
+    }
+  ]
+}
