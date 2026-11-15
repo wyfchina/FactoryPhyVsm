@@ -1,0 +1,8 @@
+EvidenceCommit: f821e0044453146a4eff350307bcc4240f5552c7
+ExitCode: 1
+Exception: C:\Users\吴一帆\.codex\skills\supply-chain-simulation-planning\scripts\github_issue_sync_check.ps1:64
+Line |
+  64 |      throw "GitHub CLI 'gh' was not found and GITHUB_TOKEN is not set. …
+     |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | GitHub CLI 'gh' was not found and GITHUB_TOKEN is not set. Install gh, set a token for a GitHub Action, or run
+     | the equivalent checks with the GitHub Connector.

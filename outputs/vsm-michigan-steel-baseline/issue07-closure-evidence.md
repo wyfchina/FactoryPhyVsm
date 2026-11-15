@@ -64,4 +64,10 @@ M09–M13 实现状态仍为 Not available 或 Defined/Pending；VSM-12/13/16/18
 
 ## 5. GitHub 闭环同步
 
-当前：Pending。先提交本证据、07规范、需求表、时间配置及责任映射，再运行同步检查。若本地脚本缺少gh/令牌，按已规定的Connector等效清单核对。线上验收评论必须包含不可变证据提交、文件路径、Wu评审及范围处置；更新status:passed并以completed关闭后，再回读确认并补记结果。
+验收证据提交：`f821e0044453146a4eff350307bcc4240f5552c7`，已推送并通过 GitHub 回读确认。
+
+当前：Pending。本地只读同步脚本已实际执行，因无gh/GITHUB_TOKEN退出1，见[原始诊断](evidence/issue07-sync-script-20261115.txt)。随后Connector读取成功，但对#7/#6/#8/#9添加评论均返回403 `Resource not accessible by integration`，没有评论写入或Issue关闭。这是Connector写入权限不足，不是验收失败。
+
+改用仓库自有 GitHub Action 执行同一授权闭环清单：[限定工作流](../../.github/workflows/issue07-closure.yml)、[脚本](../../scripts/github/close-issue07.cjs)、[闭环请求](evidence/issue07-closure-request.json)。脚本只允许仓库所有者向指定分支推送触发；校验本地Passed、不可变证据祖先提交、Wu评审、V0.11哈希和需求表，然后添加幂等验收/交接评论，只关闭#7并回读closed/completed/status:passed；#6/#8/#9保持原状态。该Action只在这三个指定文件变化时触发，不随一般模型/文档提交自动验收其他Issue。
+
+脚本语法与本地请求校验已执行通过，没有本地API写入。线上实际结果待Action执行后补记；不得将请求已推送视为闭环已完成。
