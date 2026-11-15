@@ -78,7 +78,7 @@ M09–M13 实现状态仍为 Not available 或 Defined/Pending；VSM-12/13/16/18
 | #7 标签 | 建模、status:passed；status:partial已移除 |
 | 验收评论 | [6886336335](https://github.com/wyfchina/FactoryPhyVsm/issues/7#issuecomment-6886336335)，含Wu评审、批准范围及不可变证据提交 |
 | #6 实现转交 | [6886336518](https://github.com/wyfchina/FactoryPhyVsm/issues/6#issuecomment-6886336518)，工作项仍open/status:partial |
-| #8 执行转交 | [6886336705](https://github.com/wyfchina/FactoryPhyVsm/issues/8#issuecomment-6886336705)，工作项仍open/status:partial |
+| #8 执行转交 | [6886336705](https://github.com/wyfchina/FactoryPhyVsm/issues/8#issuecomment-6886336705)，后续确定性验证范围已形成闭环；R1统计和聚合时序适用性继续由后续研究承接 |
 | #9 作者对照转交 | [6886336909](https://github.com/wyfchina/FactoryPhyVsm/issues/9#issuecomment-6886336909)，工作项仍open/status:partial |
 | 本地记录 | 07为Passed / GitHub sync: Closed，01路线与验证计划一致；I1与B0/B1仍HOLD |
 
