@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "repository": "wyfchina/FactoryPhyVsm",
+  "branch": "codex/vsm-v04-github-ready",
+  "issue_number": 8,
+  "evidence_commit": "929bb39e127d8211cceac2c1a4ccd8a3317559de",
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "business_review_confirmed": true,
+  "local_status": "Passed（确定性验证与守恒范围）",
+  "expected_status_label": "status:passed",
+  "model_path": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx",
+  "model_sha256": "73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f",
+  "evidence_paths": [
+    "outputs/vsm-michigan-steel-baseline/issue08-closure-evidence.md",
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/08.md",
+    "outputs/vsm-michigan-steel-baseline/iterations/I1/09.md",
+    "outputs/vsm-michigan-steel-baseline/05-verification-plan.md",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-acceptance-summary.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-persistence-readback.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-persistence-structure-readback.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-F01-F07-summary.json",
+    "outputs/vsm-michigan-steel-baseline/evidence/issue06-aggregation-comparison.json",
+    "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx"
+  ],
+  "approval_reference": "本会话用户明确要求开始闭环 VSM GitHub Issue #8；Wu 已登记为该项目决策责任人和业务评审人。闭环仅接受本请求列明的V0.12确定性验证与守恒范围。",
+  "acceptance_comment": "<!-- issue08-closure:929bb39e127d8211cceac2c1a4ccd8a3317559de -->\n## I1 / Issue 08 验收与闭环记录（2026-11-15）\n\n- **Local status: Passed（确定性验证与守恒范围）**\n- **Decision owner: Wu**\n- **Business reviewer: Wu**\n- **Evidence commit: 929bb39e127d8211cceac2c1a4ccd8a3317559de**\n- **Accepted scope:** V0.12确定性机制、全局/来源/位置/产品/批次守恒、F01–F07边界小例、保存重载和固定复制回归。\n\n证据：[Issue 08验收记录](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/iterations/I1/08.md)、[闭环证据](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/issue08-closure-evidence.md)、[验证计划](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/05-verification-plan.md)、[V0.12持久化回读](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/evidence/issue06-persistence-readback.json)、[V0.12接受摘要](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/evidence/issue06-acceptance-summary.json)、[q20/q1对照](https://github.com/wyfchina/FactoryPhyVsm/blob/929bb39e127d8211cceac2c1a4ccd8a3317559de/outputs/vsm-michigan-steel-baseline/evidence/issue06-aggregation-comparison.json)。保存包SHA-256为`73A98D963B756E485D6EB8B2A460954391047ED229290A823CEEB6CE9BFDD62F`；1,890条来源/位置快照全部平衡差为0，诊断0 errors、运行警告0。\n\nq20与q1的发运及按期需求响应一致，但制造完成量相差15件，已完成制造CT加权均值相差14.7333分钟；本结论不声称20件聚合实体与逐件模型时序等价。\n\n**明确延期，不属于本次关闭条件：**R1 30次独立随机复制、95% CI、目标可用率观测及容差、随机流/种子平台映射、20件聚合适用性研究、作者结果对照和B0/B1正式基线判定。这些工作由Issue 09继续处理；I1、B0/B1保持HOLD，Issue 09保持Blocked/HOLD。\n\nClosure reason: completed。"
+}
