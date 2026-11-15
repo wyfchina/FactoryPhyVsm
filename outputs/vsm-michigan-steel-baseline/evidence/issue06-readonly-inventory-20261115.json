@@ -1,0 +1,50 @@
+{
+  "identity": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\":\"/Project/Model\",\"count\":2,\"items\":[{\"name\":\"VSM_ModelVersion\",\"value\":\"VSM_V0.11_InitialWIPCohortCandidate\",\"type\":\"String\",\"description\":\"\\u6A21\\u578B\\u7248\\u672C\\u6807\\u8BC6\\uFF1B\\u7ED1\\u5B9A\\u5F53\\u524D\\u57FA\\u7EBF\\u8F93\\u5165\\u3001\\u673A\\u5236\\u548C\\u9A8C\\u8BC1\\u8BC1\\u636E\\u3002\",\"readOnly\":false,\"category\":\"Basic Logic\"},{\"name\":\"VSM_BaselineStage\",\"value\":\"INITIAL_FLOW_CANDIDATE\",\"type\":\"String\",\"description\":\"\\u9636\\u6BB5\\u95E8\\u72B6\\u6001\\uFF1BSOURCE_BASELINE \\u8868\\u793A\\u53EA\\u8868\\u8FBE\\u6848\\u4F8B\\u5F53\\u524D\\u72B6\\u6001\\uFF0C\\u4E0D\\u542B\\u4F5C\\u8005\\u4F18\\u5316\\u65B9\\u6848\\u3002\",\"readOnly\":false,\"category\":\"Basic Logic\"}]}"
+        }
+      ]
+    },
+    "id": 2,
+    "jsonrpc": "2.0"
+  },
+  "tables": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\":\"/Project/Model/Tables\",\"depth\":2,\"kind\":\"items\",\"count\":6,\"items\":[{\"name\":\"VSM_OperationTable\",\"type\":\"Table\",\"description\":\"\"},{\"name\":\"VSM_ProductTable\",\"type\":\"Table\",\"description\":\"\"},{\"name\":\"VSM_InventoryTable\",\"type\":\"Table\",\"description\":\"\"},{\"name\":\"VSM_ScenarioTable\",\"type\":\"Table\",\"description\":\"\"},{\"name\":\"VSM_ReliabilityTable\",\"type\":\"Table\",\"description\":\"\"},{\"name\":\"VSM_InitialWIPTable\",\"type\":\"Table\",\"description\":\"\"}]}"
+        }
+      ]
+    },
+    "id": 3,
+    "jsonrpc": "2.0"
+  },
+  "run_status": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"modelName\":\"Model\",\"runMode\":\"None\",\"simulationRunState\":\"bnQ\",\"isInRunMode\":false,\"running\":false,\"paused\":true,\"canGo\":true,\"canFastForward\":true,\"canPause\":false,\"canStop\":false,\"dispatcherStatus\":\"idle\",\"pendingCommandCount\":0,\"lastCommand\":\"fast_forward_model\",\"lastError\":null,\"lastStartedUtc\":\"2026-11-14T21:43:25.3019708+00:00\",\"lastCompletedUtc\":\"2026-11-14T21:43:25.8072203+00:00\",\"warningCount\":0,\"warningsTruncated\":false,\"warnings\":[]}"
+        }
+      ]
+    },
+    "id": 4,
+    "jsonrpc": "2.0"
+  },
+  "processes": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"path\":\"/Project/Model/Processes\",\"depth\":2,\"kind\":\"items\",\"count\":26,\"items\":[{\"name\":\"OnRunInitialized\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnCreated\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnDestroying\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnCapacityAllocated\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnCapacityReleased\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnEvaluatingSeizeRequest\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnCapacityChanged\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnRunEnding\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnRunWarmUpEnding\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnCapacityReservationCancelled\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"OnNewSeizeRequest\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnProductionRelease\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnShipment\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterStampingWIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitStampingWIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterWeld1WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitWeld1WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterWeld2WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitWeld2WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterAssembly1WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitAssembly1WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterAssembly2WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitAssembly2WIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnEnterFGStagingWIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_OnExitFGStagingWIP\",\"type\":\"Process\",\"description\":\"\"},{\"name\":\"VSM_InitializeWIP\",\"type\":\"Process\",\"description\":\"\"}]}"
+        }
+      ]
+    },
+    "id": 5,
+    "jsonrpc": "2.0"
+  }
+}

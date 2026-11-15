@@ -1,0 +1,3 @@
+﻿Scenario,DailyAvailableHours,ExtraHoursPerDay,ProcessSCV,RefThroughputPerDay,RefCTLeftDays,RefCTRightDays,RefFillLeft,RefFillRight,RefAssembly1Utilization
+VSM_Original,15.333333333333334,0,1,890.0598,0,0,0,0,1.0336
+Author_Calibrated,16.533333333333335,1.2,1,920,14.8,12.8,0.7459,0.7552,0.9598

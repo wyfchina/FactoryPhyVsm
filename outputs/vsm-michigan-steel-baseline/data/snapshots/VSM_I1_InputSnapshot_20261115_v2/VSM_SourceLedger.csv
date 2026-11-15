@@ -1,0 +1,16 @@
+﻿SourceID,Product,Kind,Planned
+InitialWIP_W01_L,Left,InitialWIP,4600
+InitialWIP_W01_R,Right,InitialWIP,2400
+InitialWIP_W02_L,Left,InitialWIP,1100
+InitialWIP_W02_R,Right,InitialWIP,600
+InitialWIP_W03_L,Left,InitialWIP,1600
+InitialWIP_W03_R,Right,InitialWIP,840
+InitialWIP_W03_R_Tail,Right,InitialWIP,10
+InitialWIP_W04_L,Left,InitialWIP,1200
+InitialWIP_W04_R,Right,InitialWIP,640
+InitialWIP_W05_L,Left,InitialWIP,2700
+InitialWIP_W05_R,Right,InitialWIP,1440
+P1-L,Left,Production,6000
+P1-R,Right,Production,3200
+P2-L,Left,Production,6000
+P2-R,Right,Production,3200

@@ -1,0 +1,176 @@
+[
+  {
+    "test": "F01",
+    "totals": {
+      "DemandUnits": 920.0,
+      "OnTime": 900.0,
+      "LateByHorizon": 0.0,
+      "Unfilled": 20.0
+    },
+    "allocationRows": 2,
+    "stock": [
+      20.0,
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  },
+  {
+    "test": "F02",
+    "totals": {
+      "DemandUnits": 1200.0,
+      "OnTime": 1100.0,
+      "LateByHorizon": 100.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 3,
+    "stock": [
+      0.0,
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  },
+  {
+    "test": "F03",
+    "totals": {
+      "DemandUnits": 40.0,
+      "OnTime": 20.0,
+      "LateByHorizon": 20.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 2,
+    "stock": [
+      0.0,
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  },
+  {
+    "test": "F04",
+    "totals": {
+      "DemandUnits": 20.0,
+      "OnTime": 20.0,
+      "LateByHorizon": 0.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 2,
+    "stock": [
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  },
+  {
+    "test": "F05",
+    "totals": {
+      "DemandUnits": 60.0,
+      "OnTime": 40.0,
+      "LateByHorizon": 20.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 3,
+    "stock": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  },
+  {
+    "test": "F06",
+    "totals": {
+      "DemandUnits": 18400.0,
+      "OnTime": 920.0,
+      "LateByHorizon": 17480.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 40,
+    "stock": [
+      0.0,
+      0.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 306.6666666666667,
+      "result": {
+        "type": "Number",
+        "value": 306.6666666666667
+      }
+    }
+  },
+  {
+    "test": "F07",
+    "totals": {
+      "DemandUnits": 0.0,
+      "OnTime": 0.0,
+      "LateByHorizon": 0.0,
+      "Unfilled": 0.0
+    },
+    "allocationRows": 0,
+    "stock": [
+      20.0
+    ],
+    "time": {
+      "success": true,
+      "modelName": "Model",
+      "expression": "TimeNow",
+      "contextPath": "/Project/Model/Runtime",
+      "simulationTime": 2,
+      "result": {
+        "type": "Number",
+        "value": 2
+      }
+    }
+  }
+]

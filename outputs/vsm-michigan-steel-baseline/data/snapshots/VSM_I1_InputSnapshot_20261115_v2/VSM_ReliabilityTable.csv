@@ -1,0 +1,6 @@
+﻿Station,Availability,MTTFHours,MTTRHours,FailureDistribution,SourceType,FailureStream,RepairStream
+Stamping,0.85,5.6667,1,Exponential,项目选择：指数开机故障/维修；含待机，维修后继续剩余作业；目标可用率非观测值。,201,202
+S_Weld_1,1,Infinity,0,None,原型给定可用率100%；无故障建模,0,0
+S_Weld_2,0.8,4,1,Exponential,项目选择：指数开机故障/维修；含待机，维修后继续剩余作业；目标可用率非观测值。,211,212
+Assembly_1,1,Infinity,0,None,原型给定可用率100%；无故障建模,0,0
+Assembly_2,1,Infinity,0,None,原型给定可用率100%；无故障建模,0,0

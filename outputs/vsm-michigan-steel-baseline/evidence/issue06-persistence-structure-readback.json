@@ -1,0 +1,662 @@
+{
+  "checks": [
+    {
+      "target": "Processes/VSM_InitializeWIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterStampingWIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitStampingWIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterWeld1WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitWeld1WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterWeld2WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitWeld2WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterAssembly1WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitAssembly1WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterAssembly2WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitFGStagingWIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnShipment",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnExitAssembly2WIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_FinalOutputs",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_AwaitFGAllocation",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_AllocateDemand",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnEnterFGStagingWIP",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_OnProductionRelease",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_DailyClock",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_PrepareStamping",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_PrepareWeld1",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_PrepareWeld2",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_PrepareAssembly1",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_PrepareAssembly2",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_WriteRunSummary",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_WriteWIPSnapshot",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_CompleteStamping",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_CompleteWeld1",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_CompleteWeld2",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_CompleteAssembly1",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_CompleteAssembly2",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_StampingFailed",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_StampingRepaired",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_Weld2Failed",
+      "passed": true
+    },
+    {
+      "target": "Processes/VSM_Weld2Repaired",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_OperationTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_OperationTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ProductTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ProductTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_InventoryTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_InventoryTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ScenarioTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ScenarioTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ReliabilityTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_ReliabilityTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_InitialWIPTable/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_InitialWIPTable/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_WIPSnapshot/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_WIPSnapshot/SnapshotTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_SourceLedger/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_SourceLedger/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FlowTimes/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FlowTimes/StartTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FlowTimes/FinishTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FlowTimes/ObservationTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_BatchSummary/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_BatchSummary/FirstRelease/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_BatchSummary/LastShipment/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_BatchSummary/Makespan/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_DemandLedger/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_DemandLedger/input",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FGInventory/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FGInventory/StartTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_FGInventory/FinishTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/ShipmentTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/DueTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/ManufacturingCT/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/FGWait/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/EndToEnd/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ShipmentAllocation/InitialRemainingDelivery/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_DemandFulfillment/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_DemandFulfillment/DueTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/StartTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/FinishTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/ServiceTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/SetupTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_OperationLog/ElapsedTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ResourceEvents/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_ResourceEvents/EventTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_RunSummary/schema",
+      "passed": true
+    },
+    {
+      "target": "Tables/VSM_Out_RunSummary/ObservationTime/TimeUnit",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ReleaseSequence",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_LeftReleasedCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_RightReleasedCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ShippedUnitCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1WIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2WIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1WIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2WIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGStagingWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingEnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1EnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1ExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2EnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2ExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1EnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1ExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2EnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2ExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGStagingEnteredUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGStagingExitedUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_InitialLeftUnitCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_InitialRightUnitCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ShippedLeftUnitCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ShippedRightUnitCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingLeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingRightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1LeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1RightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2LeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2RightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1LeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1RightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2LeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2RightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGStagingLeftWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGStagingRightWIP",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_SnapshotSource",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ClockDay",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StockRows",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGLeftHead",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGRightHead",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGLeftTail",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGRightTail",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_DemandLeftCursor",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_DemandRightCursor",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_AllocProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_AllocDemand",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_AllocStock",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_AllocUnits",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_ResultRow",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGLeftAvailable",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_FGRightAvailable",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_EnableSetups",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingLastProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_StampingSetupCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1LastProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld1SetupCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2LastProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Weld2SetupCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1LastProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly1SetupCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2LastProduct",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_Assembly2SetupCount",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_NumberWorkdays",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_WorkdayHours",
+      "passed": true
+    },
+    {
+      "target": "/Project/Model/States/VSM_EntityUnitQuantity",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_ProductTypeState",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_TrayIDState",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_ProductionBatchState",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_ReleaseTimeHoursState",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_QuantityState",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_SourceRow",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_StockRow",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_StartTime",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_FinishTime",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_ServiceTime",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_SetupTime",
+      "passed": true
+    },
+    {
+      "target": "/Project/ModelEntity/States/VSM_OperationStartTime",
+      "passed": true
+    }
+  ],
+  "diagnostics": {
+    "errors": [],
+    "errorCount": 0
+  },
+  "modelSHA256": "73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f",
+  "allPassed": true
+}

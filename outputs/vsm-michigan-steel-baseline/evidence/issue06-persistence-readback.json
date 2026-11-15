@@ -1,0 +1,79 @@
+{
+  "userSavedFile": "C:\\Users\\吴一帆\\Documents\\BaiduSyncdisk\\日常资料\\参考资料\\人工智能\\codex-projects\\codex-class A-workspace\\outputs\\vsm-michigan-steel-baseline\\models\\VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx",
+  "modelSHA256": "73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f",
+  "nativeIdentity": {
+    "path": "/Project/Model",
+    "count": 2,
+    "items": [
+      {
+        "name": "VSM_ModelVersion",
+        "value": "VSM_V0.12_FlowDemandLedgerCandidate",
+        "type": "String",
+        "description": "模型版本标识；绑定当前基线输入、机制和验证证据。",
+        "readOnly": false,
+        "category": "Basic Logic"
+      },
+      {
+        "name": "VSM_BaselineStage",
+        "value": "INITIAL_FLOW_VALIDATION_CANDIDATE",
+        "type": "String",
+        "description": "阶段门状态；SOURCE_BASELINE 表示只表达案例当前状态，不含作者优化方案。",
+        "readOnly": false,
+        "category": "Basic Logic"
+      }
+    ]
+  },
+  "diagnostics": {
+    "errors": [],
+    "errorCount": 0
+  },
+  "outputsMatchPreSave": true,
+  "checks": {
+    "native": {
+      "row_index": "0",
+      "ObservationTime": "306.6666666666667",
+      "NativeCreated": "1777",
+      "NativeDestroyed": "920",
+      "NativeInSystem": "857",
+      "InitialUnits": "17130",
+      "ReleasedUnits": "18400",
+      "ShippedUnits": "18400",
+      "CurrentUnits": "17130",
+      "Balance": "0",
+      "StampingAllocated": "0",
+      "Weld1Allocated": "0",
+      "Weld2Allocated": "1",
+      "Assembly1Allocated": "1",
+      "Assembly2Allocated": "1",
+      "FGStagingAllocated": "271",
+      "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+      "Replication": "20261114",
+      "RandomnessDisabled": "0"
+    },
+    "demand": {
+      "DemandUnits": 18400.0,
+      "OnTime": 18250.0,
+      "LateByHorizon": 150.0,
+      "Unfilled": 0.0
+    },
+    "censoredUnits": 11720.0,
+    "outputRows": {
+      "VSM_SourceLedger": 15,
+      "VSM_DemandLedger": 40,
+      "VSM_Out_WIPSnapshot": 1890,
+      "VSM_Out_DemandFulfillment": 40,
+      "VSM_Out_ShipmentAllocation": 931,
+      "VSM_Out_FGInventory": 1191,
+      "VSM_Out_BatchSummary": 4,
+      "VSM_Out_FlowTimes": 1570,
+      "VSM_Out_OperationLog": 5027,
+      "VSM_Out_ResourceEvents": 217,
+      "VSM_Out_RunSummary": 1
+    }
+  },
+  "stop": {
+    "modelName": "Model",
+    "stopped": true
+  },
+  "businessReview": "Separate Wu acceptance required; this script never closes GitHub"
+}

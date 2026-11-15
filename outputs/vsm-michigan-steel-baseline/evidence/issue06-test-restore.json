@@ -1,0 +1,402 @@
+{
+  "initial": [
+    {
+      "WIPRecordId": "InitialWIP_W01_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "4600",
+      "Location": "Stamping_to_Weld1",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Weld1",
+      "ProductionBatch": "InitialWIP_W01_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "230",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "1"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W01_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "2400",
+      "Location": "Stamping_to_Weld1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Weld1",
+      "ProductionBatch": "InitialWIP_W01_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "120",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "2"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W02_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1100",
+      "Location": "Weld1_to_Weld2",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Weld2",
+      "ProductionBatch": "InitialWIP_W02_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "55",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "3"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W02_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "600",
+      "Location": "Weld1_to_Weld2",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Weld2",
+      "ProductionBatch": "InitialWIP_W02_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "30",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "4"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1600",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "80",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "5"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "840",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "42",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "6"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_R_Tail",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "10",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_R_Tail",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "1",
+      "BatchUnitQuantity": "10",
+      "SourceRow": "7"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W04_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1200",
+      "Location": "Assembly1_to_Assembly2",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Assembly2",
+      "ProductionBatch": "InitialWIP_W04_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "60",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "8"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W04_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "640",
+      "Location": "Assembly1_to_Assembly2",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly2",
+      "ProductionBatch": "InitialWIP_W04_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "32",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "9"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W05_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "2700",
+      "Location": "Assembly2_to_Shipping",
+      "ProductType": "Left",
+      "CurrentResource": "Server_FG_Staging",
+      "ProductionBatch": "InitialWIP_W05_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "135",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "10"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W05_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1440",
+      "Location": "Assembly2_to_Shipping",
+      "ProductType": "Right",
+      "CurrentResource": "Server_FG_Staging",
+      "ProductionBatch": "InitialWIP_W05_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "72",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "11"
+    }
+  ],
+  "demand": [
+    {
+      "DemandID": "D01-L",
+      "Product": "Left",
+      "DueTime": "15.333333333333334",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D01-R",
+      "Product": "Right",
+      "DueTime": "15.333333333333334",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D02-L",
+      "Product": "Left",
+      "DueTime": "30.666666666666668",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D02-R",
+      "Product": "Right",
+      "DueTime": "30.666666666666668",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D03-L",
+      "Product": "Left",
+      "DueTime": "46.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D03-R",
+      "Product": "Right",
+      "DueTime": "46.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D04-L",
+      "Product": "Left",
+      "DueTime": "61.333333333333336",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D04-R",
+      "Product": "Right",
+      "DueTime": "61.333333333333336",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D05-L",
+      "Product": "Left",
+      "DueTime": "76.66666666666667",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D05-R",
+      "Product": "Right",
+      "DueTime": "76.66666666666667",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D06-L",
+      "Product": "Left",
+      "DueTime": "92.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D06-R",
+      "Product": "Right",
+      "DueTime": "92.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D07-L",
+      "Product": "Left",
+      "DueTime": "107.33333333333333",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D07-R",
+      "Product": "Right",
+      "DueTime": "107.33333333333333",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D08-L",
+      "Product": "Left",
+      "DueTime": "122.66666666666667",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D08-R",
+      "Product": "Right",
+      "DueTime": "122.66666666666667",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D09-L",
+      "Product": "Left",
+      "DueTime": "138.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D09-R",
+      "Product": "Right",
+      "DueTime": "138.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D10-L",
+      "Product": "Left",
+      "DueTime": "153.33333333333334",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D10-R",
+      "Product": "Right",
+      "DueTime": "153.33333333333334",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D11-L",
+      "Product": "Left",
+      "DueTime": "168.66666666666666",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D11-R",
+      "Product": "Right",
+      "DueTime": "168.66666666666666",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D12-L",
+      "Product": "Left",
+      "DueTime": "184.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D12-R",
+      "Product": "Right",
+      "DueTime": "184.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D13-L",
+      "Product": "Left",
+      "DueTime": "199.33333333333334",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D13-R",
+      "Product": "Right",
+      "DueTime": "199.33333333333334",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D14-L",
+      "Product": "Left",
+      "DueTime": "214.66666666666666",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D14-R",
+      "Product": "Right",
+      "DueTime": "214.66666666666666",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D15-L",
+      "Product": "Left",
+      "DueTime": "230.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D15-R",
+      "Product": "Right",
+      "DueTime": "230.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D16-L",
+      "Product": "Left",
+      "DueTime": "245.33333333333334",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D16-R",
+      "Product": "Right",
+      "DueTime": "245.33333333333334",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D17-L",
+      "Product": "Left",
+      "DueTime": "260.6666666666667",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D17-R",
+      "Product": "Right",
+      "DueTime": "260.6666666666667",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D18-L",
+      "Product": "Left",
+      "DueTime": "276.0",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D18-R",
+      "Product": "Right",
+      "DueTime": "276.0",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D19-L",
+      "Product": "Left",
+      "DueTime": "291.3333333333333",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D19-R",
+      "Product": "Right",
+      "DueTime": "291.3333333333333",
+      "DemandUnits": "320"
+    },
+    {
+      "DemandID": "D20-L",
+      "Product": "Left",
+      "DueTime": "306.6666666666667",
+      "DemandUnits": "600"
+    },
+    {
+      "DemandID": "D20-R",
+      "Product": "Right",
+      "DueTime": "306.6666666666667",
+      "DemandUnits": "320"
+    }
+  ],
+  "source": "2",
+  "clock": "<Process Name=\"VSM_DailyClock\" BeginStepID=\"2\" Scope=\"Public\" Description=\"每个有效工作日末先等待同刻正常完工/流转，再分配/盘点；第20日原生EndRun使当前时刻所有事件完成后结束，无额外时间偏移。\">\r\n  <Properties>\r\n    <Property Name=\"ReportStatistics\">True</Property>\r\n    <Property Name=\"TriggeringEventName\"></Property>\r\n    <Property Name=\"TriggeringEventCondition\"></Property>\r\n    <Property Name=\"ImmediatelyExecuteCondition\"></Property>\r\n    <Property Name=\"TokenClassName\">Token</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectDestroyed\">ContinueProcess</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectTransferRequested\">ContinueProcess</Property>\r\n    <Property Name=\"InitiallyEnabled\">True</Property>\r\n    <Property Name=\"AllowStepTrace\">True</Property>\r\n  </Properties>\r\n  <Steps>\r\n    <Step Type=\"Delay\" Name=\"等待同刻流转完毕\" Description=\"等待同刻流转完毕；按当前业务事件顺序执行。\" ID=\"2\">\r\n      <Properties>\r\n        <Property Name=\"DelayType\">ForTime</Property>\r\n        <Property Name=\"DelayTime\">Math.Epsilon</Property>\r\n        <Property Name=\"DelayEndTime\">VSM_ClockDay * Math.Round(VSM_WorkdayHours * 3600) / 3600</Property>\r\n        <Property Name=\"DelayMultiplier\">1</Property>\r\n        <Property Name=\"Interruptible\">False</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"3\" />\r\n    </Step>\r\n    <Step Type=\"Execute\" Name=\"分配到期需求\" Description=\"分配到期需求；按当前业务事件顺序执行。\" ID=\"3\">\r\n      <Properties>\r\n        <Property Name=\"ProcessName\">\r\n          <Value>VSM_AllocateDemand</Value>\r\n        </Property>\r\n        <Property Name=\"TokenWaitAction\">WaitUntilProcessCompleted</Property>\r\n        <Property Name=\"CopyTableRowReferencesFromCreatedToken\">True</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"10\" />\r\n    </Step>\r\n    <Step Type=\"Execute\" Name=\"输出当日来源盘点\" Description=\"输出当日来源盘点；按当前业务事件顺序执行。\" ID=\"4\">\r\n      <Properties>\r\n        <Property Name=\"ProcessName\">\r\n          <Value>VSM_WriteWIPSnapshot</Value>\r\n        </Property>\r\n        <Property Name=\"TokenWaitAction\">WaitUntilProcessCompleted</Property>\r\n        <Property Name=\"CopyTableRowReferencesFromCreatedToken\">True</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"5\" />\r\n    </Step>\r\n    <Step Type=\"Assign\" Name=\"进入下一工作日\" Description=\"进入下一工作日；按当前业务事件顺序执行。\" ID=\"5\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>VSM_ClockDay</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">VSM_ClockDay+1</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"6\" />\r\n    </Step>\r\n    <Step Type=\"Decide\" Name=\"仍有工作日\" Description=\"仍有工作日；按当前业务事件顺序执行。\" ID=\"6\">\r\n      <Properties>\r\n        <Property Name=\"DecideType\">ConditionBased</Property>\r\n        <Property Name=\"ConditionOrProbability\">VSM_ClockDay &lt;= VSM_NumberWorkdays</Property>\r\n        <Property Name=\"RandomNumberStream\">0</Property>\r\n      </Properties>\r\n      <Exit Name=\"True\" Type=\"Primary\" NextID=\"7\" />\r\n      <Exit Name=\"False\" Type=\"Alternate\" NextID=\"8\" />\r\n    </Step>\r\n    <Step Type=\"Delay\" Name=\"等待绝对日末\" Description=\"等待绝对日末；按当前业务事件顺序执行。\" ID=\"7\">\r\n      <Properties>\r\n        <Property Name=\"DelayType\">UntilTime</Property>\r\n        <Property Name=\"DelayTime\">0</Property>\r\n        <Property Name=\"DelayEndTime\">VSM_ClockDay * Math.Round(VSM_WorkdayHours * 3600) / 3600</Property>\r\n        <Property Name=\"DelayMultiplier\">1</Property>\r\n        <Property Name=\"Interruptible\">False</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"2\" />\r\n    </Step>\r\n    <Step Type=\"Execute\" Name=\"冻结期末结果\" Description=\"冻结期末结果；按当前业务事件顺序执行。\" ID=\"8\">\r\n      <Properties>\r\n        <Property Name=\"ProcessName\">\r\n          <Value>VSM_FinalOutputs</Value>\r\n        </Property>\r\n        <Property Name=\"TokenWaitAction\">WaitUntilProcessCompleted</Property>\r\n        <Property Name=\"CopyTableRowReferencesFromCreatedToken\">True</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"9\" />\r\n    </Step>\r\n    <Step Type=\"EndRun\" Name=\"完成本月当前事件\" Description=\"完成本月当前事件；按当前业务事件顺序执行。\" ID=\"9\">\r\n      <Properties />\r\n    </Step>\r\n    <Step Type=\"Delay\" Name=\"等待已交实体退出\" Description=\"等待已交实体退出；按当前业务事件顺序执行。\" ID=\"10\">\r\n      <Properties>\r\n        <Property Name=\"DelayType\">ForTime</Property>\r\n        <Property Name=\"DelayTime\">Math.Epsilon</Property>\r\n        <Property Name=\"DelayEndTime\">VSM_ClockDay * Math.Round(VSM_WorkdayHours * 3600) / 3600</Property>\r\n        <Property Name=\"DelayMultiplier\">1</Property>\r\n        <Property Name=\"Interruptible\">False</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"4\" />\r\n    </Step>\r\n  </Steps>\r\n</Process>"
+}

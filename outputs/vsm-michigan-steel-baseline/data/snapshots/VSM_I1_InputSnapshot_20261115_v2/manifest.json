@@ -1,0 +1,36 @@
+{
+  "snapshotId": "VSM_I1_InputSnapshot_20261115_v2",
+  "modelVersion": "VSM_V0.12_FlowDemandLedgerCandidate",
+  "modelPackageSHA256": "73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f",
+  "persistence": "user saved, closed, reopened, and native readback passed",
+  "capturedFrom": "native MCP design/parameter tables; property columns only; no runtime states imported as business input",
+  "files": {
+    "VSM_InitialWIPTable.csv": "80864f3496c31bd2a5388a51867395c224e2c5ae1f056283e4c701cac26c31b7",
+    "VSM_OperationTable.csv": "2662305e2b979333522724863cf92926176b8986feecf2c80cbea09b2353d21e",
+    "VSM_ReliabilityTable.csv": "51d337823246f062d0d9b7d4c93eea094a05564777edf293665bf180593465e9",
+    "VSM_ScenarioTable.csv": "fc58aa567e3a4d3fee463f0b66faf05c9b39d18bc5f6d32d89a60111b9648a60",
+    "VSM_SourceLedger.csv": "4fba5765ce15a5522bb6b8ab4bbea433f981a4a4468660e581261a3fc1940762",
+    "VSM_DemandLedger.csv": "0634dc471ec7dfc59b67834aa9ee495ab66437503c72ac327e2a5fec2b8d5fb6",
+    "assumptions-register.csv": "6a7b8a54c93bec196694b9c771611f5c4532b0884d02e88e7e73f15ac4e76697"
+  },
+  "randomness": {
+    "nativeReplication": 20261114,
+    "processStreams": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "failureRepairStreams": [
+      201,
+      202,
+      211,
+      212
+    ],
+    "arbitraryMasterSeedSet": false,
+    "researchMapping": "Issue08 pending"
+  },
+  "runHorizonSeconds": 1104000,
+  "workdaySeconds": 55200
+}

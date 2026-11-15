@@ -1,0 +1,595 @@
+[
+  {
+    "tool": "create_model_item",
+    "args": {
+      "path": "/Project/Model/Elements",
+      "name": "VSM_DemandClock",
+      "type": "Timer"
+    },
+    "response": {
+      "name": "VSM_DemandClock",
+      "type": "Timer",
+      "path": "/Project/Model/Elements/VSM_DemandClock"
+    }
+  },
+  {
+    "tool": "get_properties",
+    "args": {
+      "path": "/Project/Model/Elements/VSM_DemandClock"
+    },
+    "response": {
+      "path": "/Project/Model/Elements/VSM_DemandClock",
+      "count": 12,
+      "items": [
+        {
+          "name": "产品名称",
+          "value": "VSM_DemandClock",
+          "type": "String",
+          "description": "本实例的名称。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "说明",
+          "value": "",
+          "type": "String",
+          "description": "说明文字此实例。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "公",
+          "value": "True",
+          "type": "Boolean",
+          "description": "指示此实例是其包含的对象以外的公开访问。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "Report Statistics",
+          "value": "True",
+          "type": "Boolean",
+          "description": "Indicates whether statistics are to be automatically reported for this object or element.",
+          "readOnly": false,
+          "category": "General",
+          "allowedValues": [
+            "False",
+            "True"
+          ]
+        },
+        {
+          "name": "Interval Type",
+          "value": "Time",
+          "type": "Enum",
+          "description": "The method used to determine the time interval between two successive timer events.",
+          "readOnly": false,
+          "category": "Basic Logic",
+          "allowedValues": [
+            "Time",
+            "TimeInState",
+            "RateTable",
+            "EventCount",
+            "ArrivalTable"
+          ]
+        },
+        {
+          "name": "Time Offset",
+          "value": "0.0",
+          "type": "Expression",
+          "description": "Expression that is evaluated once when the timer is initialized or reset. Indicates the time offset until the first timer event.",
+          "readOnly": false,
+          "category": "Basic Logic",
+          "allowedValues": [
+            "Infinity"
+          ],
+          "unitType": "Time",
+          "units": "Hours",
+          "unitsDefault": "Hours",
+          "availableUnits": [
+            "Hours",
+            "Minutes",
+            "Seconds",
+            "Days",
+            "Weeks"
+          ]
+        },
+        {
+          "name": "Time Interval",
+          "value": "1.0",
+          "type": "Expression",
+          "description": "Expression that is evaluated whenever the timer fires its event. Indicates the time until the next timer event.",
+          "readOnly": false,
+          "category": "Basic Logic",
+          "allowedValues": [
+            "Infinity"
+          ],
+          "unitType": "Time",
+          "units": "Hours",
+          "unitsDefault": "Hours",
+          "availableUnits": [
+            "Hours",
+            "Minutes",
+            "Seconds",
+            "Days",
+            "Weeks"
+          ]
+        },
+        {
+          "name": "Triggered Process Name",
+          "value": "",
+          "type": "Process",
+          "description": "Optional process that executes immediately when the timer's event fires, before any other events scheduled on the simulation's current events calendar.",
+          "readOnly": false,
+          "category": "Basic Logic",
+          "allowedValues": [
+            "null",
+            "VSM_InitializeWIP",
+            "VSM_OnEnterAssembly1WIP",
+            "VSM_OnEnterAssembly2WIP",
+            "VSM_OnEnterFGStagingWIP",
+            "VSM_OnEnterStampingWIP",
+            "VSM_OnEnterWeld1WIP",
+            "VSM_OnEnterWeld2WIP",
+            "VSM_OnExitAssembly1WIP",
+            "VSM_OnExitAssembly2WIP",
+            "VSM_OnExitFGStagingWIP",
+            "VSM_OnExitStampingWIP",
+            "VSM_OnExitWeld1WIP",
+            "VSM_OnExitWeld2WIP",
+            "VSM_OnShipment"
+          ]
+        },
+        {
+          "name": "Maximum Events",
+          "value": "Infinity",
+          "type": "Expression",
+          "description": "The maximum number of times after initialization or reset that the timer can fire its event.",
+          "readOnly": false,
+          "category": "Stopping Conditions",
+          "allowedValues": [
+            "Infinity"
+          ]
+        },
+        {
+          "name": "Maximum Time",
+          "value": "Infinity",
+          "type": "Expression",
+          "description": "The maximum time allowed after initialization or reset that the timer can fire events.",
+          "readOnly": false,
+          "category": "Stopping Conditions",
+          "allowedValues": [
+            "Infinity"
+          ],
+          "unitType": "Time",
+          "units": "Hours",
+          "unitsDefault": "Hours",
+          "availableUnits": [
+            "Hours",
+            "Minutes",
+            "Seconds",
+            "Days",
+            "Weeks"
+          ]
+        },
+        {
+          "name": "Reset Event Name",
+          "value": "",
+          "type": "Event",
+          "description": "The name of the event whose occurrence will trigger a reset of the timer.",
+          "readOnly": false,
+          "category": "Advanced Options",
+          "allowedValues": [
+            "null",
+            "Entity.Destroyed",
+            "Entity.Engaged",
+            "Entity.Transferred",
+            "Entity.Transferring",
+            "Input@Server_Assembly1.Entered",
+            "Input@Server_Assembly1.Exited",
+            "Input@Server_Assembly2.Entered",
+            "Input@Server_Assembly2.Exited",
+            "Input@Server_FG_Staging.Entered",
+            "Input@Server_FG_Staging.Exited",
+            "Input@Server_Stamping.Entered",
+            "Input@Server_Stamping.Exited",
+            "Input@Server_Weld1.Entered",
+            "Input@Server_Weld1.Exited",
+            "Input@Server_Weld2.Entered",
+            "Input@Server_Weld2.Exited",
+            "Input@Sink_Shipping.Entered",
+            "Input@Sink_Shipping.Exited",
+            "ModelEntity.Destroyed",
+            "ModelEntity.Engaged",
+            "ModelEntity.Transferred",
+            "ModelEntity.Transferring",
+            "Output@Server_Assembly1.Entered",
+            "Output@Server_Assembly1.Exited",
+            "Output@Server_Assembly1.RiderWaiting",
+            "Output@Server_Assembly2.Entered",
+            "Output@Server_Assembly2.Exited",
+            "Output@Server_Assembly2.RiderWaiting",
+            "Output@Server_FG_Staging.Entered",
+            "Output@Server_FG_Staging.Exited",
+            "Output@Server_FG_Staging.RiderWaiting",
+            "Output@Server_Stamping.Entered",
+            "Output@Server_Stamping.Exited",
+            "Output@Server_Stamping.RiderWaiting",
+            "Output@Server_Weld1.Entered",
+            "Output@Server_Weld1.Exited",
+            "Output@Server_Weld1.RiderWaiting",
+            "Output@Server_Weld2.Entered",
+            "Output@Server_Weld2.Exited",
+            "Output@Server_Weld2.RiderWaiting",
+            "Output@Source_ProductionRelease.Entered",
+            "Output@Source_ProductionRelease.Exited",
+            "Output@Source_ProductionRelease.RiderWaiting",
+            "Server_Assembly1.CapacityChanged",
+            "Server_Assembly1.Failed",
+            "Server_Assembly1.Repaired",
+            "Server_Assembly2.CapacityChanged",
+            "Server_Assembly2.Failed",
+            "Server_Assembly2.Repaired",
+            "Server_FG_Staging.CapacityChanged",
+            "Server_FG_Staging.Failed",
+            "Server_FG_Staging.Repaired",
+            "Server_Stamping.CapacityChanged",
+            "Server_Stamping.Failed",
+            "Server_Stamping.Repaired",
+            "Server_Weld1.CapacityChanged",
+            "Server_Weld1.Failed",
+            "Server_Weld1.Repaired",
+            "Server_Weld2.CapacityChanged",
+            "Server_Weld2.Failed",
+            "Server_Weld2.Repaired",
+            "Transfer_InitialWIP.Entered",
+            "Transfer_InitialWIP.Exited",
+            "Transfer_InitialWIP.RiderWaiting",
+            "Transporter.Destroyed",
+            "Transporter.Engaged",
+            "Transporter.Transferred",
+            "Transporter.Transferring",
+            "VSM_DemandClock.Event"
+          ]
+        },
+        {
+          "name": "Initially Enabled",
+          "value": "True",
+          "type": "Expression",
+          "description": "Condition indicating whether the timer is enabled when the system is initialized.\r\n\r\nNOTE: Refer to the user-assignable ‘Enabled’ state variable of a timer to dynamically enable or disable it during a simulation run.",
+          "readOnly": false,
+          "category": "Advanced Options",
+          "allowedValues": [
+            "Infinity"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_properties",
+    "args": {
+      "path": "/Project/Model/Tables/VSM_Out_WIPSnapshot/Columns/SourceID"
+    },
+    "response": {
+      "path": "/Project/Model/Tables/VSM_Out_WIPSnapshot/Columns/SourceID",
+      "count": 10,
+      "items": [
+        {
+          "name": "名称",
+          "value": "SourceID",
+          "type": "String",
+          "description": "状态名。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "描述",
+          "value": "",
+          "type": "String",
+          "description": "这种状态下的说明文字。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "公共",
+          "value": "True",
+          "type": "Boolean",
+          "description": "指定如果这个状态是可以公开访问其包含的对象之外。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "尺寸类型",
+          "value": "纯量",
+          "type": "String",
+          "description": "状态变量的尺寸类型。支持的类型：1）标量 - 状态变量是一个单值。 2）向量 - 状态变量是一维数组的值。 3）矩阵 - 状态变量是一个2维数组的值。从表4）矩阵 - 来自一个指定的表的尺寸大小和初始值状态变量是一个2维数组。 5）n维数组 - 状态变量是一个N维的多维数组。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "纯量",
+            "向量",
+            "矩阵",
+            "表或重复组中的矩阵",
+            "3维数组",
+            "4维数组",
+            "5维数组",
+            "6维数组",
+            "7维数组",
+            "8维数组",
+            "9维数组",
+            "10维数组"
+          ]
+        },
+        {
+          "name": "初始状态值",
+          "value": "",
+          "type": "String",
+          "description": "这种状态下的初始值。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "自动复位时清零统计",
+          "value": "False",
+          "type": "Boolean",
+          "description": "指示此状态变量是否会自动复位到初始状态值（S）时的统计数据，为国家的父对象或元素将被清除。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "显示名称",
+          "value": "SourceID",
+          "type": "String",
+          "description": "作为这个国家的名称时，显示的业务规划用户的可选字符串。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "看得见",
+          "value": "True",
+          "type": "Boolean",
+          "description": "如果为true，则状态在运行计划表中的数据可见。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "分类名称",
+          "value": "",
+          "type": "String",
+          "description": "可选的字符串，用来显示该状态的业务规划用户的类别。如果违约，那么这个词“国家”。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "Is Key",
+          "value": "False",
+          "type": "Boolean",
+          "description": "Whether this table column is part of the table key.",
+          "readOnly": false,
+          "category": ""
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_properties",
+    "args": {
+      "path": "/Project/ModelEntity/States/VSM_QuantityState"
+    },
+    "response": {
+      "path": "/Project/ModelEntity/States/VSM_QuantityState",
+      "count": 8,
+      "items": [
+        {
+          "name": "名称",
+          "value": "VSM_QuantityState",
+          "type": "String",
+          "description": "状态名。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "描述",
+          "value": "实体代表的工件数量；默认生产释放批次为20件，初始WIP尾批可小于20。单位：件；在初始WIP初始化或生产释放时赋值，之后随实体一起流转。",
+          "type": "String",
+          "description": "这种状态下的说明文字。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "公共",
+          "value": "True",
+          "type": "Boolean",
+          "description": "指定如果这个状态是可以公开访问其包含的对象之外。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "尺寸类型",
+          "value": "纯量",
+          "type": "String",
+          "description": "状态变量的尺寸类型。支持的类型：1）标量 - 状态变量是一个单值。 2）向量 - 状态变量是一维数组的值。 3）矩阵 - 状态变量是一个2维数组的值。从表4）矩阵 - 来自一个指定的表的尺寸大小和初始值状态变量是一个2维数组。 5）n维数组 - 状态变量是一个N维的多维数组。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "纯量",
+            "向量",
+            "矩阵",
+            "表或重复组中的矩阵",
+            "3维数组",
+            "4维数组",
+            "5维数组",
+            "6维数组",
+            "7维数组",
+            "8维数组",
+            "9维数组",
+            "10维数组"
+          ]
+        },
+        {
+          "name": "单位类型",
+          "value": "Unspecified",
+          "type": "Enum",
+          "description": "分类在此状态变量中存储的值的单位。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "单位类型属性",
+          "value": "",
+          "type": "String",
+          "description": "其值的属性的名称，将用于确定该状态下的单位分类。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "初始状态值",
+          "value": "0",
+          "type": "Int32",
+          "description": "这种状态下的初始值。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "自动复位时清零统计",
+          "value": "False",
+          "type": "Boolean",
+          "description": "指示此状态变量是否会自动复位到初始状态值（S）时的统计数据，为国家的父对象或元素将被清除。",
+          "readOnly": false,
+          "category": ""
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_properties",
+    "args": {
+      "path": "/Project/Model/Links/Link_Assembly2ToShipping"
+    },
+    "response": {
+      "path": "/Project/Model/Links/Link_Assembly2ToShipping",
+      "count": 11,
+      "items": [
+        {
+          "name": "产品名称",
+          "value": "Link_Assembly2ToShipping",
+          "type": "String",
+          "description": "本实例的名称。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "说明",
+          "value": "Assembly 2 输出到 Shipping；当前以零行程时间 Connector 表达制造流程结束。",
+          "type": "String",
+          "description": "说明文字此实例。",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "公",
+          "value": "True",
+          "type": "Boolean",
+          "description": "指示此实例是其包含的对象以外的公开访问。",
+          "readOnly": false,
+          "category": "",
+          "allowedValues": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "name": "Report Statistics",
+          "value": "False",
+          "type": "Boolean",
+          "description": "Indicates whether statistics are to be automatically reported for this object or element.",
+          "readOnly": false,
+          "category": "General",
+          "allowedValues": [
+            "False",
+            "True"
+          ]
+        },
+        {
+          "name": "Display Name",
+          "value": "",
+          "type": "Expression",
+          "description": "String expression returning the name displayed for this object in log entries and trace. If not specified, then this property defaults to the object's unique name.",
+          "readOnly": false,
+          "category": "Advanced Options",
+          "allowedValues": [
+            "Infinity"
+          ]
+        },
+        {
+          "name": "Selection Weight",
+          "value": "1.0",
+          "type": "Expression",
+          "description": "The weight expression for this link if using a 'By Link Weight' rule to select an outbound link from a node.",
+          "readOnly": false,
+          "category": "Routing Logic",
+          "allowedValues": [
+            "Infinity"
+          ]
+        },
+        {
+          "name": "Cross Section Shape",
+          "value": "Rectangle",
+          "type": "Enum",
+          "description": "Specifies the geometric shape of this link's cross section.",
+          "readOnly": false,
+          "category": "General/Physical Characteristics",
+          "allowedValues": [
+            "Rectangle",
+            "Ellipse",
+            "Trapezoid"
+          ]
+        },
+        {
+          "name": "Size",
+          "value": "4.07 x 0 x 0",
+          "type": "String",
+          "description": "Gets or sets the current volume size of the object in cubic meters. Has state parameters Size.Length, Size.Width, and Size.Height.",
+          "readOnly": true,
+          "category": ""
+        },
+        {
+          "name": "Length",
+          "value": "4.07",
+          "type": "Double",
+          "description": "",
+          "readOnly": true,
+          "category": ""
+        },
+        {
+          "name": "Width",
+          "value": "0",
+          "type": "Double",
+          "description": "",
+          "readOnly": false,
+          "category": ""
+        },
+        {
+          "name": "Height",
+          "value": "0",
+          "type": "Double",
+          "description": "",
+          "readOnly": false,
+          "category": ""
+        }
+      ]
+    }
+  }
+]

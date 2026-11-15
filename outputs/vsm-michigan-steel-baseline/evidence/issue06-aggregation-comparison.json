@@ -1,0 +1,146 @@
+[
+  {
+    "q": 20,
+    "demand": {
+      "DemandUnits": 18400.0,
+      "OnTime": 18250.0,
+      "LateByHorizon": 150.0,
+      "Unfilled": 0.0
+    },
+    "received": 35530.0,
+    "shipped": 18400.0,
+    "manufacturingCTHours": 249.59999999999698,
+    "completedNewUnits": 6640.0,
+    "censoredUnits": 11760.0,
+    "batches": [
+      {
+        "row_index": "0",
+        "SourceID": "P1-L",
+        "Planned": "6000",
+        "Released": "6000",
+        "Manufactured": "6000",
+        "Shipped": "800",
+        "Unmanufactured": "0",
+        "Unshipped": "5200",
+        "Complete": "0",
+        "FirstRelease": "0",
+        "LastShipment": "306.6666666666667",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "1",
+        "SourceID": "P1-R",
+        "Planned": "3200",
+        "Released": "3200",
+        "Manufactured": "640",
+        "Shipped": "470",
+        "Unmanufactured": "2560",
+        "Unshipped": "2730",
+        "Complete": "0",
+        "FirstRelease": "0",
+        "LastShipment": "306.6666666666667",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "2",
+        "SourceID": "P2-L",
+        "Planned": "6000",
+        "Released": "6000",
+        "Manufactured": "0",
+        "Shipped": "0",
+        "Unmanufactured": "6000",
+        "Unshipped": "6000",
+        "Complete": "0",
+        "FirstRelease": "153.33333333333334",
+        "LastShipment": "-1",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "3",
+        "SourceID": "P2-R",
+        "Planned": "3200",
+        "Released": "3200",
+        "Manufactured": "0",
+        "Shipped": "0",
+        "Unmanufactured": "3200",
+        "Unshipped": "3200",
+        "Complete": "0",
+        "FirstRelease": "153.33333333333334",
+        "LastShipment": "-1",
+        "Makespan": "-1"
+      }
+    ]
+  },
+  {
+    "q": 1,
+    "demand": {
+      "DemandUnits": 18400.0,
+      "OnTime": 18250.0,
+      "LateByHorizon": 150.0,
+      "Unfilled": 0.0
+    },
+    "received": 35530.0,
+    "shipped": 18400.0,
+    "manufacturingCTHours": 249.35444444439852,
+    "completedNewUnits": 6655.0,
+    "censoredUnits": 11745.0,
+    "batches": [
+      {
+        "row_index": "0",
+        "SourceID": "P1-L",
+        "Planned": "6000",
+        "Released": "6000",
+        "Manufactured": "6000",
+        "Shipped": "800",
+        "Unmanufactured": "0",
+        "Unshipped": "5200",
+        "Complete": "0",
+        "FirstRelease": "0",
+        "LastShipment": "306.6666666666667",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "1",
+        "SourceID": "P1-R",
+        "Planned": "3200",
+        "Released": "3200",
+        "Manufactured": "655",
+        "Shipped": "470",
+        "Unmanufactured": "2545",
+        "Unshipped": "2730",
+        "Complete": "0",
+        "FirstRelease": "0",
+        "LastShipment": "306.6666666666667",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "2",
+        "SourceID": "P2-L",
+        "Planned": "6000",
+        "Released": "6000",
+        "Manufactured": "0",
+        "Shipped": "0",
+        "Unmanufactured": "6000",
+        "Unshipped": "6000",
+        "Complete": "0",
+        "FirstRelease": "153.33333333333334",
+        "LastShipment": "-1",
+        "Makespan": "-1"
+      },
+      {
+        "row_index": "3",
+        "SourceID": "P2-R",
+        "Planned": "3200",
+        "Released": "3200",
+        "Manufactured": "0",
+        "Shipped": "0",
+        "Unmanufactured": "3200",
+        "Unshipped": "3200",
+        "Complete": "0",
+        "FirstRelease": "153.33333333333334",
+        "LastShipment": "-1",
+        "Makespan": "-1"
+      }
+    ]
+  }
+]

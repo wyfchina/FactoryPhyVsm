@@ -1,0 +1,174 @@
+{
+  "initial": [
+    {
+      "WIPRecordId": "InitialWIP_W01_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "4600",
+      "Location": "Stamping_to_Weld1",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Weld1",
+      "ProductionBatch": "InitialWIP_W01_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "230",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "1"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W01_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "2400",
+      "Location": "Stamping_to_Weld1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Weld1",
+      "ProductionBatch": "InitialWIP_W01_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "120",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "2"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W02_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1100",
+      "Location": "Weld1_to_Weld2",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Weld2",
+      "ProductionBatch": "InitialWIP_W02_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "55",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "3"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W02_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "600",
+      "Location": "Weld1_to_Weld2",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Weld2",
+      "ProductionBatch": "InitialWIP_W02_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "30",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "4"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1600",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "80",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "5"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "840",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "42",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "6"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W03_R_Tail",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "10",
+      "Location": "Weld2_to_Assembly1",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly1",
+      "ProductionBatch": "InitialWIP_W03_R_Tail",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "1",
+      "BatchUnitQuantity": "10",
+      "SourceRow": "7"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W04_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1200",
+      "Location": "Assembly1_to_Assembly2",
+      "ProductType": "Left",
+      "CurrentResource": "Server_Assembly2",
+      "ProductionBatch": "InitialWIP_W04_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "60",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "8"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W04_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "640",
+      "Location": "Assembly1_to_Assembly2",
+      "ProductType": "Right",
+      "CurrentResource": "Server_Assembly2",
+      "ProductionBatch": "InitialWIP_W04_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "32",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "9"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W05_L",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "2700",
+      "Location": "Assembly2_to_Shipping",
+      "ProductType": "Left",
+      "CurrentResource": "Server_FG_Staging",
+      "ProductionBatch": "InitialWIP_W05_L",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "135",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "10"
+    },
+    {
+      "WIPRecordId": "InitialWIP_W05_R",
+      "ArrivalTime": "0",
+      "EntitiesPerArrival": "1440",
+      "Location": "Assembly2_to_Shipping",
+      "ProductType": "Right",
+      "CurrentResource": "Server_FG_Staging",
+      "ProductionBatch": "InitialWIP_W05_R",
+      "ReleaseTimeHours": "0",
+      "TrayID": "0",
+      "BatchEntityCount": "72",
+      "BatchUnitQuantity": "20",
+      "SourceRow": "11"
+    }
+  ],
+  "source": {
+    "Entities Per Arrival": "9200 / VSM_EntityUnitQuantity",
+    "Maximum Arrivals": "2"
+  },
+  "release": "<Process Name=\"VSM_OnProductionRelease\" BeginStepID=\"2\" Scope=\"Public\" Description=\"两轮生产释放：每轮先L6000后R3200；独立工单P1/P2；单位件；来源行号12–15。\">\r\n  <Properties>\r\n    <Property Name=\"ReportStatistics\">True</Property>\r\n    <Property Name=\"TriggeringEventName\">Output@Source_ProductionRelease.Entered</Property>\r\n    <Property Name=\"TriggeringEventCondition\"></Property>\r\n    <Property Name=\"ImmediatelyExecuteCondition\"></Property>\r\n    <Property Name=\"TokenClassName\">Token</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectDestroyed\">ContinueProcess</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectTransferRequested\">ContinueProcess</Property>\r\n    <Property Name=\"InitiallyEnabled\">True</Property>\r\n    <Property Name=\"AllowStepTrace\">True</Property>\r\n  </Properties>\r\n  <Steps>\r\n    <Step Type=\"Assign\" Name=\"登记释放序号\" Description=\"登记释放序号；按当前业务事件顺序执行。\" ID=\"2\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>VSM_ReleaseSequence</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">VSM_ReleaseSequence + VSM_EntityUnitQuantity</Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"3\" />\r\n    </Step>\r\n    <Step Type=\"Assign\" Name=\"识别工单产品\" Description=\"识别工单产品；按当前业务事件顺序执行。\" ID=\"3\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>ModelEntity.VSM_SourceRow</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">12 + 2*Math.Floor((VSM_ReleaseSequence-1)/9200) + Math.If(VSM_ReleaseSequence - 9200*Math.Floor((VSM_ReleaseSequence-1)/9200) &lt;= 6000,0,1)</Property>\r\n        <Property Name=\"Assignments\">\r\n          <Rows>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_QuantityState</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">VSM_EntityUnitQuantity</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_ProductTypeState</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">VSM_SourceLedger[ModelEntity.VSM_SourceRow].Product</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_ProductionBatchState</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">VSM_SourceLedger[ModelEntity.VSM_SourceRow].SourceID</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_ReleaseTimeHoursState</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">TimeNow</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_TrayIDState</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">Math.Floor((VSM_ReleaseSequence-1)/VSM_EntityUnitQuantity)+1</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n          </Rows>\r\n        </Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"4\" />\r\n    </Step>\r\n    <Step Type=\"Assign\" Name=\"登记工单下达\" Description=\"登记工单下达；按当前业务事件顺序执行。\" ID=\"4\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>VSM_SourceLedger[ModelEntity.VSM_SourceRow].Received</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">VSM_SourceLedger[ModelEntity.VSM_SourceRow].Received+ModelEntity.VSM_QuantityState</Property>\r\n        <Property Name=\"Assignments\">\r\n          <Rows>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>VSM_SourceLedger[ModelEntity.VSM_SourceRow].FirstRelease</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">TimeNow</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>VSM_LeftReleasedCount</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">VSM_LeftReleasedCount + Math.If(ModelEntity.VSM_ProductTypeState == \"Left\",ModelEntity.VSM_QuantityState,0)</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>VSM_RightReleasedCount</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">VSM_RightReleasedCount + Math.If(ModelEntity.VSM_ProductTypeState == \"Right\",ModelEntity.VSM_QuantityState,0)</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n          </Rows>\r\n        </Property>\r\n      </Properties>\r\n    </Step>\r\n  </Steps>\r\n</Process>",
+  "prepare": "<Process Name=\"VSM_PrepareStamping\" BeginStepID=\"2\" Scope=\"Public\" Description=\"设备容量已分配后，先冻结每件独立指数加工样本总和，再按前后产品冻结换型时间；随后更新设备产品，原生Server负责占用、故障暂停及剩余时间恢复。\">\r\n  <Properties>\r\n    <Property Name=\"ReportStatistics\">True</Property>\r\n    <Property Name=\"TriggeringEventName\"></Property>\r\n    <Property Name=\"TriggeringEventCondition\"></Property>\r\n    <Property Name=\"ImmediatelyExecuteCondition\"></Property>\r\n    <Property Name=\"TokenClassName\">Token</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectDestroyed\">ContinueProcess</Property>\r\n    <Property Name=\"TokenActionOnAssociatedObjectTransferRequested\">ContinueProcess</Property>\r\n    <Property Name=\"InitiallyEnabled\">True</Property>\r\n    <Property Name=\"AllowStepTrace\">True</Property>\r\n  </Properties>\r\n  <Steps>\r\n    <Step Type=\"Assign\" Name=\"冻结本工序时间\" Description=\"冻结本工序时间；按当前业务事件顺序执行。\" ID=\"2\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>ModelEntity.VSM_OperationStartTime</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">TimeNow</Property>\r\n        <Property Name=\"Assignments\">\r\n          <Rows>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_ServiceTime</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">Math.SumOfSamples(Random.Exponential(VSM_OperationTable[1].ProcessTimeSeconds,VSM_OperationTable[1].ProcessingStream),ModelEntity.VSM_QuantityState)</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>ModelEntity.VSM_SetupTime</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">Math.If(VSM_EnableSetups==1 &amp;&amp; VSM_StampingLastProduct!=\"\" &amp;&amp; VSM_StampingLastProduct!=ModelEntity.VSM_ProductTypeState,VSM_OperationTable[1].SetupMinutes,0)</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n          </Rows>\r\n        </Property>\r\n      </Properties>\r\n      <Exit Name=\"Exit\" Type=\"Primary\" NextID=\"3\" />\r\n    </Step>\r\n    <Step Type=\"Assign\" Name=\"登记本次设备产品\" Description=\"登记本次设备产品；按当前业务事件顺序执行。\" ID=\"3\">\r\n      <Properties>\r\n        <Property Name=\"StateVariableName\">\r\n          <Value>VSM_StampingSetupCount</Value>\r\n        </Property>\r\n        <Property Name=\"NewValue\">VSM_StampingSetupCount+Math.If(ModelEntity.VSM_SetupTime&gt;0,1,0)</Property>\r\n        <Property Name=\"Assignments\">\r\n          <Rows>\r\n            <Properties>\r\n              <Property Name=\"AssignmentsStateVariableName\">\r\n                <Value>VSM_StampingLastProduct</Value>\r\n              </Property>\r\n              <Property Name=\"AssignmentsNewValue\">ModelEntity.VSM_ProductTypeState</Property>\r\n              <Property Name=\"AssignmentsSkipAssignmentCondition\"></Property>\r\n            </Properties>\r\n          </Rows>\r\n        </Property>\r\n      </Properties>\r\n    </Step>\r\n  </Steps>\r\n</Process>",
+  "reliability": {
+    "Stamping": {
+      "Uptime Between Failures": "Random.Exponential(VSM_ReliabilityTable[1].MTTFHours,VSM_ReliabilityTable[1].FailureStream)",
+      "Time To Repair": "Random.Exponential(VSM_ReliabilityTable[1].MTTRHours,VSM_ReliabilityTable[1].RepairStream)"
+    },
+    "Weld2": {
+      "Uptime Between Failures": "Random.Exponential(VSM_ReliabilityTable[3].MTTFHours,VSM_ReliabilityTable[3].FailureStream)",
+      "Time To Repair": "Random.Exponential(VSM_ReliabilityTable[3].MTTRHours,VSM_ReliabilityTable[3].RepairStream)"
+    }
+  }
+}

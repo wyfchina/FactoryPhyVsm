@@ -1,0 +1,2950 @@
+{
+  "result": {
+    "tools": [
+      {
+        "name": "get_dashboard_definition",
+        "description": "Gets the raw XML definition for a model or experiment dashboard. Use /Project/{Model}/Dashboards/{DashboardName} for model dashboards or /Project/{Model}/ExperimentDashboards/{DashboardName} for experiment dashboards.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the dashboard definition. Example: /Project/MyModel/Dashboards/MyDashboard",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_dashboard_definition",
+        "description": "Replaces the raw XML definition for an existing model or experiment dashboard. The XML must be well-formed. Existing dashboard traits and chart-item settings are preserved. Use /Project/{Model}/Dashboards/{DashboardName} for model dashboards or /Project/{Model}/ExperimentDashboards/{DashboardName} for experiment dashboards.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the dashboard definition. Example: /Project/MyModel/Dashboards/MyDashboard",
+              "type": "string"
+            },
+            "xml": {
+              "description": "Well-formed dashboard XML to store as UTF-8.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "xml"
+          ]
+        }
+      },
+      {
+        "name": "add_data_connector",
+        "description": "Creates a data importer or exporter in a model. Use list_available_model_item_types with DataImporters or DataExporters to discover the connector type name and stable id. Use get_properties/set_property on the connector path to inspect or edit its values.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Model path. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "kind": {
+              "description": "Connector kind: 'importer' or 'exporter'.",
+              "type": "string"
+            },
+            "type": {
+              "description": "Installed connector type name or definition GUID.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional connector instance name. If omitted, a unique name is generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelPath",
+            "kind",
+            "type"
+          ]
+        }
+      },
+      {
+        "name": "remove_data_connector",
+        "description": "Removes a data importer or exporter and its bindings from all tables and logs.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "connectorPath": {
+              "description": "Connector path. Example: /Project/MyModel/DataImporters/ExcelImporter",
+              "type": "string"
+            }
+          },
+          "required": [
+            "connectorPath"
+          ]
+        }
+      },
+      {
+        "name": "add_data_connector_configuration",
+        "description": "Adds a named configuration state to a data connector. Use set_active_data_connector_configuration to select it. Configurations only need to be added when different cohorts of data need to be referenced by all tables/logs using connection (for example, 'Testing' vs 'Production' data). Otherwise, the always available [Default] configuration should be enough for most purposes.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "connectorPath": {
+              "description": "Connector path.",
+              "type": "string"
+            },
+            "name": {
+              "description": "New configuration name. '[Default]' is reserved.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "connectorPath",
+            "name"
+          ]
+        }
+      },
+      {
+        "name": "remove_data_connector_configuration",
+        "description": "Removes a named data connector configuration. The reserved [Default] configuration cannot be removed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "configurationPath": {
+              "description": "Configuration state path used to identify the state for removal. Example: /Project/MyModel/DataImporters/Excel/Configurations/Production",
+              "type": "string"
+            }
+          },
+          "required": [
+            "configurationPath"
+          ]
+        }
+      },
+      {
+        "name": "set_active_data_connector_configuration",
+        "description": "Sets the active configuration on a connector. Use '[Default]' to return to the default configuration.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "connectorPath": {
+              "description": "Connector path.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Configuration name, or '[Default]' to clear the active named configuration.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "connectorPath",
+            "name"
+          ]
+        }
+      },
+      {
+        "name": "apply_data_connector",
+        "description": "Applies a data connector to a table or exportable log. Importers can be applied only to tables; exporters can be applied to tables or logs.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "targetPath": {
+              "description": "Target table or log path.",
+              "type": "string"
+            },
+            "connectorPath": {
+              "description": "Connector path.",
+              "type": "string"
+            },
+            "makeCurrent": {
+              "description": "Whether to make the new binding current. Default true.",
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "targetPath",
+            "connectorPath"
+          ]
+        }
+      },
+      {
+        "name": "remove_data_connector_binding",
+        "description": "Removes one data connector binding from a table or exportable log.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "targetPath": {
+              "description": "Target table or log path.",
+              "type": "string"
+            },
+            "connectorPath": {
+              "description": "Connector path.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "targetPath",
+            "connectorPath"
+          ]
+        }
+      },
+      {
+        "name": "set_active_data_connector_binding",
+        "description": "Selects an already-applied connector binding as current. Pass a null connectorPath to clear a table/log binding.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "targetPath": {
+              "description": "Target table or log path.",
+              "type": "string"
+            },
+            "connectorPath": {
+              "description": "Connector path, or null to clear the current binding.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "direction": {
+              "description": "Required when clearing a table binding: 'import' or 'export'.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "targetPath"
+          ]
+        }
+      },
+      {
+        "name": "run_data_connector",
+        "description": "Runs a manual data connector operation. Imports require a table; exports support a table or exportable log. Export context is 'interactive' or 'planning'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "targetPath": {
+              "description": "Target table or log path.",
+              "type": "string"
+            },
+            "operation": {
+              "description": "Operation: 'import' or 'export'.",
+              "type": "string"
+            },
+            "context": {
+              "description": "Export context: 'interactive' or 'planning'.",
+              "type": "string",
+              "default": "interactive"
+            }
+          },
+          "required": [
+            "targetPath",
+            "operation"
+          ]
+        }
+      },
+      {
+        "name": "list_drawing_objects",
+        "description": "Lists all drawing objects in a model's facility view with type, index, and position info.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "typeFilter": {
+              "description": "Optional type filter (e.g., 'Rectangle', 'Line', 'FloorLabel')",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelName"
+          ]
+        }
+      },
+      {
+        "name": "create_drawing_object",
+        "description": "Creates a drawing shape in the facility view. Types: Rectangle, Ellipse, Line, Polygon, Curve, ClosedCurve, Label, FloorLabel.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "type": {
+              "description": "Shape type: Rectangle, Ellipse, Line, Polygon, Curve, ClosedCurve, Label, FloorLabel",
+              "type": "string"
+            },
+            "x1": {
+              "description": "For rect/ellipse/FloorLabel: top-left X",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "z1": {
+              "description": "For rect/ellipse/FloorLabel: top-left Z",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "x2": {
+              "description": "For rect/ellipse/FloorLabel: bottom-right X",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "z2": {
+              "description": "For rect/ellipse/FloorLabel: bottom-right Z",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "pointsJson": {
+              "description": "For line/polygon/curve: JSON array of [x,z] or [x,y,z] points",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "x": {
+              "description": "For Label: X position",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "z": {
+              "description": "For Label: Z position",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "text": {
+              "description": "For Label: text",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelName",
+            "type"
+          ]
+        }
+      },
+      {
+        "name": "remove_drawing_object",
+        "description": "Removes a drawing object by its type:index identifier.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "objectId": {
+              "description": "Object identifier (e.g., 'Rectangle:0', 'Line:1')",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelName",
+            "objectId"
+          ]
+        }
+      },
+      {
+        "name": "get_drawing_object_properties",
+        "description": "Gets all settable properties of a drawing shape (position, color, size, vertices, etc.).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "objectId": {
+              "description": "Object identifier (e.g., 'Rectangle:0')",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelName",
+            "objectId"
+          ]
+        }
+      },
+      {
+        "name": "set_drawing_object_properties",
+        "description": "Sets properties on a drawing shape. Pass property names and values as JSON.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "objectId": {
+              "description": "Object identifier (e.g., 'Rectangle:0')",
+              "type": "string"
+            },
+            "centerX": {
+              "description": "Center X",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "centerZ": {
+              "description": "Center Z",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "width": {
+              "description": "Width (for rectangle/ellipse)",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "height": {
+              "description": "Height/Length (for rectangle/ellipse)",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "color": {
+              "description": "Fill color as hex ARGB (e.g., 'FFAA0000')",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "lineColor": {
+              "description": "Line/border color as hex ARGB",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "lineWidth": {
+              "description": "Line width",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "lineStyle": {
+              "description": "Line style: Solid, Dashed, Dotted",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "yHeight": {
+              "description": "3D elevation height",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "rotation": {
+              "description": "Rotation in degrees",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "text": {
+              "description": "Text (for Label/FloorLabel). FloorLabel text supports formatting tags such as <b>, <i>, <u>, color tags such as <red>, and expressions inside braces such as {TimeNow}.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelName",
+            "objectId"
+          ]
+        }
+      },
+      {
+        "name": "set_drawing_object_vertices",
+        "description": "Sets, inserts, or removes vertices on a polyline, polygon, curve, or closed curve object.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "objectId": {
+              "description": "Object identifier (e.g., 'Line:0', 'Polygon:1')",
+              "type": "string"
+            },
+            "action": {
+              "description": "Action: 'set' (replace all), 'insert' (add point), 'remove' (delete point)",
+              "type": "string"
+            },
+            "pointsJson": {
+              "description": "For 'set': JSON array of [x,z] or [x,y,z] points. For 'insert': [x,z] or [x,y,z] single point.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "index": {
+              "description": "For 'insert': segment index to insert after. For 'remove': vertex index.",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelName",
+            "objectId",
+            "action"
+          ]
+        }
+      },
+      {
+        "name": "add_experiment",
+        "description": "Adds a new experiment to a model. Optionally specify a name (must be a valid, unique identifier). Returns the new experiment's name and path. Edit experiment settings afterwards with set_property (e.g. DefaultReplicationsRequired, ConfidenceLevel). NOTE: Experiment 'controls' are the same things as model properties. If you need to create a new control, add a model property, and it will show up as a control on the experiment. Example: path='/Project/MyModel/Experiments', name='Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the model's Experiments collection. Example: /Project/MyModel/Experiments",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new experiment. Must be a unique identifier with no spaces. If omitted, a name is auto-generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "remove_experiment",
+        "description": "Removes an experiment from a model. Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "run_experiment",
+        "description": "Starts running an experiment (all active scenarios for their required replications). The run is started asynchronously and this call returns immediately while the experiment continues in the background. Use get_experiment_run_status to poll progress, cancel_experiment to stop it, and get_experiment_results (in the results tools) to read statistics once it completes. Call reset_experiment first if you want to clear previous results. Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "cancel_experiment",
+        "description": "Cancels a running experiment. Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "reset_experiment",
+        "description": "Resets an experiment to its initial state, deleting any existing results produced by a previous run. Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_experiment_run_status",
+        "description": "Gets the run status of an experiment, including whether it is busy, the last tracked run outcome, per-scenario replication progress, and whether results are available. Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "add_scenario",
+        "description": "Adds a new scenario to an experiment. Optionally specify a name. Returns the new scenario's name and path. Edit scenario settings (Active, ReplicationsRequired) with set_property, and set control values with set_scenario_control_value. Example: path='/Project/MyModel/Experiments/Experiment1', name='Scenario1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new scenario. Must be unique within the experiment. If omitted, a name is auto-generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "remove_scenario",
+        "description": "Removes a scenario from an experiment. Example: path='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_scenario_control_value",
+        "description": "Sets the value of a control for a specific scenario. The control must already exist on the experiment (controls are derived from model properties. If you need to add a control, add a model property and then control will automatically appear in the experiment). Example: scenarioPath='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1', controlName='ArrivalRate', value='10'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "scenarioPath": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            },
+            "controlName": {
+              "description": "Name of the control to set.",
+              "type": "string"
+            },
+            "value": {
+              "description": "New value as a string.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "scenarioPath",
+            "controlName",
+            "value"
+          ]
+        }
+      },
+      {
+        "name": "get_scenario_control_value",
+        "description": "Gets the value of a control for a specific scenario. Example: scenarioPath='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1', controlName='ArrivalRate'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "scenarioPath": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            },
+            "controlName": {
+              "description": "Name of the control to read.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "scenarioPath",
+            "controlName"
+          ]
+        }
+      },
+      {
+        "name": "get_scenario_control_values",
+        "description": "Gets all control values for a specific scenario, keyed by control name. Use this instead of calling get_scenario_control_value repeatedly. Example: scenarioPath='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "scenarioPath": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "scenarioPath"
+          ]
+        }
+      },
+      {
+        "name": "get_experiment_scenarios",
+        "description": "Gets all scenarios in an experiment, each with its Active flag, ReplicationsRequired, and all control values keyed by control name (the experiment 'scenario grid'). Example: path='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_scenario_response_statistics",
+        "description": "Gets response summary statistics for a specific scenario: average, minimum, maximum, observations count, half-width, and standard deviation. The experiment must have been run for results to be available. Set includeObservations to true to retrieve a paged set of per-replication response values. Example: scenarioPath='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1', responseName='AvgTimeInSystem'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "scenarioPath": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            },
+            "responseName": {
+              "description": "Name of the response to read.",
+              "type": "string"
+            },
+            "includeObservations": {
+              "description": "Whether to include per-replication observations in the response (default false).",
+              "type": "boolean",
+              "default": false
+            },
+            "observationOffset": {
+              "description": "Zero-based starting observation offset when includeObservations is true (default 0).",
+              "type": "integer",
+              "default": 0
+            },
+            "observationLimit": {
+              "description": "Maximum number of observations to return when includeObservations is true (default 100).",
+              "type": "integer",
+              "default": 100
+            }
+          },
+          "required": [
+            "scenarioPath",
+            "responseName"
+          ]
+        }
+      },
+      {
+        "name": "get_scenario_response_value_for_replication",
+        "description": "Gets the value of a response for a specific scenario and a single replication. Example: scenarioPath='/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1', responseName='AvgTimeInSystem', replicationNumber=1",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "scenarioPath": {
+              "description": "Path to the scenario. Example: /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1",
+              "type": "string"
+            },
+            "responseName": {
+              "description": "Name of the response to read.",
+              "type": "string"
+            },
+            "replicationNumber": {
+              "description": "The 1-based replication number to read the response value for.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "scenarioPath",
+            "responseName",
+            "replicationNumber"
+          ]
+        }
+      },
+      {
+        "name": "add_response",
+        "description": "Adds a new response to an experiment. Optionally specify a name. Returns the new response's name and path. Edit response settings (Expression, LowerBound, UpperBound, Objective, Description) with set_property. Example: path='/Project/MyModel/Experiments/Experiment1', name='AvgTimeInSystem'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new response. Must be a unique identifier with no spaces. If omitted, a name is auto-generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "remove_response",
+        "description": "Removes a response from an experiment. Example: path='/Project/MyModel/Experiments/Experiment1/Responses/AvgTimeInSystem'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the response. Example: /Project/MyModel/Experiments/Experiment1/Responses/AvgTimeInSystem",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "add_constraint",
+        "description": "Adds a new constraint to an experiment. Optionally specify a name. Returns the new constraint's name and path. Edit constraint settings (Expression, LowerBound, UpperBound) with set_property. Example: path='/Project/MyModel/Experiments/Experiment1', name='Constraint1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new constraint. Must be a unique identifier with no spaces. If omitted, a name is auto-generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "remove_constraint",
+        "description": "Removes a constraint from an experiment. Example: path='/Project/MyModel/Experiments/Experiment1/Constraints/Constraint1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the constraint. Example: /Project/MyModel/Experiments/Experiment1/Constraints/Constraint1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_expression_completions",
+        "description": "Returns auto-complete suggestions for the next segment of a Simio expression. Pass a partial (or full) expression and get back the valid identifiers/members that can appear at the caret position. Use this to construct expressions that parse before calling tools like set_property �� for example, to discover what follows 'Server1.' or the available top-level identifiers for an empty expression. The returned 'hasMore' indicates if there are more completions available beyond that segment. The returned 'canBeLast' indicates if the completion can be the last segment of the expression.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "expression": {
+              "description": "The partial or full expression text to get completions for. May be empty to list top-level identifiers.",
+              "type": "string"
+            },
+            "modelPath": {
+              "description": "Optional path to the model whose context the expression is authored in. Example: /Project/MyModel. If omitted, the active model / current selection is used.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "caretIndex": {
+              "description": "Optional caret index (0-based) within the expression where completions are requested. Defaults to the end of the expression.",
+              "type": "integer",
+              "default": -1
+            }
+          },
+          "required": [
+            "expression"
+          ]
+        }
+      },
+      {
+        "name": "list_libraries",
+        "description": "Lists external libraries loaded in the active Simio project. The internal Project Library is excluded. Use the returned fileName as the stable selector for library-specific operations.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "list_library_objects",
+        "description": "Lists catalog entries available from external libraries loaded in the active Simio project. Pass a library name or exact fileName to limit the result to one library. The response contains catalog metadata and does not resolve full object definitions.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "libraryNameOrFileName": {
+              "description": "Optional external library name or exact fileName. Omit to list objects from all external libraries.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "offset": {
+              "description": "Zero-based result offset for paging. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of results to return in this page. Default: 100",
+              "type": "integer",
+              "default": 100
+            }
+          }
+        }
+      },
+      {
+        "name": "load_library",
+        "description": "Loads an external Simio library file into the active project. The fileName must be an explicit path accessible to the Simio Desktop process. Update availability notifications are shown by default unless suppressed.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "fileName": {
+              "description": "Path to the external Simio library file to load.",
+              "type": "string"
+            },
+            "suppressUserUpdateNotification": {
+              "description": "If true, suppresses the normal notification that library updates are available. Defaults to false.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "fileName"
+          ]
+        }
+      },
+      {
+        "name": "unload_library",
+        "description": "Unloads an external library from the active Simio project. Use the exact fileName returned by list_libraries when library names are ambiguous. The internal Project Library cannot be unloaded.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "libraryNameOrFileName": {
+              "description": "External library name or exact fileName returned by list_libraries.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "libraryNameOrFileName"
+          ]
+        }
+      },
+      {
+        "name": "update_objects_from_libraries",
+        "description": "Applies all available newer versions of library objects used by the active project. This operation does not prompt for confirmation or per-object selection, cannot be undone, and may clear the undo history.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "get_list_data",
+        "description": "Gets all items from a Simio List as a JSON array. Works with StringList, ObjectList, NodeList, and TransporterList. Example: path='/Project/MyModel/Lists/MyList'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the list. Example: /Project/MyModel/Lists/MyList",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_list_data",
+        "description": "Replaces all items in a Simio List. For StringLists, provide arbitrary string values. For ObjectList/NodeList/TransporterList, provide the names of objects/nodes/transporters in the model.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the list. Example: /Project/MyModel/Lists/MyList",
+              "type": "string"
+            },
+            "items": {
+              "description": "JSON array of items. Example: [\"Item1\", \"Item2\", \"Item3\"]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "items"
+          ]
+        }
+      },
+      {
+        "name": "list_materials",
+        "description": "Lists project materials with their names, types, and IDs. Use these names with set_object_material or set_link_material.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "create_material",
+        "description": "Creates a texture material from a local JPG or PNG image file and adds it to the project. The material name is derived from the file name.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "imagePath": {
+              "description": "Path to a local .jpg, .jpeg, or .png image file",
+              "type": "string"
+            }
+          },
+          "required": [
+            "imagePath"
+          ]
+        }
+      },
+      {
+        "name": "remove_material",
+        "description": "Removes a material from the project by name.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "materialName": {
+              "description": "Material name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "materialName"
+          ]
+        }
+      },
+      {
+        "name": "get_matrix_data",
+        "description": "Gets the complete data from a Changeover Matrix as a JSON grid. Returns row/column labels (from the associated StringList) and all cell values. Example: path='/Project/MyModel/ChangeoverMatrices/MyMatrix'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the changeover matrix. Example: /Project/MyModel/ChangeoverMatrices/MyMatrix",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_matrix_value",
+        "description": "Sets a single cell value in a Changeover Matrix by from/to labels. The labels must be items in the associated StringList. Example: set_matrix_value('/Project/MyModel/ChangeoverMatrices/PaintMatrix', 'Red', 'Blue', 5.0)",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the changeover matrix.",
+              "type": "string"
+            },
+            "from": {
+              "description": "The 'from' label (must be an item in the matrix's StringList).",
+              "type": "string"
+            },
+            "to": {
+              "description": "The 'to' label (must be an item in the matrix's StringList).",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value to set in the cell.",
+              "type": "number"
+            }
+          },
+          "required": [
+            "path",
+            "from",
+            "to",
+            "value"
+          ]
+        }
+      },
+      {
+        "name": "set_matrix_data",
+        "description": "Sets multiple cell values in a Changeover Matrix at once. Provide an array of {from, to, value} entries. Labels must be items in the associated StringList.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the changeover matrix.",
+              "type": "string"
+            },
+            "entries": {
+              "description": "JSON array of entries: [{\"from\":\"Red\",\"to\":\"Blue\",\"value\":5.0}, ...]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "entries"
+          ]
+        }
+      },
+      {
+        "name": "get_lookup_table_data",
+        "description": "Gets all entries from a Lookup Table as an array of {x, y} pairs. Example: path='/Project/MyModel/LookupTables/MyLookup'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the lookup table. Example: /Project/MyModel/LookupTables/MyLookup",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_lookup_table_data",
+        "description": "Replaces all entries in a Lookup Table with new {x, y} pairs. The X values should be in ascending order for proper interpolation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the lookup table.",
+              "type": "string"
+            },
+            "entries": {
+              "description": "JSON array of entries: [{\"x\":0.0,\"y\":1.0}, {\"x\":10.0,\"y\":5.0}, ...]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "entries"
+          ]
+        }
+      },
+      {
+        "name": "get_rate_table_data",
+        "description": "Gets all interval rates from a Rate Table. Returns the interval configuration and rate values. Example: path='/Project/MyModel/RateTables/MyRateTable'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the rate table. Example: /Project/MyModel/RateTables/MyRateTable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_rate_table_data",
+        "description": "Sets rate values in a Rate Table. Provide an array of rate values, one per interval. The array length must match the current number of intervals. To change the number of intervals, use set_property on the Rate Table first.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the rate table.",
+              "type": "string"
+            },
+            "rates": {
+              "description": "JSON array of rate values, one per interval. Example: [1.0, 1.5, 2.0, 1.0, ...]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "rates"
+          ]
+        }
+      },
+      {
+        "name": "list_children",
+        "description": "Lists child items at a given path in the Simio domain hierarchy. Use /Project to list models, /Project/{ModelName} to list available collections, or /Project/{ModelName}/{CollectionName} to list items in a collection. Example paths: /Project, /Project/MyModel, /Project/MyModel/Objects, /Project/MyModel/Tables",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Hierarchical path to list children of. Examples: /Project, /Project/MyModel, /Project/MyModel/Objects",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_active_model",
+        "description": "Gets the model currently active in the Simio Desktop UI. Use this before building or modifying a model when the user has not provided an explicit model path. Returns { active: false, model: null } when no model is active. Only available when the MCP server is hosted inside SimioDesign.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "get_active_selected_object",
+        "description": "Gets the object currently selected in the Simio Desktop UI (the active selection in the property grid / facility view), including its navigation path and property values. Use this to answer questions about whatever the user currently has selected. Or if the user is not specific about what they want, this can be a good starting point to explore the domain. Use this tool as well if the user talks about 'this object' or 'this process' or 'the selected object' or other statements without any explicitly specific path or context. Returns { selected: false } when nothing is selected. Only available when the MCP server is hosted inside SimioDesign.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "create_model",
+        "description": "Creates a separate new Simio model in the active project. Do not use this for ordinary model-building requests: first call get_active_model and use the returned model path with the path-based mutation tools. This tool requires explicit confirmation that a separate new model is intended. Fixed models receive the same ModelEntity and DefaultEntity setup as the desktop New Model command. Example: name='MyModel', confirmNewModel=true, type='Fixed'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Name of the new model. Must be unique within the project.",
+              "type": "string"
+            },
+            "description": {
+              "description": "Optional description for the new model.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "type": {
+              "description": "Optional type for the model. 'Fixed' (default), 'Node', 'Link', 'Entity', or 'Transporter'.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "confirmNewModel": {
+              "description": "Must be true to confirm that a separate new model is intentionally being created.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      {
+        "name": "create_facility_object",
+        "description": "Creates a new Simio object or node in a model. For objects/nodes: specify the type (e.g. 'Server', 'Source', 'Sink', 'BasicNode'). For links use the create_link tool instead. Example: path='/Project/MyModel/Objects', type='Server'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Collection path where the object will be created. Examples: /Project/MyModel/Objects, /Project/MyModel/Nodes",
+              "type": "string"
+            },
+            "type": {
+              "description": "The type of object to create. For objects/nodes: 'Server', 'Source', 'Sink', 'BasicNode', etc.",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new object. If omitted, a name is auto-generated.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path",
+            "type"
+          ]
+        }
+      },
+      {
+        "name": "create_model_item",
+        "description": "Creates a new item in any Simio collection under a model. Supports States, Properties, Events, Elements, Processes, Tables, LookupTables, ChangeoverMatrices, ExpressionFunctions, Tokens, RateTables, Lists, InputParameters, ScriptedSteps, ImportScripts, ExportScripts. Creating an ImportScript or ExportScript also bootstraps its initial Python file and returns the relative script file path for use with the scripting tools. For polymorphic collections, specify the 'type' parameter. For Objects/Nodes use create_facility_object; for Links use create_link. For Properties, use a concrete element type such as Material, Timer, Station, or a listed user-defined element type; generic Element is not creatable. Configure an element property's Reference Type later through set_property. Examples: path='/Project/MyModel/States', type='Real', name='MyState' or path='/Project/MyModel/Elements', type='Timer', name='MyTimer'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Collection path. Example: /Project/MyModel/States",
+              "type": "string"
+            },
+            "name": {
+              "description": "Optional name for the new item. Auto-generated if omitted.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "type": {
+              "description": "Type/subtype for polymorphic collections. States: Real, String, Integer, Boolean, DateTime, Level, List, Size, Movement, DirectedMovement. Properties: use list_available_model_item_types with collectionKind='Properties' for the full list. Common: Expression, String, Real, Integer, Boolean, DateTime, Color, State, RepeatGroup, plus concrete element-reference types such as Material, Timer, Station. Generic Element is not valid. Elements: Timer, Monitor, Station, OutputStatistic, TallyStatistic, StateStatistic, Tables: Data (default), Output, Sequence. PeriodicStatistic, Counter, Storage, Network, Activity, BatchLogic, ChangeoverLogic, ConstraintLogic, RoutingGroup, TaskSequence, Operation, PathPlanner, NeuralNetwork. Lists: String, Object, Node, Transporter. InputParameters: Expression, Distribution, TableColumn.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "create_link",
+        "description": "Creates a new link between two Nodes in a model. Specify the link type (e.g. 'Path', 'Connector'), start and end node names, and optional interior vertices. When creating links between two Objects, you specify their appropriate associated node names, for example Input@MyObject or MyNode@MyOtherObject. Example: modelPath='/Project/MyModel', type='Path', startNode='BasicNode1', endNode='BasicNode2'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "type": {
+              "description": "The type of link to create (e.g. 'Path', 'Connector').",
+              "type": "string"
+            },
+            "startNode": {
+              "description": "Name of the starting node.",
+              "type": "string"
+            },
+            "endNode": {
+              "description": "Name of the ending node.",
+              "type": "string"
+            },
+            "vertices": {
+              "description": "Optional JSON array of interior vertices, e.g. [{\"x\":1,\"y\":0,\"z\":2},{\"x\":3,\"y\":0,\"z\":4}]",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelPath",
+            "type",
+            "startNode",
+            "endNode"
+          ]
+        }
+      },
+      {
+        "name": "delete_item",
+        "description": "Deletes a Simio domain object from a model. Auto-created objects and items inherited from a base class cannot be deleted directly. Supports all collection types: Objects, Nodes, Links, Tables, States, Properties, Events, Elements, Processes, LookupTables, ChangeoverMatrices, ExpressionFunctions, Tokens, RateTables, Lists, InputParameters, ScriptedSteps, ImportScripts, ExportScripts. Deleting an ImportScript or ExportScript also removes its backing Python file. Example: path='/Project/MyModel/States/MyState'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the item to delete. Example: /Project/MyModel/States/MyState",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "rename_object",
+        "description": "Renames a Simio model or named item. For a model, use its root path such as '/Project/MyModel'. For items, works on objects, nodes, links, tables, and other named items. Example: path='/Project/MyModel/Objects/MyServer1', newName='ProcessingServer'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the model or item to rename. Example: /Project/MyModel or /Project/MyModel/Objects/MyServer1",
+              "type": "string"
+            },
+            "newName": {
+              "description": "The new name for the model or item.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "newName"
+          ]
+        }
+      },
+      {
+        "name": "set_link_vertices",
+        "description": "Sets the interior vertices of a link, defining its visual path through the facility. Provide the vertices as a JSON array of {x, y, z} points. Example: path='/Project/MyModel/Links/Path1', vertices='[{\"x\":1,\"y\":0,\"z\":2}]'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the link. Example: /Project/MyModel/Links/Path1",
+              "type": "string"
+            },
+            "vertices": {
+              "description": "JSON array of vertex points, e.g. [{\"x\":1,\"y\":0,\"z\":2},{\"x\":3,\"y\":0,\"z\":4}]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "vertices"
+          ]
+        }
+      },
+      {
+        "name": "list_step_types",
+        "description": "Lists all available built-in step types that can be used in Simio processes. Returns step type names, property schemas, and exit point information for each type. Note: does not include user-defined or scripted step types (those can still be used in set_process_xml by name).",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to a model for context. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_process_xml",
+        "description": "Gets the raw XML definition of a Simio process. Example: path='/Project/MyModel/Processes/MyProcess'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the process. Example: /Project/MyModel/Processes/MyProcess",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_process_xml",
+        "description": "Sets a process from raw XML. If a process with the same name exists, it will be replaced. Step IDs must start at 2 (Begin=0 and End=1 are auto-created). Connect steps via exits with nextId referencing target step IDs. If a process with the same name exists, it will be destroyed and rebuilt. Use list_step_types to discover available types and their properties. The XML must follow the Simio process format (use get_process_xml to see examples). IMPORTANT: pass the XML as plain, raw text exactly as get_process_xml returns it �� do NOT wrap it in a <![CDATA[ ... ]]> section and do NOT HTML-escape the angle brackets (no '&lt;Process...'). Either of those will fail to parse.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "xml": {
+              "description": "Raw XML process definition. Plain text only �� no CDATA wrapping, no HTML-escaping.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath",
+            "xml"
+          ]
+        }
+      },
+      {
+        "name": "get_properties",
+        "description": "Gets property values for a Simio domain object. Returns property names, values, types, descriptions, and whether they are read-only. Use this to inspect any object's configuration. For a model root, use a path like '/Project/MyModel' to inspect model properties such as 'Model Name'. For compilable script objects, also returns the canonical relative backing script file as 'scriptFile'. For bound tables/logs and their columns, this includes active data connector properties. For table columns, use paths like '/Project/MyModel/Tables/MyTable/Columns/Column1' to inspect column settings such as name, isKey, autoSetTableRowReference, description, defaultValue, required, and displayName where supported. For experiment scenarios, use paths like '/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1' to inspect Name, Active, Status, ReplicationsRequired, and ReplicationsCompleted. Example: path='/Project/MyModel/Objects/MyServer1'. For process steps, use paths like '/Project/MyModel/Processes/MyProcess/Steps/Transfer1'. For status displays and labels in the facility view, use paths like '/Project/MyModel/Graphics/StatusLabel:0' or '/Project/MyModel/Graphics/FloorLabel:0'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the model or object. Examples: /Project/MyModel, /Project/MyModel/Objects/MyServer1, /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1, or /Project/MyModel/Graphics/FloorLabel:0",
+              "type": "string"
+            },
+            "propertyNames": {
+              "description": "Optional comma-separated list of specific property names to return. If omitted, returns all properties.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_repeat_group_data",
+        "description": "Gets tuple data from a RepeatGroup property on a Simio domain object. Returns the tuple schema and all tuple values. Example: path='/Project/MyModel/Objects/MyServer1', propertyName='Failures'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the object. Example: /Project/MyModel/Objects/MyServer1",
+              "type": "string"
+            },
+            "propertyName": {
+              "description": "Name of the RepeatGroup property",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "propertyName"
+          ]
+        }
+      },
+      {
+        "name": "set_repeat_group_data",
+        "description": "Replaces the tuple data in a RepeatGroup property. Accepts rows as a JSON array of arrays or an array of objects keyed by tuple property names. Example: rows='[{\"FailureName\":\"Jam\",\"Duration\":\"5\"}]'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the object. Example: /Project/MyModel/Objects/MyServer1",
+              "type": "string"
+            },
+            "propertyName": {
+              "description": "Name of the RepeatGroup property",
+              "type": "string"
+            },
+            "rows": {
+              "description": "JSON array of tuple values. Array rows map positionally; object rows map by property name.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "propertyName",
+            "rows"
+          ]
+        }
+      },
+      {
+        "name": "add_repeat_group_tuple",
+        "description": "Adds a tuple to a RepeatGroup property. Optionally accepts tuple values as a JSON object or array. Example: values='{\"FailureName\":\"Jam\",\"Duration\":\"5\"}'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the object. Example: /Project/MyModel/Objects/MyServer1",
+              "type": "string"
+            },
+            "propertyName": {
+              "description": "Name of the RepeatGroup property",
+              "type": "string"
+            },
+            "values": {
+              "description": "Optional JSON object or array of values for the new tuple.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path",
+            "propertyName"
+          ]
+        }
+      },
+      {
+        "name": "remove_repeat_group_tuple",
+        "description": "Removes a tuple from a RepeatGroup property by zero-based tuple index.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the object. Example: /Project/MyModel/Objects/MyServer1",
+              "type": "string"
+            },
+            "propertyName": {
+              "description": "Name of the RepeatGroup property",
+              "type": "string"
+            },
+            "tupleIndex": {
+              "description": "Zero-based tuple index to remove",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "path",
+            "propertyName",
+            "tupleIndex"
+          ]
+        }
+      },
+      {
+        "name": "set_property",
+        "description": "Sets a property value on a Simio domain object. The value is provided as a string and will be converted to the appropriate type. Returns the updated value and any validation errors. For an explicit model rename, prefer rename_object with the model root path '/Project/{ModelName}'. For table columns, use paths like '/Project/MyModel/Tables/MyTable/Columns/Column1' to set column settings such as name, isKey, autoSetTableRowReference, description, defaultValue, required, and displayName where supported. For experiment scenarios, use paths like '/Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1' to set Name, Active, and ReplicationsRequired; Status and ReplicationsCompleted are read-only. For numeric properties that carry a unit type (e.g. a Delay step's DelayTime, which is in Time units), optionally pass 'units' to set the unit alongside the value (e.g. units='Minutes'). Use get_properties or describe_target to see whether a property supports units and which unit strings are valid. For color properties, pass an 8-digit ARGB hexadecimal value such as 'FF112233'; optional '#' and '0x' prefixes are accepted. Example: path='/Project/MyModel/Objects/MyServer1', propertyName='ProcessingTime', value='Random.Triangular(1,2,3)'. Example with units: path='/Project/MyModel/Processes/MyProcess/Steps/Delay1', propertyName='DelayTime', value='15', units='Minutes'. For status displays and labels in the facility view, use paths like '/Project/MyModel/Graphics/CircularGauge:0' or '/Project/MyModel/Graphics/FloorLabel:0'. Floor Label Text supports formatting tags such as <b>, <i>, <u>, color tags such as <red>, and expressions inside braces such as {TimeNow}.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the model or object. Examples: /Project/MyModel, /Project/MyModel/Objects/MyServer1, /Project/MyModel/Experiments/Experiment1/Scenarios/Scenario1, or /Project/MyModel/Graphics/FloorLabel:0",
+              "type": "string"
+            },
+            "propertyName": {
+              "description": "Name of the property to set",
+              "type": "string"
+            },
+            "value": {
+              "description": "New value as a string",
+              "type": "string"
+            },
+            "units": {
+              "description": "Optional unit string to set alongside the value, for numeric properties that support units (e.g. 'Minutes', 'Hours', 'Meters'). Only valid when the property has a unit type; see get_properties/describe_target/get_type_schema for the availableUnits list.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path",
+            "propertyName",
+            "value"
+          ]
+        }
+      },
+      {
+        "name": "get_diagnostics",
+        "description": "Gets current model property errors and. Use this after making changes to check if the model is in a valid state. Returns a list of error messages for properties.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_log_types",
+        "description": "Lists available log types for a model's simulation results. Returns which log types have data from completed runs. Log data is read-only and comes from simulation runs.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "query_log",
+        "description": "Queries log data from a completed simulation run. Returns rows of log records. Use get_log_types first to discover which logs have data. Results are read-only.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "logType": {
+              "description": "Log type name. Examples: 'ResourceUsage', 'StateObservation', 'Task'",
+              "type": "string"
+            },
+            "offset": {
+              "description": "Zero-based starting row offset for paging. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of rows to return in this page. Default: 100",
+              "type": "integer",
+              "default": 100
+            },
+            "usePlanningLogs": {
+              "description": "Whether to use planning logs instead of interactive logs (default false)",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "modelPath",
+            "logType"
+          ]
+        }
+      },
+      {
+        "name": "get_statistics",
+        "description": "Gets statistical return values from a completed simulation run. Returns summary statistics for the model's key performance indicators.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "usePlanningStats": {
+              "description": "Whether to use planning statistics instead of interactive (default false)",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_experiment_results",
+        "description": "Gets the summary statistical results produced by running an experiment (ExperimentDefinition.StatisticsReturnValueSummariesForDataBinding). Each row is one statistic for one scenario: scenario, objectType, objectName, displayName, dataSource, category, dataItem, statistic, timePeriod, average, minimum, maximum, halfWidth, standardDeviation. Optionally filter to a single scenario and page through large result sets. Example: experimentPath='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "experimentPath": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            },
+            "scenarioName": {
+              "description": "Optional scenario name to filter to a single scenario.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "offset": {
+              "description": "Number of rows to skip (default 0).",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of rows to return (default 100).",
+              "type": "integer",
+              "default": 100
+            }
+          },
+          "required": [
+            "experimentPath"
+          ]
+        }
+      },
+      {
+        "name": "get_experiment_result_details",
+        "description": "Gets the per-replication statistical result details produced by running an experiment (ExperimentDefinition.StatisticsReturnValueDetailsForDataBinding). Like get_experiment_results but each row also includes the replication number and that replication's value. Optionally filter to a single scenario and page through large result sets. Example: experimentPath='/Project/MyModel/Experiments/Experiment1'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "experimentPath": {
+              "description": "Path to the experiment. Example: /Project/MyModel/Experiments/Experiment1",
+              "type": "string"
+            },
+            "scenarioName": {
+              "description": "Optional scenario name to filter to a single scenario.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "offset": {
+              "description": "Number of rows to skip (default 0).",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of rows to return (default 100).",
+              "type": "integer",
+              "default": 100
+            }
+          },
+          "required": [
+            "experimentPath"
+          ]
+        }
+      },
+      {
+        "name": "get_run_setup",
+        "description": "Gets the model's ActiveRunSetup, including start/end timing options, public run settings, and optionally compatibility settings. Use this before running a model to discover current values, writable settings, and valid enum values. Compatibility settings are omitted unless includeCompatibilitySettings is true.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "includeCompatibilitySettings": {
+              "description": "Whether to include the less commonly used CompatibilitySettings metadata. Defaults to false.",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "set_run_setup",
+        "description": "Applies a JSON object patch to the model's ActiveRunSetup before a run starts. Direct RunSetup properties are top-level keys; CompatibilitySettings properties go under the compatibilitySettings object. Use get_run_setup first. Changes are rejected while the model is in run mode. Example: {\"RunEndType\":\"RunLength\",\"EndTimeHours\":24,\"CompatibilitySettings\":{\"UsePerformanceOptimizedSteps\":true}}",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "settingsJson": {
+              "description": "JSON object patch containing RunSetup properties and an optional compatibilitySettings object.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath",
+            "settingsJson"
+          ]
+        }
+      },
+      {
+        "name": "reset_compatibility_settings",
+        "description": "Resets every CompatibilitySettings value on the model's ActiveRunSetup to its DEFAULT_ value. Other RunSetup settings are not changed. Changes are rejected while the model is in run mode. Use get_run_setup with includeCompatibilitySettings=true to inspect the settings and their descriptions.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_runtime_children",
+        "description": "Lists bounded children in the current runtime Watch hierarchy. Start at /Project/{Model}/Runtime, then follow the returned contextual name paths. Paths are resolved fresh for every call and are valid only while the paused runtime tree remains unchanged.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Runtime path. Example: /Project/MyModel/Runtime",
+              "type": "string"
+            },
+            "offset": {
+              "description": "Zero-based child offset.",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of children to return.",
+              "type": "integer",
+              "default": 50
+            },
+            "maxDepth": {
+              "description": "Maximum runtime path depth to resolve.",
+              "type": "integer",
+              "default": 32
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_runtime_value",
+        "description": "Gets the current formatted value and metadata for one runtime Watch node. Use get_runtime_children first to discover contextual path segments.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Runtime path. Example: /Project/MyModel/Runtime/Server1/Queue",
+              "type": "string"
+            },
+            "maxDepth": {
+              "description": "Maximum runtime path depth to resolve.",
+              "type": "integer",
+              "default": 32
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "evaluate_runtime_expression",
+        "description": "Evaluates a read-only Simio expression against the paused model runtime. Use /Project/{Model}/Runtime as the default model context, or provide a runtime node path to evaluate relative to its owning object. Randomness is disabled and runtime errors are returned explicitly.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "expression": {
+              "description": "Expression to evaluate, such as TimeNow or Server1.ProcessingTime.",
+              "type": "string"
+            },
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "contextPath": {
+              "description": "Optional runtime Watch path providing the owning object context.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "expression",
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "run_model",
+        "description": "Starts or resumes an interactive simulation run. The request is queued so the MCP call returns immediately, while the actual model run is marshaled onto the primary UI thread. Use get_run_status to poll progress and use get_run_setup/set_run_setup to inspect or configure active run setup before starting the run. MCP-managed runs continue through runtime warnings without opening a modal warning dialog; inspect warnings in get_run_status. pause_model/stop_model to control it. When the model finishes running, you should call stop_model to stop it. If running the model to get interactive results, prefer calling fast_forward_model. If running the model to get planning and scheduling, prefer calling run_model_plan. ",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "fast_forward_model",
+        "description": "Starts or resumes a fast-forward simulation run without animation. The request is queued so the MCP call returns immediately, while the actual model run is marshaled onto the primary UI thread. Use get_run_setup/set_run_setup to inspect or configure active run setup before starting the run. MCP-managed runs continue through runtime warnings without opening a modal warning dialog; inspect warnings in get_run_status. When the model finishes running, you should call stop_model to stop it. When running a model in order to get interactive results, prefer this call. If running the model to get planning and scheduling, prefer calling run_model_plan. ",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "run_model_plan",
+        "description": "Starts a planning and scheduling model run. The request is queued so the MCP call returns immediately, while the actual model run is marshaled onto the primary UI thread. Use get_run_status to poll progress and MCP-managed runs continue through runtime warnings without opening a modal warning dialog; inspect warnings in get_run_status. pause_model/stop_model to control it. When the model finishes running, you should call stop_model to stop it. If running the model to get planning and scheduling, prefer this call. ",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "pause_model",
+        "description": "Pauses a running simulation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "stop_model",
+        "description": "Stops a simulation run.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "reset_model",
+        "description": "Resets the model to its initial run state. Call this when you want to go into run mode but don't (yet) want to actually progress simulated time.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "runMode": {
+              "description": "Optional run mode for the reset operation. Default: InteractiveMode",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_run_status",
+        "description": "Gets the current run status for a model, including engine run flags, simulation run state, MCP dispatcher state, and runtime warnings captured during the last queued run.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "enable_trace",
+        "description": "Enables interactive trace collection for a model. This changes only the model's trace flag; existing trace detail settings are preserved.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "disable_trace",
+        "description": "Disables interactive trace collection for a model. Existing trace output remains available until the next run replaces it.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_trace_status",
+        "description": "Gets trace configuration and output status for a model. The trace CSV path is reported when trace output has been created.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_trace",
+        "description": "Gets metadata and the local CSV path for a model's trace output. The potentially large CSV contents are not copied into the MCP response.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "get_type_schema",
+        "description": "Gets the property schema for a Simio object type. Returns property definitions with names, types, descriptions, default values, and allowed values. Use this to understand what properties are available on a given type before creating or editing objects. This is type-definition-only and does not include instance-specific data connector properties; use describe_target or get_properties on a bound table/log or its column for those properties. For step types, use list_step_types instead. This is for domain/library types, not facility-view graphics/status-display instances.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "typeName": {
+              "description": "Name of the type to get schema for. Examples: 'Server', 'Source', 'Sink', 'BasicNode', 'Path', 'Timer', 'Monitor'",
+              "type": "string"
+            },
+            "modelPath": {
+              "description": "Path to a model for context (needed to resolve library types). Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "typeName",
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "describe_target",
+        "description": "Gets instance-specific metadata for a Simio domain object, including current property values with allowed values resolved in context. More detailed than get_type_schema because it shows the actual instance state, not just the type definition. For bound tables/logs and their columns, this includes active data connector properties. Example: path='/Project/MyModel/Objects/MyServer1'. For process steps, use paths like '/Project/MyModel/Processes/MyProcess/Steps/Transfer1'. For status displays and labels in the facility view, use paths like '/Project/MyModel/Graphics/CircularGauge:0' or '/Project/MyModel/Graphics/FloorLabel:0'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the specific object instance. Example: /Project/MyModel/Objects/MyServer1 or /Project/MyModel/Graphics/CircularGauge:0 or /Project/MyModel/Graphics/FloorLabel:0",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "list_available_model_item_types",
+        "description": "Lists the available types/subtypes that can be created in a given collection. Use this to discover what types of Elements, States, Properties, Steps, etc. are available before calling create_model_item or set_process_xml. Properties include concrete built-in and user-defined element-reference types; generic Element is not creatable. Example: collectionKind='Elements', modelPath='/Project/MyModel'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "collectionKind": {
+              "description": "The collection kind to list types for. Examples: 'Elements', 'States', 'Properties', 'Steps', 'Lists', 'InputParameters', 'Tables'",
+              "type": "string"
+            },
+            "modelPath": {
+              "description": "Path to a model for context. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collectionKind",
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "list_script_files",
+        "description": "Lists Python script files in a model's scripting directory. These scripts are used by Scripted Steps, Import Scripts, and Export Scripts. Example: modelPath='/Project/MyModel'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath"
+          ]
+        }
+      },
+      {
+        "name": "read_script_file",
+        "description": "Reads the content of a Python script file from the model's scripting directory. Example: modelPath='/Project/MyModel', relativePath='my_step.py'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "relativePath": {
+              "description": "Relative path within the scripting directory. Example: 'my_step.py' or 'subfolder/helper.py'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath",
+            "relativePath"
+          ]
+        }
+      },
+      {
+        "name": "write_script_file",
+        "description": "Writes or creates a Python script file in the model's scripting directory. Creates the scripting directory if it doesn't exist. Example: modelPath='/Project/MyModel', relativePath='my_step.py', content='...'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "relativePath": {
+              "description": "Relative path within the scripting directory. Example: 'my_step.py' or 'subfolder/helper.py'",
+              "type": "string"
+            },
+            "content": {
+              "description": "Content to write to the file",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelPath",
+            "relativePath",
+            "content"
+          ]
+        }
+      },
+      {
+        "name": "search_objects",
+        "description": "Searches for objects by name or type across all collections in a model. Returns matching items with their paths. Useful when you don't know the exact name or location. Supports bounded result sets and reports skipped collections explicitly. Example: modelPath='/Project/MyModel', query='Server'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "query": {
+              "description": "Search query �� matches against item names and type names (case-insensitive substring match)",
+              "type": "string"
+            },
+            "collectionFilter": {
+              "description": "Optional collection to limit search to. Example: 'Objects', 'Tables', 'Processes'. If omitted, searches all collections.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "offset": {
+              "description": "Zero-based result offset for paging. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of results to return in this page. Default: 100",
+              "type": "integer",
+              "default": 100
+            }
+          },
+          "required": [
+            "modelPath",
+            "query"
+          ]
+        }
+      },
+      {
+        "name": "search_values",
+        "description": "Searches for values within properties/attributes of all object and items in all collections in a model. Returns matching values with their parent object paths. Useful when you want to find where certain item and objects are referenced elsewhere in the model. Supports bounded result sets for easier client-side paging. Example: modelPath='/Project/MyModel', query='Timer4'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelPath": {
+              "description": "Path to the model. Example: /Project/MyModel",
+              "type": "string"
+            },
+            "query": {
+              "description": "Search query �� matches against item/property values",
+              "type": "string"
+            },
+            "offset": {
+              "description": "Zero-based result offset for paging. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of results to return in this page. Default: 100",
+              "type": "integer",
+              "default": 100
+            }
+          },
+          "required": [
+            "modelPath",
+            "query"
+          ]
+        }
+      },
+      {
+        "name": "get_object_graphics",
+        "description": "Gets graphical properties of an intelligent object or node (position, size, rotation, symbol, material info). The path must identify an object or node, such as /Project/MyModel/Objects/MyServer1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to an object or node. Examples: /Project/MyModel/Objects/MyServer1 or /Project/MyModel/Nodes/BasicNode1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_object_graphics",
+        "description": "Sets graphical properties on an intelligent object or node (position, size, rotation). The path must identify an object or node, such as /Project/MyModel/Objects/MyServer1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to an object or node. Examples: /Project/MyModel/Objects/MyServer1 or /Project/MyModel/Nodes/BasicNode1",
+              "type": "string"
+            },
+            "centerX": {
+              "description": "Center X position",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "centerZ": {
+              "description": "Center Z position",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "centerY": {
+              "description": "Center Y (height) position",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "width": {
+              "description": "Width",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "length": {
+              "description": "Length",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "rotation": {
+              "description": "Rotation in degrees",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_link_graphics",
+        "description": "Gets graphical properties of a link (vertices, width, height, decorator info). The path must identify a link, such as /Project/MyModel/Links/Path1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to a link. Example: /Project/MyModel/Links/Path1",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_link_graphics",
+        "description": "Sets graphical properties on a link (width, interior vertices). The path must identify a link, such as /Project/MyModel/Links/Path1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to a link. Example: /Project/MyModel/Links/Path1",
+              "type": "string"
+            },
+            "width": {
+              "description": "Decorator/link width",
+              "type": [
+                "number",
+                "null"
+              ],
+              "default": null
+            },
+            "verticesJson": {
+              "description": "Interior vertices as JSON array of [x,z] or [x,y,z] points (replaces all interior vertices)",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "apply_symbol",
+        "description": "Applies an existing symbol to a simulation object, optionally with a look name. The symbol may come from either the project library or the application/library symbol catalog. Prefer list_symbols first, then pass the symbol name or id. External symbols are cloned into the project automatically when needed. The path must identify an object or node, such as /Project/MyModel/Objects/MyServer1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to an object or node. Examples: /Project/MyModel/Objects/MyServer1 or /Project/MyModel/Nodes/BasicNode1",
+              "type": "string"
+            },
+            "symbolNameOrId": {
+              "description": "Symbol name or id from list_symbols",
+              "type": "string"
+            },
+            "lookName": {
+              "description": "Optional look name for material variant",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            },
+            "source": {
+              "description": "Optional source: 'Project' or 'Application'. Omit to prefer project symbols when names collide.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path",
+            "symbolNameOrId"
+          ]
+        }
+      },
+      {
+        "name": "set_object_material",
+        "description": "Applies a project material by name or a hex color (#RRGGBB or AARRGGBB) to a simulation object's surface. Use list_materials to find project material names. The path must identify an object or node, such as /Project/MyModel/Objects/MyServer1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to an object or node. Examples: /Project/MyModel/Objects/MyServer1 or /Project/MyModel/Nodes/BasicNode1",
+              "type": "string"
+            },
+            "materialNameOrColor": {
+              "description": "Project material name from list_materials, or a hex color (#RRGGBB or AARRGGBB)",
+              "type": "string"
+            },
+            "surfaceIndex": {
+              "description": "Surface index (default 0)",
+              "type": "integer",
+              "default": 0
+            }
+          },
+          "required": [
+            "path",
+            "materialNameOrColor"
+          ]
+        }
+      },
+      {
+        "name": "set_link_material",
+        "description": "Applies a project material by name or a hex color (#RRGGBB or AARRGGBB) to a simulation link's surface. Use list_materials to find project material names. The path must identify a link, such as /Project/MyModel/Links/Path1.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to a link. Example: /Project/MyModel/Links/Path1",
+              "type": "string"
+            },
+            "materialNameOrColor": {
+              "description": "Project material name from list_materials, or a hex color (#RRGGBB or AARRGGBB)",
+              "type": "string"
+            },
+            "surfaceIndex": {
+              "description": "Surface index (default 0)",
+              "type": "integer",
+              "default": 0
+            }
+          },
+          "required": [
+            "path",
+            "materialNameOrColor"
+          ]
+        }
+      },
+      {
+        "name": "create_status_object",
+        "description": "Creates a status display object in the facility view. Status objects implement IPropertyGridObject, so use get_properties/set_property to configure them after creation. FloorLabel creates a rich-text label on the floor.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "type": {
+              "description": "Type: StatusLabel, StatusTable, StatusPlot, StatusPie, StatusBar, CircularGauge, LinearGauge, StackedBar, FloorLabel, Button, QueueSet",
+              "type": "string"
+            },
+            "x1": {
+              "description": "Top-left X coordinate",
+              "type": "number"
+            },
+            "z1": {
+              "description": "Top-left Z coordinate",
+              "type": "number"
+            },
+            "x2": {
+              "description": "Bottom-right X coordinate",
+              "type": "number"
+            },
+            "z2": {
+              "description": "Bottom-right Z coordinate",
+              "type": "number"
+            }
+          },
+          "required": [
+            "modelName",
+            "type",
+            "x1",
+            "z1",
+            "x2",
+            "z2"
+          ]
+        }
+      },
+      {
+        "name": "remove_status_object",
+        "description": "Removes a status display object by its type:index identifier, such as 'StatusLabel:0' or 'FloorLabel:0'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "modelName": {
+              "description": "Model name",
+              "type": "string"
+            },
+            "objectId": {
+              "description": "Object identifier (e.g., 'StatusLabel:0' or 'FloorLabel:0')",
+              "type": "string"
+            }
+          },
+          "required": [
+            "modelName",
+            "objectId"
+          ]
+        }
+      },
+      {
+        "name": "list_symbols",
+        "description": "Lists symbols available for use in the current Simio Desktop session. By default this includes both project symbols and application/library symbols. Prefer choosing an existing symbol here before creating a new one.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "description": "Optional source filter: 'All', 'Project', or 'Application'. Defaults to 'All'.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          }
+        }
+      },
+      {
+        "name": "get_symbol_details",
+        "description": "Gets detailed information about a symbol from either the project or the application/library symbol catalog. Use the symbol name or the symbol id returned by list_symbols. When names collide, provide source='Project' or source='Application'.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbolNameOrId": {
+              "description": "Symbol name or the symbol id returned by list_symbols (for example 'Project:...guid...' or 'Application:...guid...').",
+              "type": "string"
+            },
+            "source": {
+              "description": "Optional source: 'Project' or 'Application'. Omit to prefer project symbols when names collide.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "symbolNameOrId"
+          ]
+        }
+      },
+      {
+        "name": "create_symbol",
+        "description": "Creates a new empty symbol in the project. Prefer list_symbols first so you can reuse an existing project or application symbol when possible.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Optional name for the symbol",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          }
+        }
+      },
+      {
+        "name": "remove_symbol",
+        "description": "Removes a project symbol by name or project symbol id.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbolNameOrId": {
+              "description": "Project symbol name or project symbol id returned by list_symbols.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "symbolNameOrId"
+          ]
+        }
+      },
+      {
+        "name": "rename_symbol",
+        "description": "Renames a project symbol by name or project symbol id.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbolNameOrId": {
+              "description": "Current project symbol name or project symbol id",
+              "type": "string"
+            },
+            "newName": {
+              "description": "New name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "symbolNameOrId",
+            "newName"
+          ]
+        }
+      },
+      {
+        "name": "add_symbol_look",
+        "description": "Adds a named look (material variant) to a project symbol. Returns the look name.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "symbolNameOrId": {
+              "description": "Project symbol name or project symbol id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "symbolNameOrId"
+          ]
+        }
+      },
+      {
+        "name": "get_table_schema",
+        "description": "Gets the schema of a Simio data table, including both property columns and state columns, and the row count. Returns column names, types, descriptions, default values, key-column flags, auto row-reference flags, common metadata, column kinds, and the total number of rows. Each column reports a columnKind: 'property' columns are editable via set_table_data/set_table_rows_by_key, while 'state' columns are read-only �� their values are produced by the simulation engine during a run and cannot be written from the API. Example: path='/Project/MyModel/Tables/MyTable'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "get_table_data",
+        "description": "Gets row data from a Simio data table, including property-column values and table state values. Supports pagination and column filtering, and returns a maximum of 100 rows at a time. Returns column names, column metadata, and row values as a tabular structure. Example: path='/Project/MyModel/Tables/MyTable', offset=0, limit=10",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            },
+            "offset": {
+              "description": "Zero-based starting row offset for paging. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "description": "Maximum number of rows to return in this page (capped at 100). Default: 100",
+              "type": "integer",
+              "default": 100
+            },
+            "getPlanningData": {
+              "description": "Whether to get planning and scheduling data rather than interactive run data (default false)",
+              "type": "boolean",
+              "default": false
+            },
+            "columns": {
+              "description": "Optional comma-separated list of column names to include. If omitted, returns all columns.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "path"
+          ]
+        }
+      },
+      {
+        "name": "set_table_data",
+        "description": "Sets row data in a Simio data table. Accepts rows as a JSON string �� either an array of arrays (positional mapping to columns) or an array of objects (named column mapping). Can overwrite existing rows starting at startRow or append new rows. When clearExisting is true and startRow is 0, rows beyond the provided data are removed. NOTE: This writes property columns only. Table STATE columns (columnKind='state' in get_table_schema/get_table_data) cannot be written here �� their values are produced by the simulation engine during a run and are read-only from the API. Example: path='/Project/MyModel/Tables/MyTable', rows='[[\"val1\",\"val2\"],[\"val3\",\"val4\"]]'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            },
+            "rows": {
+              "description": "JSON string of row data. Array of arrays: [[val1,val2],...] or array of objects: [{\"Col1\":\"val1\"},...].",
+              "type": "string"
+            },
+            "startRow": {
+              "description": "Zero-based starting row index for overwriting existing rows. Rows beyond the existing count are appended. Default: 0",
+              "type": "integer",
+              "default": 0
+            },
+            "clearExisting": {
+              "description": "If true and startRow is 0, remove existing rows beyond the provided data. Default: true",
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "path",
+            "rows"
+          ]
+        }
+      },
+      {
+        "name": "get_table_rows_by_key",
+        "description": "Gets table row data by key column values, including both property columns and state columns. Accept keyValues as a JSON object mapping key column names to values, and supports composite keys by specifying all key columns. Example: path='/Project/MyModel/Tables/MyTable', keyValues='{\"Id\":\"A100\"}'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            },
+            "keyValues": {
+              "description": "JSON object of key column values. Example: {\"Id\":\"A100\"} or {\"OrderId\":\"1\",\"LineNumber\":\"2\"}",
+              "type": "string"
+            },
+            "getPlanningData": {
+              "description": "Whether to get planning and scheduling data rather than interactive run data (default false)",
+              "type": "boolean",
+              "default": false
+            }
+          },
+          "required": [
+            "path",
+            "keyValues"
+          ]
+        }
+      },
+      {
+        "name": "set_table_rows_by_key",
+        "description": "Sets row data for rows matched by key column values. Accept keyValues and values as JSON objects. If no matching row exists and upsert is true, a new row is created with the combined key and value data. NOTE: This writes property columns only. Table STATE columns (columnKind='state' in get_table_schema/get_table_data) cannot be written here �� their values are produced by the simulation engine during a run and are read-only from the API. Example: path='/Project/MyModel/Tables/MyTable', keyValues='{\"Id\":\"A100\"}', values='{\"Status\":\"Done\"}'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            },
+            "keyValues": {
+              "description": "JSON object of key column values. Example: {\"Id\":\"A100\"}",
+              "type": "string"
+            },
+            "values": {
+              "description": "JSON object of column values to set on the matching row(s). Example: {\"Status\":\"Done\",\"Priority\":\"5\"}",
+              "type": "string"
+            },
+            "upsert": {
+              "description": "If true, create a new row when no existing row matches the key. Default: true",
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "path",
+            "keyValues",
+            "values"
+          ]
+        }
+      },
+      {
+        "name": "modify_table_schema",
+        "description": "Modifies the schema of a Simio data table by adding or removing columns. Accepts a JSON array of operations. Supported actions: 'add' (adds a property or state column) and 'remove'. By default 'add' creates a property column; set 'columnKind':'state' to add a state column instead. Property columns that reference elements must use a concrete element type such as Material, Timer, or Station; generic Element is not a valid creation type. The 'remove' action can remove both property columns and state columns. Use get_properties/set_property with a column path to edit column settings such as name, isKey, autoSetTableRowReference, description, defaultValue, required, and displayName where supported. Unknown operation fields are rejected with an error. Example: operations='[{\"action\":\"add\",\"name\":\"ID\",\"type\":\"Integer\"},{\"action\":\"remove\",\"name\":\"OldCol\"}]'",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "Path to the table. Example: /Project/MyModel/Tables/MyTable",
+              "type": "string"
+            },
+            "operations": {
+              "description": "JSON array of schema operations. Each has 'action' (add/remove), 'name', optionally 'type' (for add), and optionally 'columnKind' ('property' default, or 'state'). For property columns, 'type' (e.g. Expression, String, Real, Integer, Boolean, DateTime, Color, State, ObjectInstance, Node, Transporter, Event, Table, RateTable, ChangeoverMatrix, List, SequenceNumber, etc.) can be discovered via list_available_model_item_types with collectionKind='Properties'. Default property type is 'Expression'. Element-reference property columns must use a concrete element type such as Material, Timer, Station, or a listed user-defined element type; 'Element' is rejected. For state columns (columnKind='state'), 'type' (e.g. Real, Integer, Boolean, DateTime, String, List, ForeignKey, etc.) can be discovered via list_available_model_item_types with collectionKind='States'. Default state type is 'Real'. To edit column settings, use get_properties/set_property with /Project/{Model}/Tables/{Table}/Columns/{Column}. Example: [{\"action\":\"add\",\"name\":\"ID\",\"type\":\"Integer\"},{\"action\":\"remove\",\"name\":\"OldCol\"}]",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "operations"
+          ]
+        }
+      },
+      {
+        "name": "simio_modeling_basics",
+        "description": "Returns a guide explaining the Simio domain object hierarchy and how objects work together. Use this to understand the structure of a Simio model before making changes.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "process_building_guide",
+        "description": "Returns a guide explaining how to build processes with steps in Simio using the raw XML format. Use this before creating or modifying processes.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "expression_syntax_guide",
+        "description": "Returns a guide for Simio expression syntax. Use this to understand how to write property expressions, conditions, and formulas in Simio.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "graphics_manipulation_guide",
+        "description": "Returns a guide explaining how to create and manipulate visual/drawing objects in the Simio facility view. Use this to understand shapes, status displays, symbols, and materials.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      }
+    ]
+  },
+  "id": 2,
+  "jsonrpc": "2.0"
+}

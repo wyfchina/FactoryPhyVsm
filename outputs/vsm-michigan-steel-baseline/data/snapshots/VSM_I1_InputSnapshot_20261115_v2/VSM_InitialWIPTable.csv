@@ -1,0 +1,12 @@
+﻿WIPRecordId,ArrivalTime,EntitiesPerArrival,Location,ProductType,CurrentResource,ProductionBatch,ReleaseTimeHours,TrayID,BatchEntityCount,BatchUnitQuantity,SourceRow
+InitialWIP_W01_L,0,4600,Stamping_to_Weld1,Left,Server_Weld1,InitialWIP_W01_L,0,0,230,20,1
+InitialWIP_W01_R,0,2400,Stamping_to_Weld1,Right,Server_Weld1,InitialWIP_W01_R,0,0,120,20,2
+InitialWIP_W02_L,0,1100,Weld1_to_Weld2,Left,Server_Weld2,InitialWIP_W02_L,0,0,55,20,3
+InitialWIP_W02_R,0,600,Weld1_to_Weld2,Right,Server_Weld2,InitialWIP_W02_R,0,0,30,20,4
+InitialWIP_W03_L,0,1600,Weld2_to_Assembly1,Left,Server_Assembly1,InitialWIP_W03_L,0,0,80,20,5
+InitialWIP_W03_R,0,840,Weld2_to_Assembly1,Right,Server_Assembly1,InitialWIP_W03_R,0,0,42,20,6
+InitialWIP_W03_R_Tail,0,10,Weld2_to_Assembly1,Right,Server_Assembly1,InitialWIP_W03_R_Tail,0,0,1,10,7
+InitialWIP_W04_L,0,1200,Assembly1_to_Assembly2,Left,Server_Assembly2,InitialWIP_W04_L,0,0,60,20,8
+InitialWIP_W04_R,0,640,Assembly1_to_Assembly2,Right,Server_Assembly2,InitialWIP_W04_R,0,0,32,20,9
+InitialWIP_W05_L,0,2700,Assembly2_to_Shipping,Left,Server_FG_Staging,InitialWIP_W05_L,0,0,135,20,10
+InitialWIP_W05_R,0,1440,Assembly2_to_Shipping,Right,Server_FG_Staging,InitialWIP_W05_R,0,0,72,20,11

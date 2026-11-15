@@ -1,0 +1,1353 @@
+{
+  "modelName": "Model",
+  "isInRunMode": false,
+  "canConfigure": true,
+  "runSetup": [
+    {
+      "name": "CalendarEventsBetweenCallbacksForInteractiveRun",
+      "displayName": "CalendarEventsBetweenCallbacksForInteractiveRun",
+      "type": "Int32",
+      "value": 32,
+      "writable": true,
+      "readOnly": false,
+      "description": "The number of calendar events between callbacks for an interactive run.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "DisableRandomness",
+      "displayName": "DisableRandomness",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to disable random number generation during the run.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "EndTime",
+      "displayName": "EndTime",
+      "type": "DateTime",
+      "value": "2026-11-28T18:40:00.0000000",
+      "writable": true,
+      "readOnly": false,
+      "description": "The ending time of the simulation when RunEndType is EndingTime. For an infinite run, set RunEndType to Infinite.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "EndTimeUnitSubType",
+      "displayName": "EndTimeUnitSubType",
+      "type": "Int32",
+      "value": 0,
+      "writable": true,
+      "readOnly": false,
+      "description": "The display unit subtype used to present EndTimeValue.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "EndTimeValue",
+      "displayName": "EndTimeValue",
+      "type": "Decimal",
+      "value": 306.6666666666667,
+      "writable": true,
+      "readOnly": false,
+      "description": "The run length in EndTimeUnitSubType units when RunEndType is RunLength.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ExhaustiveConstraintChecking",
+      "displayName": "ExhaustiveConstraintChecking",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to perform exhaustive constraint checking.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "FrameInterval",
+      "displayName": "FrameInterval",
+      "type": "Double",
+      "value": 2.777777777777778e-05,
+      "writable": true,
+      "readOnly": false,
+      "description": "The animation frame interval in simulation hours.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "FreezePeriodHours",
+      "displayName": "FreezePeriodHours",
+      "type": "Double",
+      "value": 0,
+      "writable": true,
+      "readOnly": false,
+      "description": "The time offset into the simulation at which statistics will be reset, in hours. Use zero for no warmup period.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "GenerateNeuralNetworkTrainingDataReplicationNumber",
+      "displayName": "GenerateNeuralNetworkTrainingDataReplicationNumber",
+      "type": "Int32",
+      "value": 0,
+      "writable": true,
+      "readOnly": false,
+      "description": "The replication number used for random sampling when generating neural network training data.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "GenerateProfileReport",
+      "displayName": "GenerateProfileReport",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to generate a profile report for the run.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "Latitude",
+      "displayName": "Latitude",
+      "type": "Double",
+      "value": 40.539912,
+      "writable": true,
+      "readOnly": false,
+      "description": "The model latitude used for location-dependent behavior.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "LoadAction",
+      "displayName": "LoadAction",
+      "type": "Enum",
+      "value": "None",
+      "writable": true,
+      "readOnly": false,
+      "description": "The action to take when the model is loaded.",
+      "allowedValues": [
+        "None",
+        "Reset",
+        "Step",
+        "Run",
+        "FastForward"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "None",
+          "description": "Do not perform an action after loading."
+        },
+        {
+          "value": "Reset",
+          "description": "Reset the model after loading."
+        },
+        {
+          "value": "Step",
+          "description": "Step the model after loading."
+        },
+        {
+          "value": "Run",
+          "description": "Run the model after loading."
+        },
+        {
+          "value": "FastForward",
+          "description": "Fast-forward the model after loading."
+        }
+      ]
+    },
+    {
+      "name": "LogInteractiveRuntimeData",
+      "displayName": "LogInteractiveRuntimeData",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to log interactive runtime data.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "Longitude",
+      "displayName": "Longitude",
+      "type": "Double",
+      "value": -80.180157,
+      "writable": true,
+      "readOnly": false,
+      "description": "The model longitude used for location-dependent behavior.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "MinCallbacksPerSecond",
+      "displayName": "MinCallbacksPerSecond",
+      "type": "Int32",
+      "value": 5,
+      "writable": true,
+      "readOnly": false,
+      "description": "The minimum number of callbacks per second.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RealTimeClock",
+      "displayName": "RealTimeClock",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to run the simulation using the real-time clock.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RiskAnalysisConcurrentReplicationLimit",
+      "displayName": "RiskAnalysisConcurrentReplicationLimit",
+      "type": "Int32",
+      "value": 0,
+      "writable": true,
+      "readOnly": false,
+      "description": "The maximum number of risk analysis replications that may run concurrently. Zero means no limit.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RiskAnalysisConfidenceLevel",
+      "displayName": "RiskAnalysisConfidenceLevel",
+      "type": "Enum",
+      "value": "Point95",
+      "writable": true,
+      "readOnly": false,
+      "description": "The confidence interval level used for risk analysis statistics.",
+      "allowedValues": [
+        "None",
+        "Point90",
+        "Point95",
+        "Point98",
+        "Point99",
+        "Default"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "None",
+          "description": "Do not calculate a confidence interval."
+        },
+        {
+          "value": "Point90",
+          "description": "Use a 90% confidence level."
+        },
+        {
+          "value": "Point95",
+          "description": "Use a 95% confidence level."
+        },
+        {
+          "value": "Point98",
+          "description": "Use a 98% confidence level."
+        },
+        {
+          "value": "Point99",
+          "description": "Use a 99% confidence level."
+        },
+        {
+          "value": "Default",
+          "description": "Use the default confidence level."
+        }
+      ]
+    },
+    {
+      "name": "RiskAnalysisNumberOfReplications",
+      "displayName": "RiskAnalysisNumberOfReplications",
+      "type": "Int32",
+      "value": 10,
+      "writable": true,
+      "readOnly": false,
+      "description": "The number of replications used for risk analysis.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RunEndType",
+      "displayName": "RunEndType",
+      "type": "Enum",
+      "value": "Infinite",
+      "writable": true,
+      "readOnly": false,
+      "description": "The method used to determine the ending time of the simulation.",
+      "allowedValues": [
+        "Infinite",
+        "EndingTime",
+        "RunLength"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "Infinite",
+          "description": "The simulation run will end when it runs out of calendar events."
+        },
+        {
+          "value": "EndingTime",
+          "description": "Use a specific ending date and time."
+        },
+        {
+          "value": "RunLength",
+          "description": "Use a specific run length to determine the ending time."
+        }
+      ]
+    },
+    {
+      "name": "RunStartCurrentTimeType",
+      "displayName": "RunStartCurrentTimeType",
+      "type": "Enum",
+      "value": "Second",
+      "writable": true,
+      "readOnly": false,
+      "description": "When RunStartType is UseCurrent, the precision at which the current time is truncated.",
+      "allowedValues": [
+        "Second",
+        "Minute",
+        "Hour",
+        "Day",
+        "Week",
+        "Month",
+        "Year"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "Second",
+          "description": "Use the current time with milliseconds removed."
+        },
+        {
+          "value": "Minute",
+          "description": "Use the current time with seconds and milliseconds removed."
+        },
+        {
+          "value": "Hour",
+          "description": "Use the current time with minutes, seconds, and milliseconds removed."
+        },
+        {
+          "value": "Day",
+          "description": "Use midnight at the start of the current day."
+        },
+        {
+          "value": "Week",
+          "description": "Use midnight at the start of the current week."
+        },
+        {
+          "value": "Month",
+          "description": "Use midnight at the start of the current month."
+        },
+        {
+          "value": "Year",
+          "description": "Use midnight at the start of the current year."
+        }
+      ]
+    },
+    {
+      "name": "RunStartCurrentTimeZoneId",
+      "displayName": "RunStartCurrentTimeZoneId",
+      "type": "String",
+      "value": null,
+      "writable": true,
+      "readOnly": false,
+      "description": "The time zone ID used when calculating a current-time start. Leave empty to use the local time zone.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RunStartType",
+      "displayName": "RunStartType",
+      "type": "Enum",
+      "value": "Specific",
+      "writable": true,
+      "readOnly": false,
+      "description": "The lower-level starting-time mode. Use Specific to use StartTime or UseCurrent to calculate the start from the current time.",
+      "allowedValues": [
+        "Specific",
+        "UseCurrent"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "Specific",
+          "description": "Use the configured StartTime."
+        },
+        {
+          "value": "UseCurrent",
+          "description": "Use the current date and time, optionally truncated according to RunStartCurrentTimeType."
+        }
+      ]
+    },
+    {
+      "name": "SpecificReplicationNumber",
+      "displayName": "SpecificReplicationNumber",
+      "type": "Int32",
+      "value": 1,
+      "writable": true,
+      "readOnly": false,
+      "description": "The specific replication number to run when a specific replication is selected.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "StartTime",
+      "displayName": "StartTime",
+      "type": "DateTime",
+      "value": "2026-11-16T00:00:00.0000000",
+      "writable": true,
+      "readOnly": false,
+      "description": "The starting time of the simulation when StartTimeType is Specific.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "StartTimeType",
+      "displayName": "StartTimeType",
+      "type": "Enum",
+      "value": "Specific",
+      "writable": true,
+      "readOnly": false,
+      "description": "The method used to determine the starting time of the simulation. Prefer this high-level setting over the lower-level RunStartType and RunStartCurrentTimeType settings.",
+      "allowedValues": [
+        "Specific",
+        "UseCurrentSecond",
+        "UseCurrentMinute",
+        "UseCurrentHour",
+        "UseCurrentDay",
+        "UseCurrentWeek",
+        "UseCurrentMonth",
+        "UseCurrentYear"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "Specific",
+          "description": "Use a specific date and time."
+        },
+        {
+          "value": "UseCurrentSecond",
+          "description": "Use the current date and time truncated to the second."
+        },
+        {
+          "value": "UseCurrentMinute",
+          "description": "Use the current date and time truncated to the minute."
+        },
+        {
+          "value": "UseCurrentHour",
+          "description": "Use the current date and time truncated to the hour."
+        },
+        {
+          "value": "UseCurrentDay",
+          "description": "Use the current date and time truncated to the beginning of the day."
+        },
+        {
+          "value": "UseCurrentWeek",
+          "description": "Use the current date and time truncated to the beginning of the week."
+        },
+        {
+          "value": "UseCurrentMonth",
+          "description": "Use the current date and time truncated to the beginning of the month."
+        },
+        {
+          "value": "UseCurrentYear",
+          "description": "Use the current date and time truncated to the beginning of the year."
+        }
+      ]
+    },
+    {
+      "name": "StopAtEndOfRun",
+      "displayName": "StopAtEndOfRun",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Whether to stop the model at the end of the run.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UpdateInterval",
+      "displayName": "UpdateInterval",
+      "type": "Double",
+      "value": 1,
+      "writable": true,
+      "readOnly": false,
+      "description": "The update interval, expressed in UpdateIntervalTimeUnit.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UpdateIntervalHours",
+      "displayName": "UpdateIntervalHours",
+      "type": "Double",
+      "value": 1,
+      "writable": false,
+      "readOnly": true,
+      "description": "The effective UpdateInterval converted to hours. This value is read-only.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UpdateIntervalTimeUnit",
+      "displayName": "UpdateIntervalTimeUnit",
+      "type": "Int32",
+      "value": 0,
+      "writable": true,
+      "readOnly": false,
+      "description": "The time unit subtype used by UpdateInterval.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "WarningNotificationLevel",
+      "displayName": "WarningNotificationLevel",
+      "type": "Enum",
+      "value": "ShowPopup",
+      "writable": true,
+      "readOnly": false,
+      "description": "The notification level for runtime warnings.",
+      "allowedValues": [
+        "Disabled",
+        "OnlyToTrace",
+        "ShowPopup",
+        "ReportAsRuntimeError"
+      ],
+      "allowedValueDescriptions": [
+        {
+          "value": "Disabled",
+          "description": "Do not report runtime warnings."
+        },
+        {
+          "value": "OnlyToTrace",
+          "description": "Report runtime warnings only to the trace."
+        },
+        {
+          "value": "ShowPopup",
+          "description": "Show runtime warnings in a popup."
+        },
+        {
+          "value": "ReportAsRuntimeError",
+          "description": "Report runtime warnings as runtime errors."
+        }
+      ]
+    }
+  ],
+  "compatibilitySettings": [
+    {
+      "name": "AllChangeoverLogicExpressionEvaluationsAllowResourceReferences",
+      "displayName": "All Changeover Logic Expression Evaluations Allow Resource References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether all expression evaluations by a Changeover Logic element allow references to the resource. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AllowCrossNodeComparisonsWhenUsingRoutingGroupDynamicSelectionRules",
+      "displayName": "Allow Cross-Node Comparisons When Using Routing Group Dynamic Selection Rules",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether routing groups are allowed to compare dynamic selection rule results across destination nodes, in order to determine the best overall entity destination assignments. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AllowExplicitRowSelectionsOfPreviouslyRowSelectedTablesWithoutActiveDetailSelections",
+      "displayName": "Allow Explicit Row Selections Of Previously Row Selected Tables Without Active Detail Selections",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether a reference of DetailTable[Index] is evaluated in the context of the current row subset for that detail table when being evaluated as part of an expression as a result of a previous reference to DetailTable[OtherIndex]. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AllowIndexingPastRelatedRowsForTableStateIndexing",
+      "displayName": "Allow Indexing Past Related Rows For Table State Indexing",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is True, when explicitly indexing into a table to get a table state value (in the form TableName[index].TableState) if the table has foreign keys into a master table for which the table selections have a row set, and the specified index goes beyond the set of 'detail' rows for that selection, then the index will instead be used to as a raw index into the overall table, instead of a runtime error being thrown. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AllowRouteRequestQueueBypassing",
+      "displayName": "Allow Route Request Queue Bypassing",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether an entity executing a Route step is allowed to immediately be assigned a destination node bypassing the route request queue. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AllowTokenBasedTableRowReferencesInQueueRankingExpressions",
+      "displayName": "Allow Token-Based Table Row References In Queue Ranking Expressions",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether table row references set for process tokens are allowed in queue ranking expressions. For example, whether table row references set for process tokens executing Seize steps are allowed in the resource Ranking Expression properties used to rank allocation queue items. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysAllocateResourcesToFirstEligibleSeizeRequests",
+      "displayName": "Always Allocate Resources To First Eligible Seize Requests",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to always allocate a resource's available capacity to the first eligible seize request(s) waiting in its allocation queue. If this setting is False and no dynamic selection rule is being used, then a resource will be unable to continue further checking of seize requests waiting in its allocation queue if the seize request at the front of the queue is ineligible. The recommended value for this setting is True so that further checking is allowed.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysAllowInfinityAsLinkSelectionWeightValue",
+      "displayName": "Always Allow 'Infinity' As Link Selection Weight Value",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether 'Infinity' is always allowed as a possible value for a link selection weight. To ensure safe evaluation of link selection weight values by the simulation engine, the recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysAssociateDynamicSelectionRuleEvaluationsWithTheObjectsMakingTheSelections",
+      "displayName": "Always Associate Dynamic Selection Rule Evaluations With The Objects Making The Selections",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether expression evaluations when using a dynamic selection rule are always associated with the objects making the selections. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysCheckSpecificRunSpaceContextWhenResolvingTableRowReferences",
+      "displayName": "Always Check Specific Run Space Context When Resolving Table Row References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the specific run space context is always checked when resolving table row references. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysConsiderParentTokenTableRowReferencesWhenResolvingRowCountsInSearchStep",
+      "displayName": "Always Consider Parent Token Table Row References When Resolving Row Counts In Search Step",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to consider the parent token's table row references when resolving Search step expressions involving table row counts. This setting could affect the output of table expressions such as AvailableRowCount and RandomValue. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysDoFullChecksOfBatchLogicParentQueues",
+      "displayName": "Always Do Full Checks Of Batch Logic Parent Queues",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is False, then a batch logic element will stop further checking of entities waiting in its parent queue if the entity waiting at the front of the queue cannot collect its required batch quantity. The recommended value for this setting is True so that further checking is always allowed.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysThrowIfSetSequenceTableRowReferenceError",
+      "displayName": "Always Throw If Set Sequence Table Row Reference Error",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to always throw a runtime error if an exception occurs when setting a sequence table row reference. The recommended value for this setting is True. Otherwise, such exceptions may be silently ignored causing skipped SetRow steps that are difficult to detect and diagnose.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysTryImmediatelyAllocateMaterial",
+      "displayName": "Always Try Immediately Allocate Material",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "When executing a Produce step, indicates whether to ignore the step's Immediate Try Allocate property setting and always assume True. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysTryImmediatelyConsumeMaterial",
+      "displayName": "Always Try Immediately Consume Material",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "When executing a Consume step, indicates whether to ignore the step's Immediate Try Consume property setting and always assume True. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysUsePropertyParentTableReferences",
+      "displayName": "Always Use Property Parent Table References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the table row references of a property's parent object should always be considered when resolving the property's value. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AlwaysUseSeizeSelectionGoalWhenCheckingResourceAllocationQueue",
+      "displayName": "Always Use Seize Selection Goal When Checking Resource Allocation Queue",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether a Seize step's selection goal should be used not only at the initial seize attempt but also whenever any resource allocation queue checks occur - if waiting for resources is necessary - regardless of the Must Simultaneous Seize option setting. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AnimationOfActiveAgentsShouldPreventRunEnding",
+      "displayName": "Animation of Active Agents Should Prevent Run Ending",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates if animation of active agents in the system should prevent a run from stopping when the end time of the run is unspecified. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AssumeInputNodeEntriesAreToAssociatedObjectIfNoDrawnOutboundLinks",
+      "displayName": "Assume Input Node Entries Are To Associated Object If No Drawn Outbound Links",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is set to True, then if an entity is entering a node with no drawn outbound links and that node is an external input node to enter another object, the engine will assume the entity's objective is to enter the input node's associated object and thus execute the node's standard 'OnEnteredToAssociatedObject' process (if specified). The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AutoCancelMoveRequestIfResourceReleased",
+      "displayName": "Auto Cancel Move Request If Resource Released",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to automatically cancel a resource move request if that resource is released. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AutoDestroyZeroVolumeEntitiesInContainersWithZeroRateInflow",
+      "displayName": "Auto Destroy Zero Volume Entities In Containers With Zero Rate Inflow",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is False, entities in a container that fall to zero volume with an existing inflow, where the inflow rate is zero, will not automatically be destroyed. Doing so may constrain upstream flows. The recommended value for this setting is True to remove the potential upstream constraint.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AutomaticallyAdjustTimerTargetTriggeringEventCountIfZeroToOne",
+      "displayName": "Automatically Adjust Timer's Target Triggering Event Count If Zero To One",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is True, and an event count-based timer's Triggering Event Count expression property has returned the value zero, then the target triggering event count for that timer will be automatically adjusted to one. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AutomaticallyClearEntityDestinationNodeFirstBeforeExecutingRouteStep",
+      "displayName": "Automatically Clear Entity Destination Node First Before Executing Route Step",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to automatically clear an entity's reference to a destination node first before executing a Route step.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "AutomaticNetworkPathExistenceChecksForVisitRequests",
+      "displayName": "Automatic Network Path Existence Checks For Visit Requests",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether automatic network path existence checks for visit requests are enabled if a transporter or moveable resource's travel mode is Network Only. The recommended value for this setting is False to allow for possible travel mode assignments, network assignments, or shortest path updates.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ChangeNaNToZeroInExpressions",
+      "displayName": "Automatically Return Zero Instead of NaN In Expressions",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is set to True, then for any element or state function with no parameters that is used in an expression, the engine will automatically adjust a NaN result returned by the function to zero. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "DefaultListStateResultsClassificationDataItemString",
+      "displayName": "Default List State Results Classification Data Item String",
+      "type": "String",
+      "value": "Time$(StateValueLabel)",
+      "writable": true,
+      "readOnly": false,
+      "description": "The default string used as the Data Item field for classifying results reported by list states in the model. \n\nNote that you may insert a state value label into the Data Item classification string by using the special parameter '$(StateValueLabel)'. When a list state is reporting statistics for an individual state value, if that parameter occurs within the Data Item classification string then it will be replaced with the actual state value label.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "DontUnitConvertStateParameters",
+      "displayName": "Do Not Perform Unit Conversions For State Parameters",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is set to True, then the engine will not properly handle unit conversions of state parameters such the Weight or Volume parameters of a queue that is holding entities. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "EnsureForeignNodesCastToNonNodeTypesAreAssociatedNodes",
+      "displayName": "Ensure Foreign Nodes Cast To Non Node Types Are Associated Nodes",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is set to True, then the engine will throw a runtime error if a node is referenced via the Foreign/Candidate/Owner keywords, the cast given is not a Node type, and the node is not associated with an object as an external input or output node. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "EvaluateExpressionFunctionsInExpressionsUsingUnitTypesOfExpression",
+      "displayName": "Evaluate Expression Functions In Expressions Using Units Of Expression",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether expression functions used in expressions will be evaluated using the units specified for the expression itself. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ExcludeEntitiesTransferringOutOfChildStationsFromResourceUtilization",
+      "displayName": "Exclude Entities Transferring Out Of Child Stations From Resource Utilization",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether capacity allocated to entities transferring out of child station locations of a resource are excluded from that resource's utilization calculations if the utilization type of the resource's Blocked state is NotUtilized. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ExcludeUnrelatedRowsInTimerArrivalTables",
+      "displayName": "Exclude Unrelated Rows In Timer Arrival Tables",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to exclude unrelated rows if an arrival table used to schedule timer events has primary key/foreign key relationships. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "HarvestAvailableRowsViaUnionAcrossAllRowsReferencedFromOriginalTable",
+      "displayName": "Harvest Available Rows Via Union Across All Rows Referenced From Original Table",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether calculation of available rows will result from the union of all row relations into an tables referenced via foreign key from the table explicitly selected. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IgnorePrimaryForeignKeyRelationshipsWhenEvaluatingTablePropertyRandomRowFunction",
+      "displayName": "Ignore Primary-Foreign Key Relationships When Evaluating Table Property 'RandomRow' Function",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If using TableName.PropertyName.RandomRow function syntax in an expression and this setting is set to True, then the value returned by the RandomRow function will ignore any foreign-primary key relationships and always return a random row index into the entire table, regardless of whether or not the active token or object is referencing a row selection set in the table.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IgnoreShortCircuitEvaluationInExpressions",
+      "displayName": "Ignore Short Circuit Evaluation In Expressions",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is set to True, then Simio will not 'short circuit' evaluation of expressions using && or || in them. For example, 'MyRefState != Nothing && Random.Uniform(MyRefState.MyEntity.MyState, 100) < 5' will normally 'short circuit' evaluation if it sees that MyRefState is Nothing, and will not evaluate the latter part of the && statement. If this setting is True, then Simio will evaluate both parts no matter what.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IgnoreTableReferencesWhenResolvingScheduleExceptions",
+      "displayName": "Ignore Table References When Resolving Schedule Exceptions",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates if, when resolving the exception repeat groups for a work schedule on a resource, the table references set on the resource will be ignored. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IgnoreTableReferencesWhenResolvingTableStatesIndexedByRow",
+      "displayName": "Ignore Table References When Resolving Table States Indexed By Row",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates when resolving table states in the form TableName[RowNumber].StateName that existing table references on the object should be ignored. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IncludeContextObjectInTableReferenceSearches",
+      "displayName": "Include Context Object In Table Reference Searches",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether, when resolving a table reference, references held by the active token's context object will be included in the search. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IncludeMaterialOrInventoryInMaterialUsageLogExpressionEvaluations",
+      "displayName": "Include Material Or Inventory In Material Usage Log Expression Evaluations",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to include the Material or Inventory element in Material Usage Log expression evaluations. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IncludeStaticAgentObjectInTableReferenceSearches",
+      "displayName": "Include Static Agent Object In Table Reference Searches",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether, when resolving a table reference, references held by the associated object's static instance (if the object is an agent) will be included in the search. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IncludeTallyStatisticInTallyObservationLogExpressionEvaluations",
+      "displayName": "Include Tally Statistic In Tally Observation Log Expression Evaluations",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to include the Tally Statistic element in Tally Observation Log expression evaluations. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "IncludeTokenInTallyObservationLogExpressionEvaluations",
+      "displayName": "Include Token In Tally Observation Log Expression Evaluations",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to include the token executing the Tally step in Tally Observation Log expression evaluations. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "MaxExpressionStackSize",
+      "displayName": "Maximum Expression Stack Size",
+      "type": "Int32",
+      "value": 20,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates the size of the stack of expressions to evaluate before throwing a runtime error. For example, if expression A calls into expression B, which calls into expression C, a stack size of at least 3 would be necessary.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "MinimalAutomaticRouteRequestQueueChecking",
+      "displayName": "Minimal Automatic Route Request Queue Checking",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether routing groups will automatically check their route request queues only when space at a possible destination node has become available or when a planned or unplanned primary resource downtime has ended. Otherwise, if this setting is False, then routing groups will automatically check their route request queues when any station or resource state change occurs at a possible destination node, resulting in a greater number of automatic (and likely unnecessary) route request queue checks. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "NodeAssociatedStationHasSpaceForFunctionConsidersAllPossibleRedirectStations",
+      "displayName": "Node.AssociatedStationHasSpaceFor() Function Considers All Possible Redirect Stations",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the AssociatedStationHasSpaceFor() function provided by an external input node considers all possible redirect stations in addition to the node's most immediate associated station location. For example, if the node is the input node of a server with an input buffer, this setting determines whether that node's AssociatedStationHasSpaceFor() function considers space in both the input buffer and processing station locations of that server or only in its input buffer. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "OnReleasedProcessCompatibilityMode",
+      "displayName": "On Released Process Compatibility Mode",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to execute an On Released Process of a Release step using token associated object and token context object references that are compatible with Simio version Sprint 190 or earlier.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "OnSeizedProcessCompatibilityMode",
+      "displayName": "On Seized Process Compatibility Mode",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to execute an On Seized Process of a Seize step using token associated object and token context object references that are compatible with Simio version Sprint 190 or earlier.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "PreventMonitorTriggeringDuringStateInitialization",
+      "displayName": "Prevent Monitor Triggering During State Initialization",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether monitors in the model will be prevented from triggering during the value initialization of their monitored state variables. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RecordStateVariableValueWheneverStateStatisticFunctionCalled",
+      "displayName": "Record State Variable Value Whenever State Statistic Function Called",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "For any State Statistic element, indicates whether to record and log the monitored state variable's current value and parameters whenever one of the state statistic's functions is called (specifically the Average, Minimum, Maximum, LastRecordedValue, or HalfWidth functions). The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ReportMaterialConsumptionCostAsUsageCostCharged",
+      "displayName": "Report Material Consumption Cost As Usage Cost Charged",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the total cost charged to consumers of a specific material is reported in the results as 'UsageCostCharged' instead of 'MaterialCostCharged'. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ReserveBinsQuantSelectionRuleCanAutoCreateStockQuants",
+      "displayName": "Reserve Bins Quant Selection Rule Can Auto Create Stock Quants",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether a Quant selection rule for a Reserve Bins step can automatically create a new stock quant if no existing quant is selected in a storage bin. The recommended value for this setting is False to enforce that a Quant selection rule explicitly means add to existing stock.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RoutingGroupAsContextOnEvaluatingToken",
+      "displayName": "Routing Group As Context On Evaluating Token",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether when evaluating the Destination Node List Name and Destination Blocked Condition for a Routing Group Element, if the routing group should be set as the 'context' element for the executing token.The recommended value for this setting is True.\r\n\r\nNOTE: This setting is not applicable and is ignored if the Always Use Property Parent Table References advanced compatibility setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RunOnEvaluatingRouteRequestAsRegularProcess",
+      "displayName": "Run OnEvaluatingRouteRequest As A Regular Process",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the OnEvaluatingRouteRequest process of a RoutingGroup element is executed as a 'regular' process instead of a 'decision' process. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RunResourceOnCapacityAllocatedProcessAfterSeizeStepOnSeizedProcess",
+      "displayName": "Run Resource OnCapacityAllocated Process After Seize Step On Seized Process",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "When a resource is seized, indicates whether the resource's OnCapacityAllocated process is executed after the On Seized Process optionally specified by the Seize step. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "RunResourceOnCapacityReleasedProcessAfterReleaseStepOnReleasedProcess",
+      "displayName": "Run Resource OnCapacityReleased Process After Release Step On Released Process",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "When a resource is released, indicates whether the resource's OnCapacityReleased process is executed after the On Released Process optionally specified by the Release step. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ScheduleConstraintLogicRelatedQueueChecksAsLatestCurrentEvents",
+      "displayName": "Schedule Constraint Logic Related Queue Checks As Latest Current Events",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to schedule constraint logic-related queue checks as latest priority current events, thereby allowing queue checks scheduled for any other reasons to happen first. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ScheduleLateCurrentEventToTryAllocatingWhenResourceCapacityIncreased",
+      "displayName": "Schedule Late Current Event To Try Allocating When Resource Capacity Increased",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to schedule a late priority current event to try allocating whenever the capacity of a resource has been increased. Otherwise, allocation will be immediately attempted before the execution of any other simulation logic in the system. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ScheduleLateCurrentEventToTryBatchingWhenBatchQueueItemInserted",
+      "displayName": "Schedule Late Current Event To Try Batching When Batch Queue Item Inserted",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to schedule a late priority current event to try batching whenever a new item has been inserted into the parent or member queue of a batch logic element. Otherwise, batching will be immediately attempted before the execution of any other simulation logic in the system. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "SearchAssociatedObjectsOfCandidateObjectsForTableReferences",
+      "displayName": "Search Associated Objects Of Candidate Objects For Table References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is True, when using table references in the form Candidate.TableName (such as Candidate.TableName.ColumnName), if the Candidate object has an Associated object, such as the Input Node of a Server having an associated Server object, then that associated objects table references will also be used to find a value if the value isn't found using the Candidates table references. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "SearchCopiesTableReferencesWhenSearchedTableIsImplicitlyReferenced",
+      "displayName": "Search Step Copies Over Table Row References When Searched Table Is Implicitly Referenced",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is True, when a Search step is used to search a table with rows that are only implicitly referenced by the incoming token to the Search step (for example, searching a 'detail' table of a master-detail relationship with the reference to the 'master' table is already set on the incoming token), then all table references on the incoming token will be copied to the 'found' token. If this setting is False, then those references will not be copied in that case.\r\n\r\nNOTE: This setting is not applicable and is ignored if the Search Step Uses Explicit Copy Over Table Row References advanced compatibility setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "SearchRelatedRowsOnlyOptionAlwaysLooksForBestForeignKeyRelationship",
+      "displayName": "Search Related Rows Only Option Always Looks For Best Foreign Key Relationship",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the Search Related Rows Only option of a Search step always looks for the best foreign key relationship in the searched table. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "SearchStepUsesExplicitCopyOverTableRowReferences",
+      "displayName": "Search Step Uses Explicit Copy Over Table Row References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the copying of table row references over from an original token executing a Search step to new tokens associated with found items is based solely on the step's Copy Over Table Row References property value, removing all restrictions that were required by previous Simio versions. Enabling this option also ensures that the table row references for the original token are always included in match condition and search expression evaluations. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "SetCurrentJobStepWhenSettingRowOnSequenceDestinationTable",
+      "displayName": "Set CurrentJobStep When Setting Row On Sequence Destination Table",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates if, when executing a SetRow on table, and that table contains sequence destinations, and a previous table selection was made with foreign keys into that table, if the CurrentJobStep should be set to the row indicated in the SetRow step. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "TableRowReferencesScopedToParent",
+      "displayName": "Table Row References Scoped To Parent Instance",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether row references via SetRow or AddRow are differentiated by the parent object instance of the table, if any. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "TableRowRuntimeRemovalClearsReferenceToRow",
+      "displayName": "Table Row Runtime Removal Clears Reference To Row",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether after a RemoveRows step with the 'RemoveActiveRow' type is executed, the reference to that active row is removed from the given table references. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "ThrowErrorIfIndexOutOfRangeWhenEvaluatingAnItemAtIndexFunction",
+      "displayName": "Throw Error If Index Out Of Range When Evaluating An 'ItemAtIndex' Function",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If using Collection.ItemAtIndex(index) function syntax in an expression and this setting is set to True, then when evaluating the function a runtime error will be thrown if the index argument is out of range. Otherwise, an undefined or null value will be returned without any error. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "TimeIndexedRowFunctionReturnsOneInsteadOfZeroIfNoRows",
+      "displayName": "TimeIndexedRow Function Of Time-Indexed Table Returns One Instead Of Zero If No Rows",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the TimeIndexedRow function of a time-indexed table returns one instead of zero if no rows are found in the table. The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "TokenIsSuspendedFunctionConsidersOnlySuspensionsAppliedExplicitlyToTheToken",
+      "displayName": "Token.IsSuspended Function Considers Only Suspensions Applied Explicitly To The Token",
+      "type": "Boolean",
+      "value": false,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether the IsSuspended function provided by a token considers only suspensions applied explicitly to the token, not any suspensions applied to the token's parent process.The recommended value for this setting is False.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "TreatStockConstraintReservationRequestsAsDemand",
+      "displayName": "Treat Stock Constraint Reservation Requests As Demand",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether stock constraint reservation requests are treated as material demand orders that affect inventory position and demand fill rates. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UseConsistentTableReferenceSearches",
+      "displayName": "Use Consistent Table Reference Searches",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates how, when resolving a table reference, multiple references in the context will be searched. If true, then the object or element containing the property that is referencing the table will be searched first, then the active token, then the active token's associated object, then the active token's context object (if including the context object in the search). The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UseDoubleStorageForDateTimeStates",
+      "displayName": "Use Double Precision Storage For DateTime States",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates if DateTime states should internally use double precision floating point, or integer ticks for value storage. Using double precision storage more closely aligns with how other time is handled in the simulation engine. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UseExecutingTokenToEvaluateRouteStepSelectionConditionExpression",
+      "displayName": "Use Executing Token To Evaluate Route Step Selection Condition Expression",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to evaluate the Selection Condition expression property of a Route step using the executing token. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UsePerformanceOptimizedSteps",
+      "displayName": "Use Performance-Optimized Steps",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "If this setting is True, then at runtime Simio will attempt to use performance-tuned versions of certain steps where possible. The recommended value for this setting is True.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UseProcessElementTableRowReferences",
+      "displayName": "Use Process Element Table Row References",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to use a Process Element's table row references when retrieving property values.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    },
+    {
+      "name": "UseStartTasksAssociatedObjectCurrentLocationAsContextForTaskPropertyEvaluations",
+      "displayName": "Use Start Tasks Associated Object Current Location As Context For Task Property Evaluations",
+      "type": "Boolean",
+      "value": true,
+      "writable": true,
+      "readOnly": false,
+      "description": "Indicates whether to use the current location of the Start Tasks step's associated object as the context for task property evaluations. The recommended value for this setting is True. Otherwise, the Task Sequence element's parent object will be used as the context.",
+      "allowedValues": null,
+      "allowedValueDescriptions": null
+    }
+  ]
+}

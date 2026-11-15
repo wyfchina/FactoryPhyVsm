@@ -1,0 +1,7 @@
+﻿Station,ProcessTimeSeconds,SetupMinutes,Availability,ResourceCount,IsUnlimited,ProcessingStream
+Stamping,1,60,0.85,1,False,101
+S_Weld_1,39,10.02,1,1,False,102
+S_Weld_2,46,10.02,0.8,1,False,103
+Assembly_1,62,0,1,1,False,104
+Assembly_2,40,0,1,1,False,105
+Shipping,0,0,1,1,True,0

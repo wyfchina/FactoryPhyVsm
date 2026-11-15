@@ -1,0 +1,109 @@
+{
+  "Server_Stamping": {
+    "sequence": [
+      "Left",
+      "Left",
+      "Right",
+      "Right",
+      "Left",
+      "Left"
+    ],
+    "setups": [
+      "0",
+      "0",
+      "1",
+      "0",
+      "1",
+      "0"
+    ]
+  },
+  "Server_Weld1": {
+    "sequence": [
+      "Left",
+      "Left",
+      "Right",
+      "Right",
+      "Left",
+      "Left"
+    ],
+    "setups": [
+      "0",
+      "0",
+      "0.16699999999999998",
+      "0",
+      "0.16699999999999998",
+      "0"
+    ]
+  },
+  "Server_Weld2": {
+    "sequence": [
+      "Left",
+      "Left",
+      "Right",
+      "Right",
+      "Left",
+      "Left"
+    ],
+    "setups": [
+      "0",
+      "0",
+      "0.16699999999999998",
+      "0",
+      "0.16699999999999998",
+      "0"
+    ]
+  },
+  "failure_resume": {
+    "row_index": "0",
+    "Resource": "Server_Stamping",
+    "SourceID": "P1-L",
+    "Product": "Left",
+    "Units": "20",
+    "StartTime": "0",
+    "FinishTime": "2",
+    "ServiceTime": "1",
+    "SetupTime": "0",
+    "ElapsedTime": "2",
+    "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+    "Replication": "20261114",
+    "RandomnessDisabled": "0"
+  },
+  "idle_failure": [
+    {
+      "row_index": "0",
+      "Resource": "Server_Stamping",
+      "Event": "Failed",
+      "EventTime": "0.5",
+      "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+      "Replication": "20261114",
+      "RandomnessDisabled": "0"
+    },
+    {
+      "row_index": "1",
+      "Resource": "Server_Stamping",
+      "Event": "Repaired",
+      "EventTime": "1.5",
+      "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+      "Replication": "20261114",
+      "RandomnessDisabled": "0"
+    },
+    {
+      "row_index": "2",
+      "Resource": "Server_Stamping",
+      "Event": "Failed",
+      "EventTime": "2",
+      "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+      "Replication": "20261114",
+      "RandomnessDisabled": "0"
+    },
+    {
+      "row_index": "3",
+      "Resource": "Server_Stamping",
+      "Event": "Repaired",
+      "EventTime": "3",
+      "Version": "VSM_V0.12_FlowDemandLedgerCandidate",
+      "Replication": "20261114",
+      "RandomnessDisabled": "0"
+    }
+  ]
+}
