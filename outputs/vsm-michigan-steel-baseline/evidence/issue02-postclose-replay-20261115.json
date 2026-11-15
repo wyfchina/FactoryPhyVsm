@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-15T01:08:13.4431122Z",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "issue_number": 2,
+  "evidence_commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+  "phase": "PostClose",
+  "transport": "Snapshot (offline, read-only)",
+  "snapshot_only": true,
+  "result": "Passed",
+  "detail": "Read-only audit; no GitHub mutations. Snapshot success is not live verification.",
+  "actions": [],
+  "checks": [
+    {
+      "Name": "local-status",
+      "Passed": true,
+      "Detail": "Local status: Passed"
+    },
+    {
+      "Name": "decision-owner",
+      "Passed": true,
+      "Detail": "Decision owner: Wu"
+    },
+    {
+      "Name": "business-reviewer",
+      "Passed": true,
+      "Detail": "Business reviewer: Wu"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/iterations/I1/02.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/assumptions-register.csv",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/04-expected-analytic-checks.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "evidence-file:outputs/vsm-michigan-steel-baseline/vsm-v07-20piece-entity-evidence.md",
+      "Passed": true,
+      "Detail": "Evidence file exists locally"
+    },
+    {
+      "Name": "remote-commit",
+      "Passed": true,
+      "Detail": "Immutable evidence commit exists in the target repository"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/iterations/I1/02.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit 72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit 72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/assumptions-register.csv",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit 72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/04-expected-analytic-checks.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit 72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+    },
+    {
+      "Name": "committed-evidence:outputs/vsm-michigan-steel-baseline/vsm-v07-20piece-entity-evidence.md",
+      "Passed": true,
+      "Detail": "Path is a file in evidence commit 72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+    },
+    {
+      "Name": "issue-identity",
+      "Passed": true,
+      "Detail": "Target is the requested Issue, not a PR"
+    },
+    {
+      "Name": "remote-state",
+      "Passed": true,
+      "Detail": "State: closed"
+    },
+    {
+      "Name": "closure-reason",
+      "Passed": true,
+      "Detail": "Reason: completed"
+    },
+    {
+      "Name": "status-label",
+      "Passed": true,
+      "Detail": "Required: status:passed"
+    },
+    {
+      "Name": "exclusive-status-label",
+      "Passed": true,
+      "Detail": "Conflicting labels: "
+    },
+    {
+      "Name": "acceptance-comment",
+      "Passed": true,
+      "Detail": "Acceptance comment binds evidence commit and named decision owner/business reviewer"
+    }
+  ],
+  "observed_issue": {
+    "number": 2,
+    "labels": [
+      "设计",
+      "status:passed"
+    ],
+    "state_reason": "completed",
+    "state": "closed"
+  },
+  "acceptance_comment_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/2#issuecomment-6887047596"
+}

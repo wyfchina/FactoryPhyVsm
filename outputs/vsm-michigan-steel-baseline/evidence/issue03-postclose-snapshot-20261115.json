@@ -1,0 +1,242 @@
+{
+  "captured_at_utc": "2026-11-15T01:07:39.247723Z",
+  "source": "Extracted from saved live REST issue/commit/tree and Connector comments; read-only replay only",
+  "source_records": [
+    "issue01-09-live-readback-20261115.json",
+    "issue01-06-comments-readback-20261115.json"
+  ],
+  "issue": {
+    "url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3",
+    "repository_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm",
+    "labels_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3/labels{/name}",
+    "comments_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3/comments",
+    "events_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3/events",
+    "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/3",
+    "id": 6380267864,
+    "node_id": "I_kwDOVtDyOM8AAAABfEspWA",
+    "number": 3,
+    "title": "[数据] Michigan Steel VSM I1.2：数据架构与输入快照",
+    "user": {
+      "login": "github-actions[bot]",
+      "id": 41898282,
+      "node_id": "MDM6Qm90NDE4OTgyODI=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+      "html_url": "https://github.com/apps/github-actions",
+      "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "id": 13072769848,
+        "node_id": "LA_kwDOVtDyOM8AAAADCzKjOA",
+        "url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/labels/%E6%95%B0%E6%8D%AE",
+        "name": "数据",
+        "color": "0e8a16",
+        "default": false,
+        "description": "Data and input snapshots",
+        "archived_at": null,
+        "archived_by": null
+      },
+      {
+        "id": 13084808690,
+        "node_id": "LA_kwDOVtDyOM8AAAADC-pV8g",
+        "url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/labels/status:passed",
+        "name": "status:passed",
+        "color": "0e8a16",
+        "default": false,
+        "description": "Passed within the stated acceptance scope",
+        "archived_at": null,
+        "archived_by": null
+      }
+    ],
+    "state": "closed",
+    "locked": false,
+    "assignees": [],
+    "milestone": {
+      "url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/milestones/1",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/milestone/1",
+      "labels_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/milestones/1/labels",
+      "id": 19509420,
+      "node_id": "MI_kwDOVtDyOM4BKbCs",
+      "number": 1,
+      "title": "I1 - Michigan Steel VSM Baseline",
+      "description": "I1 route from source and data definition through the initial WIP prototype and baseline readiness gate.",
+      "creator": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "node_id": "MDM6Qm90NDE4OTgyODI=",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+        "html_url": "https://github.com/apps/github-actions",
+        "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+        "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+        "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+        "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+        "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+        "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+        "type": "Bot",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "open_issues": 6,
+      "closed_issues": 5,
+      "state": "open",
+      "created_at": "2026-11-13T21:27:57Z",
+      "updated_at": "2026-11-15T01:05:50Z",
+      "due_on": null,
+      "closed_at": null
+    },
+    "comments": 1,
+    "created_at": "2026-11-13T21:27:59Z",
+    "updated_at": "2026-11-15T01:05:38Z",
+    "closed_at": "2026-11-15T01:05:38Z",
+    "assignee": null,
+    "author_association": "CONTRIBUTOR",
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "<!-- simulation-record-sync:wyfchina/FactoryPhyVsm:3:72bac8ba6650ead0a8847ff94c5243ecd2b58d33 -->\n## 当前受控记录\n\n- Iteration: I1\n- Local status: Passed（仅本工作包声明范围）\n- Decision owner: Wu\n- Business reviewer: Wu\n- Evidence commit: 72bac8ba6650ead0a8847ff94c5243ecd2b58d33\n\n验收通过的是来源、单位、转换规则、参数/随机流快照、质量核对、冻结文件哈希及V0.9身份。活动清单的假设表哈希已据原冻结清单和CSV作有日期的纠正，原快照保留。随机参数消费、可用率观测、原生重载由#6/#8承接；当前演进输入不冒充历史冻结副本。\n\n目标、依赖、设计、验收条件和详细结果以[受控文件](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/iterations/I1/03.md)为准，避免复制两份规范。\n\n[本轮同步审计](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md)。历史正文另存于该审计的原始回读文件。\n\n批准依据：本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。\n\n本步骤只刷新记录；关闭状态由已批准的闭环请求和线上验收回读确定。I1、B0/B1继续HOLD。",
+    "closed_by": {
+      "login": "github-actions[bot]",
+      "id": 41898282,
+      "node_id": "MDM6Qm90NDE4OTgyODI=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+      "html_url": "https://github.com/apps/github-actions",
+      "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/wyfchina/FactoryPhyVsm/issues/3/timeline",
+    "performed_via_github_app": null,
+    "state_reason": "completed",
+    "pinned_comment": null
+  },
+  "comments": [
+    {
+      "id": 6887048956,
+      "body": "<!-- simulation-issue-closure:wyfchina/FactoryPhyVsm:3:72bac8ba6650ead0a8847ff94c5243ecd2b58d33 -->\n## Issue closure acceptance\n\n- Local status: Passed\n- Decision owner: Wu\n- Business reviewer: Wu\n- Approval reference: 本会话Wu已登记为决策责任人和业务评审人并批准01及按建议推进02–05；各本地Issue已记录Passed及接受边界。本轮Wu明确要求：之前已经闭环的07之前的几个Issue状态和交付物在Github应该同步，你可以继续检验SKILL。详见 outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md 的批准与逐项范围。\n- Evidence commit: 72bac8ba6650ead0a8847ff94c5243ecd2b58d33\n- Local Issue file: outputs/vsm-michigan-steel-baseline/iterations/I1/03.md\n- Closure reason: completed\n\n验收通过的是来源、单位、转换规则、参数/随机流快照、质量核对、冻结文件哈希及V0.9身份。活动清单的假设表哈希已据原冻结清单和CSV作有日期的纠正，原快照保留。随机参数消费、可用率观测、原生重载由#6/#8承接；当前演进输入不冒充历史冻结副本。\n\n- [outputs/vsm-michigan-steel-baseline/iterations/I1/03.md](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/iterations/I1/03.md)\n- [outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md)\n- [outputs/vsm-michigan-steel-baseline/input-snapshot-manifest-v0.9.md](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/input-snapshot-manifest-v0.9.md)\n- [outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/processes.csv](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/processes.csv)\n- [outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/wip-initial.csv](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/wip-initial.csv)\n- [outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/demand-calendar.csv](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/demand-calendar.csv)\n- [outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/assumptions-register.csv](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/assumptions-register.csv)\n- [outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx](https://github.com/wyfchina/FactoryPhyVsm/blob/72bac8ba6650ead0a8847ff94c5243ecd2b58d33/outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx)",
+      "html_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/3#issuecomment-6887048956",
+      "user": {
+        "login": "github-actions[bot]",
+        "id": 41898282,
+        "profile_url": "https://github.com/apps/github-actions",
+        "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4"
+      },
+      "author_association": "CONTRIBUTOR",
+      "reactions": {
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "confused": 0,
+        "heart": 0,
+        "hooray": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "created_at": "2026-11-15T01:05:36Z",
+      "updated_at": "2026-11-15T01:05:36Z"
+    }
+  ],
+  "commit": {
+    "sha": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33"
+  },
+  "files": [
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/iterations/I1/03.md",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "598d4b875dec9a39b24a6a464056e13782f0b1b7"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/issue01-06-sync-audit.md",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "fe77981a1fb8c9a4a05d47905e0196c23e0821b8"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/input-snapshot-manifest-v0.9.md",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "ba361f1085c8743df061dacd496550fc83d8fc15"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/processes.csv",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "acb43a8cdfa573c41ed2c20da5e8e3e46ae6e204"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/wip-initial.csv",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "724cd794b6aa6d985aa16e08d0f305b9dcc30f85"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/demand-calendar.csv",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "81114cd701280086c8e955954e9540dce363ffe0"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/data/snapshots/VSM_I1_InputSnapshot_20261114_v1/assumptions-register.csv",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "9557002708d1d18c73e287304f61ac9abad53cb4"
+    },
+    {
+      "path": "outputs/vsm-michigan-steel-baseline/models/VSM_MichiganSteel_V0.9_ProductGroupAuditCandidate.spfx",
+      "commit": "72bac8ba6650ead0a8847ff94c5243ecd2b58d33",
+      "type": "file",
+      "sha": "c337912aa9f7ff7b4a564fa4a10ca67dccb40690"
+    }
+  ]
+}
