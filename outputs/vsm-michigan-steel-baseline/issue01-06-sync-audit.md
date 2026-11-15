@@ -18,7 +18,7 @@
 | 03 | 输入快照、转换规则、模型身份与哈希 Passed | #3 open/status:partial | 同上 | 不宣称已消费随机参数或测得目标可用率 |
 | 04 | V0.9 总量释放、事件、路径、守恒与能力压力 Passed | #4 open/status:partial | 同上 | 版本未知的旧18,400实体运行不作为关闭证据；不追认逐件到达时序 |
 | 05 | V0.10 公共骨架、确定性回归及保存包身份 Passed | #5 open/status:partial | 同上 | 独立关闭/重载仍由VSM-14及06/08承接 |
-| 06 | V0.11 cohort标签等子集；整体 In Progress/HOLD | #6 open/status:partial | 更新当前交付物、通过子集和待办；保持打开 | 动态cohort、真实批次、CT/FG/需求、故障换型、重载等未完成 |
+| 06 | V0.12 实施与确定性实现范围 Passed | #6 open/status:partial（闭环前快照） | 已具备限定范围验收证据；完成线上验收评论、status:passed、closed/completed和回读 | Issue 09 的随机研究、20件聚合适用性、作者对照和正式B0/B1阶段门不由06关闭 |
 
 线上原正文已保存为[同步前回读](evidence/issue01-06-before-20261115.json)。旧正文停留在V0.4、Source初始化、Partial和待确认班次口径；本次用当前受控文件链接更新摘要，完整旧运行记录不改写。
 
