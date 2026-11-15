@@ -19,7 +19,7 @@ $sha='a'*40
 $baseRequest=[ordered]@{schema_version=1;repository='example/simulation-test';issue_number=42;local_file='iterations/I3/06.md';evidence_commit=$sha;evidence_paths=@('evidence/acceptance.md');decision_owner='DecisionOwner';business_reviewer='Reviewer';business_review_confirmed=$true;approval_reference='Synthetic approval, no live authorization';acceptance_summary='Synthetic specification scope; native model work remains outside this test.'}
 $baseSnapshot=[ordered]@{
     issue=@{number=42;state='closed';state_reason='completed';labels=@(@{name='verification'},@{name='status:passed'})}
-    comments=@(@{id=1;html_url='https://example.invalid/acceptance';body="Acceptance evidence $sha`nDecision owner: DecisionOwner`nBusiness reviewer: Reviewer"})
+    comments=@(@{id=1;html_url='https://example.invalid/acceptance';body="Acceptance evidence $sha`nLocal status: Passed`nDecision owner: DecisionOwner`nBusiness reviewer: Reviewer"})
     commit=@{sha=$sha}
     files=@(@{path='evidence/acceptance.md';commit=$sha;type='file';sha=('b'*40)})
 }
@@ -29,7 +29,7 @@ $cases=@(
     @{name='conflicting-status-labels';exit=2}, @{name='uncommitted-evidence';exit=2},
     @{name='missing-commit';exit=2}, @{name='empty-evidence-list';exit=2}, @{name='path-outside-root';exit=2},
     @{name='snapshot-apply-prohibited';exit=2}, @{name='preclose-open';exit=0},
-    @{name='unconfirmed-review';exit=2}, @{name='wrong-issue';exit=2}
+    @{name='unconfirmed-review';exit=2}, @{name='wrong-issue';exit=2}, @{name='acceptance-not-passed';exit=2}
 )
 $results=[Collections.Generic.List[object]]::new()
 foreach($case in $cases) {
@@ -53,6 +53,7 @@ foreach($case in $cases) {
         'preclose-open' {$phase='PreClose';$snap.issue.state='open';$snap.issue.state_reason=$null;$snap.issue.labels=@(@{name='status:partial'});$snap.comments=@()}
         'unconfirmed-review' {$phase='PreClose';$req.business_review_confirmed=$false}
         'wrong-issue' {$snap.issue.number=99}
+        'acceptance-not-passed' {$snap.comments[0].body=$snap.comments[0].body.Replace('Local status: Passed','Local status: Partial')}
     }
     $requestFile=Join-Path $TestRoot ($case.name+'-request.json')
     $snapshotFile=Join-Path $TestRoot ($case.name+'-snapshot.json')

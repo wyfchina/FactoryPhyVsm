@@ -108,6 +108,7 @@ function Acceptance-Comment($Comments) {
     return ($Comments | Where-Object {
         $_.body -and $_.body.Contains($EvidenceCommit) -and
         $_.body -match '(?i)验收|acceptance|evidence|证据' -and
+        ($_.body -replace '[*`]', '') -match '(?im)^\s*(?:-\s*)?(?:Local status|状态|Status)\s*[:：]\s*Passed\b' -and
         $_.body.Contains("Decision owner: $DecisionOwner") -and
         $_.body.Contains("Business reviewer: $BusinessReviewer")
     } | Select-Object -First 1)
