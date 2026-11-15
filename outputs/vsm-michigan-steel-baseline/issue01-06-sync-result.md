@@ -16,7 +16,7 @@
 | 03 | #3 closed / completed / status:passed | [验收](https://github.com/wyfchina/FactoryPhyVsm/issues/3#issuecomment-6887048956) | 数据/快照身份，含活动清单纠错；不代表随机参数已消费 |
 | 04 | #4 closed / completed / status:passed | [验收](https://github.com/wyfchina/FactoryPhyVsm/issues/4#issuecomment-6887050193) | 绑定V0.9的结构机制回归，版本未知旧运行不作为关闭证据 |
 | 05 | #5 closed / completed / status:passed | [验收](https://github.com/wyfchina/FactoryPhyVsm/issues/5#issuecomment-6887051229) | V0.10公共骨架、会话回归、保存包身份；独立重载仍由06/08承担 |
-| 06 | #6 本地 Passed（V0.12实施与确定性实现范围）；线上闭环回读待补 | 待创建本轮验收评论 | 随机统计、20件聚合时序适用性、作者结果对照和B0/B1阶段门转由09/基线评审 |
+| 06 | #6 closed / completed / status:passed | [验收评论](https://github.com/wyfchina/FactoryPhyVsm/issues/6#issuecomment-6892979311) | V0.12实施与确定性实现范围已闭环；随机统计、20件聚合时序适用性、作者结果对照和B0/B1阶段门转由09/基线评审 |
 
 02–05正文已改为当前范围摘要和不可变受控文件链接；目标、依赖、设计、验收条件、预期与实际结果仍以各自Markdown为权威，避免双份正文分别演化。原始线上正文保留在[同步前快照](evidence/issue01-06-before-20261115.json)。#7保持原closed/completed/status:passed，#8/#9保持open，I1和正式B0/B1继续HOLD。
 

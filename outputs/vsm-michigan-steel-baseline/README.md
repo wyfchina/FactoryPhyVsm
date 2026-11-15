@@ -29,6 +29,6 @@
 
 ## GitHub 协作状态
 
-项目规划和 I1 的 01–14 工作包 Markdown 已整理为仓库内容。Issue 06 的 V0.12 实施与确定性实现范围已通过本地验收，线上闭环回读完成后更新其状态；Issue 08 的确定性验证与守恒范围已闭环。随机复制、置信区间、20 件聚合适用性与作者结果对照转交 Issue 09，I1/B0/B1仍为HOLD。目标远端为 [`wyfchina/FactoryPhyVsm`](https://github.com/wyfchina/FactoryPhyVsm)，本地分支为 `codex/vsm-v04-github-ready`。
+项目规划和 I1 的 01–14 工作包 Markdown 已整理为仓库内容。Issue 06 的 V0.12 实施与确定性实现范围已完成线上闭环，Issue 08 的确定性验证与守恒范围已闭环。随机复制、置信区间、20 件聚合适用性与作者结果对照转交 Issue 09，I1/B0/B1仍为HOLD。目标远端为 [`wyfchina/FactoryPhyVsm`](https://github.com/wyfchina/FactoryPhyVsm)，本地分支为 `codex/vsm-v04-github-ready`。
 
 每项后续模型变更应关联 Issue，记录目标、依赖、设计、验收条件、预期和实际结果以及证据路径。每次运行都须绑定模型文件哈希、输入快照和 Simio 版本；不能用提交、上传或文件名代替阶段验收。

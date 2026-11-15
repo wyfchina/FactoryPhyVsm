@@ -21,3 +21,12 @@
 - 模型文件：[models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx](models/VSM_MichiganSteel_V0.12_FlowDemandLedgerCandidate.spfx)
 
 关闭条件必须同时具备：证据提交、Wu 业务评审、线上验收评论、`status:passed` 标签、`closed/completed` 状态和闭环回读。线上 Issue 号仍是 `#6`；本地 `I1.4` 只表示路线位置。
+
+## 线上回读
+
+- 状态：`closed / completed`
+- 标签：`建模`、`status:passed`；`status:partial` 已移除
+- 验收评论：[issuecomment-6892979311](https://github.com/wyfchina/FactoryPhyVsm/issues/6#issuecomment-6892979311)
+- 证据提交：`7191bba2a9ce64245b0210845ee584d3ccdabbfa`
+- Action 提交：`0491239efdec8260b1526eb7a302593a97d83792`
+- 机器可读回执：[issue06-closure-readback-20261115.json](evidence/issue06-closure-readback-20261115.json)

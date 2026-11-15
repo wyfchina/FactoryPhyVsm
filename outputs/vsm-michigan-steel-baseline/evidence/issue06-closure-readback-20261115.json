@@ -1,0 +1,34 @@
+{
+  "captured_at_utc": "2026-11-15T10:27:57Z",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "issue_number": 6,
+  "issue_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/6",
+  "state": "closed",
+  "state_reason": "completed",
+  "labels": ["建模", "status:passed"],
+  "removed_status_labels": ["status:partial"],
+  "milestone": "I1 - Michigan Steel VSM Baseline",
+  "evidence_commit": "7191bba2a9ce64245b0210845ee584d3ccdabbfa",
+  "action_commit": "0491239efdec8260b1526eb7a302593a97d83792",
+  "acceptance_comment_id": 6892979311,
+  "acceptance_comment_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/6#issuecomment-6892979311",
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "accepted_scope": "V0.12 implementation and deterministic acceptance scope",
+  "deferred_to_issue_09": [
+    "R1 independent random replications",
+    "95% confidence intervals",
+    "availability observation and tolerance",
+    "random stream/seed platform mapping",
+    "20-piece aggregation timing applicability",
+    "author result comparison",
+    "formal B0/B1 baseline gate"
+  ],
+  "readback_checks": {
+    "closed_completed": true,
+    "status_passed_present": true,
+    "status_partial_absent": true,
+    "acceptance_comment_contains_evidence_commit": true,
+    "issue_09_remains_deferred": true
+  }
+}
