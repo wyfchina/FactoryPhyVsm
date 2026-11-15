@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "repository": "wyfchina/FactoryPhyVsm",
+  "target_branch": "codex/vsm-v04-github-ready",
+  "evidence_commit": "c3ae155e4d82b5d2ff92a77f291dc728a5ee2eef",
+  "approval_reference": "本会话已授权完成V0.12保存重载后的Issue 06技术进度同步；业务评审和Issue关闭状态仍单独确认。",
+  "records": [
+    {
+      "issue_number": 6,
+      "expected_state": "open",
+      "local_file": "outputs/vsm-michigan-steel-baseline/iterations/I1/06.md",
+      "local_status": "Technical Passed / Business Review Pending / HOLD for research",
+      "summary": "V0.12已完成初始WIP动态账本、9张Output Table、四张生产工单、ManufacturingCT/删失、方案A需求履约、换型、故障续作和用户保存关闭重开。保存包SHA-256为73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f；诊断0 errors、运行警告0，保存前后输出逐行一致。F01-F07确定性小例、来源/位置守恒、正常资源释放和固定原生复制回归通过。20件计算实体与逐件参照的交期件数一致，但制造完工数差15件、已完成制造CT加权均值差14.7333分钟，不声明时序等价；30复制、95%CI、可用率观测和聚合适用性转交Issue 08，作者结果对照转交Issue 09。",
+      "progress_comment": "## V0.12 技术进度同步（2026-11-15）\n\n- Local status: Technical Passed / Business Review Pending\n- Decision owner: Wu\n- Business reviewer: Wu\n- Evidence commit: c3ae155e4d82b5d2ff92a77f291dc728a5ee2eef\n- Model SHA-256: 73a98d963b756e485d6eb8b2a460954391047ed229290a823ceeb6ce9bfdd62f\n\n用户已保存并关闭重开V0.12。保存重载结构、诊断、11张账本/输出表、F01-F07确定性边界和机制回归证据已进入该提交。20件与逐件参照的制造时序差异已显式登记，由Issue 08判断适用性。#6保持Open/status:partial，等待Wu确认本次限定业务验收范围；I1、B0/B1继续HOLD。"
+    }
+  ]
+}

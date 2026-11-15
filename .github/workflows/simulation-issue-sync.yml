@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - .github/issue-closures/*.json
+      - .github/issue-records/i1-v012-progress.json
   workflow_dispatch:
     inputs:
       request_file:
@@ -38,7 +39,11 @@ jobs:
         with:
           script: |
             const { run } = require('./scripts/github/sync-issue-records.cjs');
-            await run({ github, context, core });
+            const changed = require('node:child_process').execFileSync('git', ['diff', '--name-only', '--diff-filter=AM', context.payload.before, context.sha], { encoding: 'utf8' });
+            const planPath = changed.split(/\r?\n/).includes('.github/issue-records/i1-v012-progress.json')
+              ? '.github/issue-records/i1-v012-progress.json'
+              : undefined;
+            await run({ github, context, core, planPath });
       - name: Check and synchronize approved requests
         shell: pwsh
         env:

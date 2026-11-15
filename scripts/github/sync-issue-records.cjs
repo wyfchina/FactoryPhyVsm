@@ -31,8 +31,8 @@ function validatePlan(plan, repository, branch) {
   return plan;
 }
 
-async function run({ github, context, core }) {
-  const planPath = '.github/issue-records/i1-pre07-sync.json';
+async function run({ github, context, core, planPath: requestedPlanPath }) {
+  const planPath = requestedPlanPath || '.github/issue-records/i1-pre07-sync.json';
   // Future closure requests must not reapply this historical body refresh.
   if (context.eventName !== 'push') return;
   const changed = cp.execFileSync('git', ['diff', '--name-only', '--diff-filter=AM', context.payload.before, context.sha],
