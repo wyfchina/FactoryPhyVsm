@@ -81,6 +81,23 @@
 ## 状态与版本身份
 ```
 
+启用 GitHub 管理时，在 Issue 文件的状态段或交接段追加：
+
+```markdown
+## GitHub 闭环记录
+- GitHub Issue：#<number>
+- Local status：Passed
+- Decision owner：
+- Business reviewer：
+- Approval reference：
+- Evidence commit：
+- Evidence paths：
+- GitHub sync：Pending / Audited / Closed
+- Sync receipt：通道、实际动作、回读时间与证据位置
+```
+
+本地 `Passed` 只表示本 Issue 的验收范围完成；线上 `closed` 必须在证据提交、业务评审、验收评论和状态标签完成后登记。详细规则见[GitHub 仿真项目治理](github-project-governance.md)。
+
 用 Issue 验收记录实际结果。若验收失败，记录失败证据、影响的架构决策、返工版本和需要重跑的回归测试；不得仅把 Issue 状态改成完成。
 
 ## Aerospace 来源的抽象边界

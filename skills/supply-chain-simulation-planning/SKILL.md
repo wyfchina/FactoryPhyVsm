@@ -3,6 +3,7 @@ name: supply-chain-simulation-planning
 description: Plan and govern discrete-event simulation projects for supply chain, manufacturing, logistics, and service operations. Use this skill to establish a decision-focused project plan, iterative model states, conceptual model, data and assumption plan, verification and experiment framework, or evidence-based recommendation. A formal baseline is optional and user-defined. For detailed Simio model edits, also use the available simio-modeling skill.
 metadata:
   short-description: Plan, verify, analyze, and govern supply chain simulation projects
+  version: "2026.11.15.1"
 ---
 
 # 供应链仿真规划
@@ -16,19 +17,20 @@ metadata:
 - 对重要陈述标注类别：来源事实、确认约束、假设、实现选择、解析推导、仿真结果或未验证；保留来源及版本。
 - 先利用现有资料建立事实、假设和未知项框架。是否创建正式仿真基线由用户或决策问题决定；显式列出缺失输入及其影响，只有当缺失信息会改变范围、模型结构或验收结论时才询问用户。
 - 选择足以支持决策的最简方法。透明的解析计算可以回答问题时，不强行建立仿真；决策依赖交互、顺序、资源争用、变异、阻塞或策略反馈时，再采用仿真。
-- 区分通用流程和平台实现。若需修改或审查 Simio 模型，先读项目约定，并使用 `simio-modeling` 处理模型机制。
+- 区分通用流程和平台实现。若需修改或审查 Simio 模型，先读项目约定，并使用 `simio-modeling` 处理模型机制；本规划 Skill 不规定 Simio 专属对象、Process、属性或表达式。
 - 模型能运行、静态诊断无错误或图表看似合理，都不能单独证明模型代表了真实运营。
 
 ## 工作流程
 
-1. 选择工作模式：项目资料盘点与规划、概念设计、模型审查、验证与确认、实验与优化、决策交付。若项目通过 GitHub 协作，读取[GitHub 仿真项目治理](references/github-project-governance.md)，确定记录的权威来源、变更审查和版本追溯方式；按需读取其他参考文件。
+1. 选择工作模式：项目资料盘点与规划、概念设计、模型审查、验证与确认、实验与优化、决策交付。若项目通过 GitHub 协作，读取[GitHub 仿真项目治理](references/github-project-governance.md)。项目已启用 GitHub 管理且某个 Issue 本地验收为 `Passed`、准备闭环时，必须按[闭环同步协议](references/github-issue-sync.md)主动启动检查：证据先提交，核对业务批准及线上状态，再在既有授权范围内同步评论、标签和关闭状态，最后回读并回填本地记录。不能以 Markdown 的 Passed、已推送或 Action 已启动代替线上闭环确认。
 2. 从资料中提取决策问题、系统边界、实体与流、控制策略、资源、日历、需求、绩效指标和约束。使用[项目规划与迭代基线登记模板](assets/templates/project-baseline.md)形成首版框架；项目根目录的 `01.md` 是总路线索引，必须把 `I1.1`、`I2.1` 等轮次环节映射到实际的核心 Issue 文件，例如 `iterations/I1/04.md`。按需读取[Issue 驱动建模流程](references/issue-driven-model-build.md)：每次迭代在已验证模型上增加明确的复杂度，验证新增机制并回归既有验证，记录模型版本和进入下一迭代的条件；基线只在用户或决策问题要求时定义，并标明对应迭代。
 3. 统一术语、单位、时间边界和目标口径；分开记录事实、假设、设计选择和未知项。识别哪些未知项可实验验证，哪些必须由业务方确认。
 4. 先定义概念模型和备选方案，再做详细实现。用解析估算检查数量级；对脆弱或平台相关的机制先做最小原型。
 5. 设计验证、模型确认和实验计划，写明验收标准、可比控制条件、不确定性度量和复现信息。用户要求审查模型、数据、结果或修复声明时，读取[通用模型核查规范](references/model-audit-protocol.md)；普通建模验证按[验证与实验](references/verification-and-experiments.md)执行。
-6. 分阶段实现。每次重要变更后更新模型/数据版本、运行相关检查并保留证据；不同模型机制或统计总体的结果不得直接混用。GitHub 管理的项目还应将工作 Issue、Pull Request、提交、模型/输入快照及运行证据相互关联，按治理参考执行受控修改和发布。
+6. 分阶段实现。每次重要变更后更新模型/数据版本、运行相关检查并保留证据；不同模型机制或统计总体的结果不得直接混用。GitHub 管理的项目还应将工作 Issue、Pull Request、提交、模型/输入快照及运行证据相互关联，按治理参考执行受控修改和发布；本地 Issue 的详细验收与 GitHub Issue 的线上状态必须分开记录并在闭环门同步核对。
 7. 按决策约束、运营可行性、成本和不确定性比较方案，明确证据支持什么、尚不能支持什么。
 8. 完成交接：目的、场景与发现、模型和数据结构、假设与边界、运行方法、证据位置、版本身份及后续事项。
+
 
 ## 阶段门
 
@@ -64,6 +66,7 @@ metadata:
 
 - Issue 编号、依赖、可裁剪核心工作包和验证闭环：读[Issue 驱动建模流程](references/issue-driven-model-build.md)。
 - GitHub Issue/PR 协作、项目文件职责、变更控制、证据追溯和模型发布：读[GitHub 仿真项目治理](references/github-project-governance.md)。
+- GitHub 闭环触发、通道切换、脚本参数和可复用 Action 接入：读[闭环同步协议](references/github-issue-sync.md)。脚本在 `scripts/`，可复制的工作流及请求模板在 `assets/templates/`；默认只读，写入需要明确业务批准及已有用户授权。
 - 需要追溯 Aerospace `01–14` 的案例结构时：读[Aerospace Issue 参考索引](references/aerospace-issue-patterns.md)。
 - 对模型、数据、运行结果和“已修复”声明做独立核查：读[通用模型核查规范](references/model-audit-protocol.md)。
 - 阶段活动、入口/出口证据和交付物：读[项目生命周期](references/project-lifecycle.md)。
@@ -71,3 +74,7 @@ metadata:
 - 验证、模型确认、实验统计和优化：读[验证与实验](references/verification-and-experiments.md)。
 - Aerospace 参考项目的可迁移经验：读[Aerospace 案例模式](references/aerospace-case-patterns.md)。案例数值不是默认值。
 - 建立首版项目框架：复制并按需裁剪[项目基线模板](assets/templates/project-baseline.md)。
+
+## 维护与安装一致性
+
+维护源和安装目录分别登记；有多个副本时先比较差异并保留各自有效修改，避免相互覆盖。完成升级后从确认的维护源安装，核对完整相对文件清单与逐文件 SHA-256，并记录本次版本、来源提交和测试结果。只有安装目录与验收的维护源一致，才能报告“已升级可用”；通用规则、脚本和案例示例仍按各自目录分开维护。

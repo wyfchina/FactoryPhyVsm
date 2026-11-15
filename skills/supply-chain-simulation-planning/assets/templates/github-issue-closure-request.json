@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "mode": "audit",
+  "repository": "owner/repository",
+  "target_branch": "main",
+  "issue_number": 1,
+  "local_file": "iterations/I1/01.md",
+  "evidence_commit": "REPLACE_WITH_FULL_EVIDENCE_COMMIT_SHA",
+  "evidence_paths": ["evidence/issue-01-acceptance.md"],
+  "decision_owner": "REPLACE_WITH_DECISION_OWNER",
+  "business_reviewer": "REPLACE_WITH_BUSINESS_REVIEWER",
+  "business_review_confirmed": false,
+  "approval_reference": "REPLACE_WITH_APPROVAL_RECORD_REFERENCE",
+  "acceptance_summary": "REPLACE_WITH_ACCEPTED_SCOPE_AND_ANY_APPROVED_DEFERRED_WORK",
+  "expected_status_label": "status:passed"
+}
