@@ -31,8 +31,12 @@
 ## GitHub 闭环记录
 
 - 本地状态：`Passed（确定性验证与守恒范围）`
-- 线上状态：Pending（待 Action 写入并回读）
-- 证据提交：将在本地闭环记录提交后写入请求并绑定完整 SHA
+- 线上状态：`Closed / completed`
+- 线上标签：`验证`、`status:passed`；已移除 `status:partial`
+- 验收评论：[6891352803](https://github.com/wyfchina/FactoryPhyVsm/issues/8#issuecomment-6891352803)
+- 证据提交：`929bb39e127d8211cceac2c1a4ccd8a3317559de`
 - 本次责任范围：V0.12 确定性机制、守恒、边界小例、持久化及固定复制回归
 - 下游研究：Issue 09 承接 R1 随机复制、95% CI、可用率目标观测、随机流/种子映射、20 件聚合适用性和作者结果对照
 - 项目阶段：I1 与 B0/B1 仍为 `HOLD`；Issue 09 仍为 `Blocked / HOLD`
+
+线上回读证据：[issue08-closure-readback-20261115.json](evidence/issue08-closure-readback-20261115.json)

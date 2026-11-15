@@ -1,0 +1,33 @@
+{
+  "captured_at_utc": "2026-11-15T07:56:02Z",
+  "repository": "wyfchina/FactoryPhyVsm",
+  "issue_number": 8,
+  "issue_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/8",
+  "state": "closed",
+  "state_reason": "completed",
+  "labels": ["验证", "status:passed"],
+  "removed_status_labels": ["status:partial"],
+  "milestone": "I1 - Michigan Steel VSM Baseline",
+  "evidence_commit": "929bb39e127d8211cceac2c1a4ccd8a3317559de",
+  "acceptance_comment_id": 6891352803,
+  "acceptance_comment_url": "https://github.com/wyfchina/FactoryPhyVsm/issues/8#issuecomment-6891352803",
+  "decision_owner": "Wu",
+  "business_reviewer": "Wu",
+  "accepted_scope": "V0.12 deterministic validation, conservation, boundary small cases, persistence/reload and fixed replication regression",
+  "deferred_to_issue_09": [
+    "R1 independent random replications",
+    "95% confidence intervals",
+    "observed availability and tolerance",
+    "random stream/seed platform mapping",
+    "20-piece aggregation timing applicability",
+    "author result comparison",
+    "formal B0/B1 baseline gate"
+  ],
+  "readback_checks": {
+    "closed_completed": true,
+    "status_passed_present": true,
+    "status_partial_absent": true,
+    "acceptance_comment_contains_evidence_commit": true,
+    "issue_09_remains_deferred": true
+  }
+}
