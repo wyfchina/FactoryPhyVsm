@@ -1,0 +1,29 @@
+{
+  "label": "continuous-240d-aligned",
+  "checks": {
+    "period_rows": true,
+    "native_log_count": true,
+    "balances": true,
+    "finite_statistics": true,
+    "complete_periods": true,
+    "rates": true,
+    "initial_once": true,
+    "run_balance": true,
+    "no_warnings": true,
+    "zero_backlog_max_is_zero": true,
+    "independent_integrals_and_native_logs": true,
+    "product_totals": true,
+    "daily_monthly_weighting": true,
+    "shipment_regression_exact": true,
+    "daily_business_regression_exact": true
+  },
+  "passed": true,
+  "max_integral_errors": {
+    "fg": 3.6834535421803594e-11,
+    "mfg": 2.764863893389702e-10,
+    "backlog": 3.0809133022557944e-11
+  },
+  "errors": [],
+  "sum_errors": [],
+  "aggregation_errors": []
+}
