@@ -1,0 +1,41 @@
+{
+  "experiment": "Exp_VSM_AssemblyModes",
+  "isBusy": false,
+  "status": "completed",
+  "startedUtc": "2026-11-17T03:54:37.359981+00:00",
+  "completedUtc": "2026-11-17T04:00:48.1272387+00:00",
+  "lastError": null,
+  "resultsAvailable": true,
+  "scenarios": [
+    {
+      "name": "Scenario1",
+      "active": false,
+      "replicationsRequired": 10,
+      "replicationsCompleted": 0
+    },
+    {
+      "name": "Original_LargeBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 1
+    },
+    {
+      "name": "Original_SmallBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 1
+    },
+    {
+      "name": "Parallel_LargeBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 1
+    },
+    {
+      "name": "Parallel_SmallBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 1
+    }
+  ]
+}

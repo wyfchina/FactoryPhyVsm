@@ -1,0 +1,25 @@
+{
+  "expected_rejection": true,
+  "error": "{'modelName': 'Model', 'runMode': 'InteractiveMode', 'simulationRunState': 'bnP', 'isInRunMode': True, 'running': False, 'paused': True, 'canGo': True, 'canFastForward': True, 'canPause': False, 'canStop': True, 'dispatcherStatus': 'idle', 'pendingCommandCount': 0, 'lastCommand': 'fast_forward_model', 'lastError': '对象：Transfer_InitialWIP\\n\\n在时刻检测到的运行时错误0.0 Hours在以下的处理步骤：\\n\\n对象：Model\\n流程：VSM_校验实验输入\\n令牌：Token.2\\n步骤：[Notify] 校验并行人数\\n\\nVSM 实验输入不合法\\r\\n\\r\\n当前工人资源列表支持1或2人；扩展资源列表后才能使用更大人数。\\n\\nAssociated Object: Transfer_InitialWIP\\nContext Object: Transfer_InitialWIP\\nParent Object: Model\\n', 'lastStartedUtc': '2026-11-17T04:01:33.9659391+00:00', 'lastCompletedUtc': '2026-11-17T04:01:34.3677862+00:00', 'warningCount': 0, 'warningsTruncated': False, 'warnings': []}",
+  "status": {
+    "modelName": "Model",
+    "runMode": "InteractiveMode",
+    "simulationRunState": "bnP",
+    "isInRunMode": true,
+    "running": false,
+    "paused": true,
+    "canGo": true,
+    "canFastForward": true,
+    "canPause": false,
+    "canStop": true,
+    "dispatcherStatus": "idle",
+    "pendingCommandCount": 0,
+    "lastCommand": "fast_forward_model",
+    "lastError": "对象：Transfer_InitialWIP\n\n在时刻检测到的运行时错误0.0 Hours在以下的处理步骤：\n\n对象：Model\n流程：VSM_校验实验输入\n令牌：Token.2\n步骤：[Notify] 校验并行人数\n\nVSM 实验输入不合法\r\n\r\n当前工人资源列表支持1或2人；扩展资源列表后才能使用更大人数。\n\nAssociated Object: Transfer_InitialWIP\nContext Object: Transfer_InitialWIP\nParent Object: Model\n",
+    "lastStartedUtc": "2026-11-17T04:01:33.9659391+00:00",
+    "lastCompletedUtc": "2026-11-17T04:01:34.3677862+00:00",
+    "warningCount": 0,
+    "warningsTruncated": false,
+    "warnings": []
+  }
+}
