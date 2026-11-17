@@ -1,0 +1,934 @@
+{
+  "Original_LargeBatch": {
+    "ShippedUnits": {
+      "responseName": "ShippedUnits",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 219350,
+      "minimum": 219350,
+      "maximum": 219350,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 219350
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ManufacturedUnits": {
+      "responseName": "ManufacturedUnits",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 215210,
+      "minimum": 215210,
+      "maximum": 215210,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 215210
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "OnTimeFillPct": {
+      "responseName": "OnTimeFillPct",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 80.39855072463769,
+      "minimum": 80.39855072463769,
+      "maximum": 80.39855072463769,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 80.39855072463769
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "FinalBacklogUnits": {
+      "responseName": "FinalBacklogUnits",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 1450,
+      "minimum": 1450,
+      "maximum": 1450,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 1450
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageFGCoverageDays": {
+      "responseName": "AverageFGCoverageDays",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3.562550756776246,
+      "minimum": 3.562550756776246,
+      "maximum": 3.562550756776246,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3.562550756776246
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageManufacturingWIPDays": {
+      "responseName": "AverageManufacturingWIPDays",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 21.032511761964567,
+      "minimum": 21.032511761964567,
+      "maximum": 21.032511761964567,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 21.032511761964567
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker1UtilPct": {
+      "responseName": "Worker1UtilPct",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker2UtilPct": {
+      "responseName": "Worker2UtilPct",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ReleasedUnits": {
+      "responseName": "ReleasedUnits",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "UnitBalance": {
+      "responseName": "UnitBalance",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "SimulatedHours": {
+      "responseName": "SimulatedHours",
+      "scenario": "Original_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3680,
+      "minimum": 3680,
+      "maximum": 3680,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3680
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    }
+  },
+  "Original_SmallBatch": {
+    "ShippedUnits": {
+      "responseName": "ShippedUnits",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 219350,
+      "minimum": 219350,
+      "maximum": 219350,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 219350
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ManufacturedUnits": {
+      "responseName": "ManufacturedUnits",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 215210,
+      "minimum": 215210,
+      "maximum": 215210,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 215210
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "OnTimeFillPct": {
+      "responseName": "OnTimeFillPct",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 87.90307971014492,
+      "minimum": 87.90307971014492,
+      "maximum": 87.90307971014492,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 87.90307971014492
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "FinalBacklogUnits": {
+      "responseName": "FinalBacklogUnits",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 1450,
+      "minimum": 1450,
+      "maximum": 1450,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 1450
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageFGCoverageDays": {
+      "responseName": "AverageFGCoverageDays",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3.15931656595194,
+      "minimum": 3.15931656595194,
+      "maximum": 3.15931656595194,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3.15931656595194
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageManufacturingWIPDays": {
+      "responseName": "AverageManufacturingWIPDays",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 16.53251176196455,
+      "minimum": 16.53251176196455,
+      "maximum": 16.53251176196455,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 16.53251176196455
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker1UtilPct": {
+      "responseName": "Worker1UtilPct",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker2UtilPct": {
+      "responseName": "Worker2UtilPct",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ReleasedUnits": {
+      "responseName": "ReleasedUnits",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "UnitBalance": {
+      "responseName": "UnitBalance",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "SimulatedHours": {
+      "responseName": "SimulatedHours",
+      "scenario": "Original_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3680,
+      "minimum": 3680,
+      "maximum": 3680,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3680
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    }
+  },
+  "Parallel_LargeBatch": {
+    "ShippedUnits": {
+      "responseName": "ShippedUnits",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ManufacturedUnits": {
+      "responseName": "ManufacturedUnits",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 233790,
+      "minimum": 233790,
+      "maximum": 233790,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 233790
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "OnTimeFillPct": {
+      "responseName": "OnTimeFillPct",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 100,
+      "minimum": 100,
+      "maximum": 100,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 100
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "FinalBacklogUnits": {
+      "responseName": "FinalBacklogUnits",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageFGCoverageDays": {
+      "responseName": "AverageFGCoverageDays",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 15.804383917448169,
+      "minimum": 15.804383917448169,
+      "maximum": 15.804383917448169,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 15.804383917448169
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageManufacturingWIPDays": {
+      "responseName": "AverageManufacturingWIPDays",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 8.315181299943077,
+      "minimum": 8.315181299943077,
+      "maximum": 8.315181299943077,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 8.315181299943077
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker1UtilPct": {
+      "responseName": "Worker1UtilPct",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 90.4451682364101,
+      "minimum": 90.4451682364101,
+      "maximum": 90.4451682364101,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 90.4451682364101
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker2UtilPct": {
+      "responseName": "Worker2UtilPct",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 88.75867804391457,
+      "minimum": 88.75867804391457,
+      "maximum": 88.75867804391457,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 88.75867804391457
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ReleasedUnits": {
+      "responseName": "ReleasedUnits",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "UnitBalance": {
+      "responseName": "UnitBalance",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "SimulatedHours": {
+      "responseName": "SimulatedHours",
+      "scenario": "Parallel_LargeBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3680,
+      "minimum": 3680,
+      "maximum": 3680,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3680
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    }
+  },
+  "Parallel_SmallBatch": {
+    "ShippedUnits": {
+      "responseName": "ShippedUnits",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ManufacturedUnits": {
+      "responseName": "ManufacturedUnits",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 230150,
+      "minimum": 230150,
+      "maximum": 230150,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 230150
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "OnTimeFillPct": {
+      "responseName": "OnTimeFillPct",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 100,
+      "minimum": 100,
+      "maximum": 100,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 100
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "FinalBacklogUnits": {
+      "responseName": "FinalBacklogUnits",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageFGCoverageDays": {
+      "responseName": "AverageFGCoverageDays",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 13.160306976696711,
+      "minimum": 13.160306976696711,
+      "maximum": 13.160306976696711,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 13.160306976696711
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "AverageManufacturingWIPDays": {
+      "responseName": "AverageManufacturingWIPDays",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 6.459258240694487,
+      "minimum": 6.459258240694487,
+      "maximum": 6.459258240694487,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 6.459258240694487
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker1UtilPct": {
+      "responseName": "Worker1UtilPct",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 89.3553056553082,
+      "minimum": 89.3553056553082,
+      "maximum": 89.3553056553082,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 89.3553056553082
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "Worker2UtilPct": {
+      "responseName": "Worker2UtilPct",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 87.10907012790673,
+      "minimum": 87.10907012790673,
+      "maximum": 87.10907012790673,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 87.10907012790673
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "ReleasedUnits": {
+      "responseName": "ReleasedUnits",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 220800,
+      "minimum": 220800,
+      "maximum": 220800,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 220800
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "UnitBalance": {
+      "responseName": "UnitBalance",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 0,
+      "minimum": 0,
+      "maximum": 0,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 0
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    },
+    "SimulatedHours": {
+      "responseName": "SimulatedHours",
+      "scenario": "Parallel_SmallBatch",
+      "hasValidAverage": true,
+      "observationsCount": 1,
+      "average": 3680,
+      "minimum": 3680,
+      "maximum": 3680,
+      "halfWidth": null,
+      "standardDeviation": null,
+      "observationOffset": 0,
+      "observationLimit": 100,
+      "observations": [
+        {
+          "replication": 1,
+          "value": 3680
+        }
+      ],
+      "hasMoreObservations": false,
+      "nextObservationOffset": null
+    }
+  }
+}

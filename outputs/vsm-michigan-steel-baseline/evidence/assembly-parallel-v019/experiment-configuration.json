@@ -1,0 +1,125 @@
+{
+  "experiment": "Exp_VSM_AssemblyModes",
+  "controls": [
+    "VSM_ModelVersion",
+    "VSM_BaselineStage",
+    "VSM_TransferBatchSize",
+    "VSM_ProcessBatchRule",
+    "VSM_ProductMixRule",
+    "VSM_InitialWIPRule",
+    "VSM_StatisticalBoundary",
+    "VSM_RunHorizonHours",
+    "VSM_AssemblyMode",
+    "VSM_AssemblyParallelWorkers",
+    "VSM_LeftProcessBatch",
+    "VSM_RightProcessBatch"
+  ],
+  "count": 5,
+  "scenarios": [
+    {
+      "name": "Scenario1",
+      "path": "/Project/Model/Experiments/Exp_VSM_AssemblyModes/Scenarios/Scenario1",
+      "active": false,
+      "replicationsRequired": 10,
+      "replicationsCompleted": 0,
+      "controlValues": {
+        "VSM_ModelVersion": "VSM_V0.1_SourceBaseline",
+        "VSM_BaselineStage": "SOURCE_BASELINE",
+        "VSM_TransferBatchSize": "20",
+        "VSM_ProcessBatchRule": "L=6000; R=3200; EPE=2 weeks; release point pending",
+        "VSM_ProductMixRule": "Aggregate takt stream; product identity pending",
+        "VSM_InitialWIPRule": "VSM snapshot by location; 2450-unit buffer treated as unit snapshot",
+        "VSM_StatisticalBoundary": "Deterministic structural run; 306.6667 h; no warmup",
+        "VSM_RunHorizonHours": "0",
+        "VSM_AssemblyMode": "1",
+        "VSM_AssemblyParallelWorkers": "2",
+        "VSM_LeftProcessBatch": "600",
+        "VSM_RightProcessBatch": "VSM_LeftProcessBatch * 8 / 15"
+      }
+    },
+    {
+      "name": "Original_LargeBatch",
+      "path": "/Project/Model/Experiments/Exp_VSM_AssemblyModes/Scenarios/Original_LargeBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 0,
+      "controlValues": {
+        "VSM_ModelVersion": "VSM_V0.19_ParameterizedAssemblyWorkersCandidate",
+        "VSM_BaselineStage": "ASSEMBLY_ORGANIZATION_EXPERIMENT_CANDIDATE",
+        "VSM_TransferBatchSize": "20",
+        "VSM_ProcessBatchRule": "Table-driven; Left/Right batch ratio fixed at 15:8; interval scales with total batch; Maximum Arrivals=Infinity",
+        "VSM_ProductMixRule": "Left/Right batch ratio 15:8; one combined release cycle; interarrival scales from 552000 seconds by total batch/9200; finite horizon ends production",
+        "VSM_InitialWIPRule": "Data Table + initialization Process; frozen initial quantities; 20-piece entities plus 10-piece tail; shared workers assigned for remaining assembly only",
+        "VSM_StatisticalBoundary": "Fixed RunLength=3680 hours; Maximum Arrivals=Infinity; source interarrival scales with batch; initial WIP/FG once; diagnostic batch-rate comparison",
+        "VSM_RunHorizonHours": "3680",
+        "VSM_AssemblyMode": "0",
+        "VSM_AssemblyParallelWorkers": "2",
+        "VSM_LeftProcessBatch": "6000",
+        "VSM_RightProcessBatch": "VSM_LeftProcessBatch * 8 / 15"
+      }
+    },
+    {
+      "name": "Original_SmallBatch",
+      "path": "/Project/Model/Experiments/Exp_VSM_AssemblyModes/Scenarios/Original_SmallBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 0,
+      "controlValues": {
+        "VSM_ModelVersion": "VSM_V0.19_ParameterizedAssemblyWorkersCandidate",
+        "VSM_BaselineStage": "ASSEMBLY_ORGANIZATION_EXPERIMENT_CANDIDATE",
+        "VSM_TransferBatchSize": "20",
+        "VSM_ProcessBatchRule": "Table-driven; Left/Right batch ratio fixed at 15:8; interval scales with total batch; Maximum Arrivals=Infinity",
+        "VSM_ProductMixRule": "Left/Right batch ratio 15:8; one combined release cycle; interarrival scales from 552000 seconds by total batch/9200; finite horizon ends production",
+        "VSM_InitialWIPRule": "Data Table + initialization Process; frozen initial quantities; 20-piece entities plus 10-piece tail; shared workers assigned for remaining assembly only",
+        "VSM_StatisticalBoundary": "Fixed RunLength=3680 hours; Maximum Arrivals=Infinity; source interarrival scales with batch; initial WIP/FG once; diagnostic batch-rate comparison",
+        "VSM_RunHorizonHours": "3680",
+        "VSM_AssemblyMode": "0",
+        "VSM_AssemblyParallelWorkers": "2",
+        "VSM_LeftProcessBatch": "600",
+        "VSM_RightProcessBatch": "VSM_LeftProcessBatch * 8 / 15"
+      }
+    },
+    {
+      "name": "Parallel_LargeBatch",
+      "path": "/Project/Model/Experiments/Exp_VSM_AssemblyModes/Scenarios/Parallel_LargeBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 0,
+      "controlValues": {
+        "VSM_ModelVersion": "VSM_V0.19_ParameterizedAssemblyWorkersCandidate",
+        "VSM_BaselineStage": "ASSEMBLY_ORGANIZATION_EXPERIMENT_CANDIDATE",
+        "VSM_TransferBatchSize": "20",
+        "VSM_ProcessBatchRule": "Table-driven; Left/Right batch ratio fixed at 15:8; interval scales with total batch; Maximum Arrivals=Infinity",
+        "VSM_ProductMixRule": "Left/Right batch ratio 15:8; one combined release cycle; interarrival scales from 552000 seconds by total batch/9200; finite horizon ends production",
+        "VSM_InitialWIPRule": "Data Table + initialization Process; frozen initial quantities; 20-piece entities plus 10-piece tail; shared workers assigned for remaining assembly only",
+        "VSM_StatisticalBoundary": "Fixed RunLength=3680 hours; Maximum Arrivals=Infinity; source interarrival scales with batch; initial WIP/FG once; diagnostic batch-rate comparison",
+        "VSM_RunHorizonHours": "3680",
+        "VSM_AssemblyMode": "1",
+        "VSM_AssemblyParallelWorkers": "2",
+        "VSM_LeftProcessBatch": "6000",
+        "VSM_RightProcessBatch": "VSM_LeftProcessBatch * 8 / 15"
+      }
+    },
+    {
+      "name": "Parallel_SmallBatch",
+      "path": "/Project/Model/Experiments/Exp_VSM_AssemblyModes/Scenarios/Parallel_SmallBatch",
+      "active": true,
+      "replicationsRequired": 1,
+      "replicationsCompleted": 0,
+      "controlValues": {
+        "VSM_ModelVersion": "VSM_V0.19_ParameterizedAssemblyWorkersCandidate",
+        "VSM_BaselineStage": "ASSEMBLY_ORGANIZATION_EXPERIMENT_CANDIDATE",
+        "VSM_TransferBatchSize": "20",
+        "VSM_ProcessBatchRule": "Table-driven; Left/Right batch ratio fixed at 15:8; interval scales with total batch; Maximum Arrivals=Infinity",
+        "VSM_ProductMixRule": "Left/Right batch ratio 15:8; one combined release cycle; interarrival scales from 552000 seconds by total batch/9200; finite horizon ends production",
+        "VSM_InitialWIPRule": "Data Table + initialization Process; frozen initial quantities; 20-piece entities plus 10-piece tail; shared workers assigned for remaining assembly only",
+        "VSM_StatisticalBoundary": "Fixed RunLength=3680 hours; Maximum Arrivals=Infinity; source interarrival scales with batch; initial WIP/FG once; diagnostic batch-rate comparison",
+        "VSM_RunHorizonHours": "3680",
+        "VSM_AssemblyMode": "1",
+        "VSM_AssemblyParallelWorkers": "2",
+        "VSM_LeftProcessBatch": "600",
+        "VSM_RightProcessBatch": "VSM_LeftProcessBatch * 8 / 15"
+      }
+    }
+  ]
+}

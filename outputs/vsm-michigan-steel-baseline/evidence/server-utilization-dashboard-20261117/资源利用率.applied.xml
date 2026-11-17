@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Dashboard CurrencyCulture="zh-CN" RequestParameters="false">
+  <Title Text="Server 利用率｜本次交互运行累计｜按容量时间加权" />
+  <DataSources>
+    <ObjectDataSource Name="Constraint Log" ComponentName="dashboardObjectDataSource1">
+      <DataSource Type="J.JR, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Inventory Review Log" ComponentName="dashboardObjectDataSource2">
+      <DataSource Type="J.JT, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Material Usage Log" ComponentName="dashboardObjectDataSource3">
+      <DataSource Type="J.Ju, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Periodic Output Statistic Log" ComponentName="dashboardObjectDataSource4">
+      <DataSource Type="J.JW, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Periodic State Statistic Log" ComponentName="dashboardObjectDataSource5">
+      <DataSource Type="J.Jx, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Periodic Tally Statistic Log" ComponentName="dashboardObjectDataSource6">
+      <DataSource Type="J.JZ, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Capacity Log" ComponentName="dashboardObjectDataSource7">
+      <DataSource Type="M.MQ, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+      <CalculatedFields>
+        <CalculatedField Name="UtilizedCapacityTime" Expression="[CapacityUtilized] * [Duration]" DataType="Auto" />
+        <CalculatedField Name="ScheduledCapacityTime" Expression="[CapacityScheduled] * [Duration]" DataType="Auto" />
+        <CalculatedField Name="ScheduledUtilizationRatio" Expression="Iif(Sum([ScheduledCapacityTime]) &gt; 0, Sum([UtilizedCapacityTime]) / Sum([ScheduledCapacityTime]), 0)" DataType="Auto" />
+        <CalculatedField Name="ServerLabel" Expression="Iif([ResourceName] = 'Server_Stamping', '1 冲压 Stamping', Iif([ResourceName] = 'Server_Weld1', '2 点焊一 Weld #1', Iif([ResourceName] = 'Server_Weld2', '3 点焊二 Weld #2', Iif([ResourceName] = 'Server_Assembly1', '4 装配一 Assembly #1', Iif([ResourceName] = 'Server_Assembly2', '5 装配二 Assembly #2', Iif([ResourceName] = 'Server_FG_Staging', '6 成品暂存 FG Staging', '其他资源'))))))" DataType="Auto" />
+      </CalculatedFields>
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Information Log" ComponentName="dashboardObjectDataSource8">
+      <DataSource Type="M.Mr, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource State Log" ComponentName="dashboardObjectDataSource9">
+      <DataSource Type="M.Mt, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Resource Usage Log" ComponentName="dashboardObjectDataSource10">
+      <DataSource Type="M.Mv, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="State Observation Log" ComponentName="dashboardObjectDataSource11">
+      <DataSource Type="j.ja, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_DemandLedger" ComponentName="dashboardObjectDataSource12">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_InitialWIPTable" ComponentName="dashboardObjectDataSource13">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_InventoryTable" ComponentName="dashboardObjectDataSource14">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_OperationTable" ComponentName="dashboardObjectDataSource15">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_AssemblyWorkerLog" ComponentName="dashboardObjectDataSource16">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_BacklogPlot" ComponentName="dashboardObjectDataSource17">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_BatchSummary" ComponentName="dashboardObjectDataSource18">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_DailyInventoryDelivery" ComponentName="dashboardObjectDataSource19">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_DailyOrderChart" ComponentName="dashboardObjectDataSource20">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_DashboardPeriods" ComponentName="dashboardObjectDataSource21">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_DeliveryBarPlot" ComponentName="dashboardObjectDataSource22">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_DemandFulfillment" ComponentName="dashboardObjectDataSource23">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_FGInventory" ComponentName="dashboardObjectDataSource24">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_FlowTimes" ComponentName="dashboardObjectDataSource25">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_InventoryOrderEvents" ComponentName="dashboardObjectDataSource26">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_LInventoryPlot" ComponentName="dashboardObjectDataSource27">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_MonthlyDeliveryPlot" ComponentName="dashboardObjectDataSource28">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_MonthlyInventoryDelivery" ComponentName="dashboardObjectDataSource29">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_MonthlyStockPlot" ComponentName="dashboardObjectDataSource30">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_OperationLog" ComponentName="dashboardObjectDataSource31">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_ResourceEvents" ComponentName="dashboardObjectDataSource32">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_RInventoryPlot" ComponentName="dashboardObjectDataSource33">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_RunSummary" ComponentName="dashboardObjectDataSource34">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_ShipmentAllocation" ComponentName="dashboardObjectDataSource35">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_Out_WIPSnapshot" ComponentName="dashboardObjectDataSource36">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_ProductTable" ComponentName="dashboardObjectDataSource37">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_ReliabilityTable" ComponentName="dashboardObjectDataSource38">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_ScenarioTable" ComponentName="dashboardObjectDataSource39">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Table.VSM_SourceLedger" ComponentName="dashboardObjectDataSource40">
+      <DataSource Type="Simio.Containers.TableInnerJoinView, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Tally Observation Log" ComponentName="dashboardObjectDataSource41">
+      <DataSource Type="j.jC, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Task Log" ComponentName="dashboardObjectDataSource42">
+      <DataSource Type="j.jD, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Task State Log" ComponentName="dashboardObjectDataSource43">
+      <DataSource Type="j.je, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+    <ObjectDataSource Name="Transporter Usage Log" ComponentName="dashboardObjectDataSource44">
+      <DataSource Type="N.NZ, Simio, Version=21.298.57236.0, Culture=neutral, PublicKeyToken=6ab6ba21a3d4a42a" />
+    </ObjectDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="五道生产工序｜利用容量时间 ÷ 排班容量时间" DataSource="dashboardObjectDataSource7" FilterString="[ResourceName] = 'Server_Stamping' Or [ResourceName] = 'Server_Weld1' Or [ResourceName] = 'Server_Weld2' Or [ResourceName] = 'Server_Assembly1' Or [ResourceName] = 'Server_Assembly2'" Rotated="true">
+      <DataItems>
+        <Dimension DataMember="ServerLabel" Name="Server（按工序排序）" DefaultId="DataItem0" />
+        <Measure DataMember="ScheduledUtilizationRatio" Name="排班容量利用率" SummaryType="Average" DefaultId="DataItem1">
+          <NumericFormat FormatType="Percent" Precision="2" Unit="Ones" />
+        </Measure>
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="本次运行累计">
+          <AxisY Title="利用率（%）" TitleVisible="true" AlwaysShowZeroLevel="true">
+            <NumericFormat FormatType="Percent" Precision="2" Unit="Ones" />
+          </AxisY>
+          <Series>
+            <Simple SeriesType="Bar">
+              <Value DefaultId="DataItem1" />
+              <PointLabelOptions ContentType="Value" Orientation="Default" Position="Outside" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <AxisX TitleVisible="false" />
+      <ChartLegend Visible="false" />
+    </Chart>
+    <Chart ComponentName="chartDashboardItem2" Name="成品暂存区｜容量占用率（100万个聚合实体位置，非加工设备）" DataSource="dashboardObjectDataSource7" FilterString="[ResourceName] = 'Server_FG_Staging'" Rotated="true">
+      <DataItems>
+        <Dimension DataMember="ServerLabel" Name="Server（按工序排序）" DefaultId="DataItem0" />
+        <Measure DataMember="ScheduledUtilizationRatio" Name="排班容量利用率" SummaryType="Average" DefaultId="DataItem1">
+          <NumericFormat FormatType="Percent" Precision="4" Unit="Ones" />
+        </Measure>
+      </DataItems>
+      <Arguments>
+        <Argument DefaultId="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="本次运行累计">
+          <AxisY Title="利用率（%）" TitleVisible="true" AlwaysShowZeroLevel="true">
+            <NumericFormat FormatType="Percent" Precision="4" Unit="Ones" />
+          </AxisY>
+          <Series>
+            <Simple SeriesType="Bar">
+              <Value DefaultId="DataItem1" />
+              <PointLabelOptions ContentType="Value" Orientation="Default" Position="Outside" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <AxisX TitleVisible="false" />
+      <ChartLegend Visible="false" />
+    </Chart>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutItem DashboardItem="chartDashboardItem1" Weight="80" />
+      <LayoutItem DashboardItem="chartDashboardItem2" Weight="20" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
